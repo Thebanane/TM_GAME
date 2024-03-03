@@ -1,0 +1,5 @@
+res://Levels/Levels/level_2.tscn
+res://Levels/Level_parents/level_parents.tscn
+res://Levels/Levels/level_1.tscn
+res://Objects_folder/Player/Player.tscn
+res://Levels/Levels/level_2.gd
