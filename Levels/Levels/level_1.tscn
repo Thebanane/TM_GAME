@@ -32,7 +32,7 @@ shape = SubResource("RectangleShape2D_v5exj")
 
 [node name="Player" parent="." index="4"]
 z_index = 2
-position = Vector2(-6, 495)
+position = Vector2(6, 495)
 
 [node name="Camera2D" parent="Player" index="6"]
 zoom = Vector2(4.065, 4.065)
