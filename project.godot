@@ -13,6 +13,7 @@ config_version=5
 config/name="TM"
 run/main_scene="res://Levels/Levels/level_1.tscn"
 config/features=PackedStringArray("4.1", "Mobile")
+run/max_fps=60
 config/icon="res://icon.svg"
 
 [autoload]
@@ -23,7 +24,6 @@ Global="*res://Objects_folder/Global/Global.gd"
 
 window/size/viewport_width=1250
 window/size/viewport_height=720
-window/size/resizable=false
 
 [editor]
 

@@ -10,7 +10,7 @@ var dash_direction: Vector2 = Vector2.ZERO
 @export var target_velocity = Vector2.ZERO
 #variables saut et gravité
 @export var gravity = 50
-@export var jump_impulse = 800
+@export var jump_impulse = 200
 var can_double_jump: bool = false
 #variables wall slide
 @export var wall_gravity = 60
@@ -26,11 +26,11 @@ var compare: bool  = true
 func dash(parameter_direction):
 	if dashing:
 		if dash_direction == Vector2(0,-1) or dash_direction == Vector2(0,1):
-			dashspeed = 650
+			dashspeed = 500
 		elif dash_direction == Vector2(1,0) or dash_direction == Vector2(-1,0):
-			dashspeed = 1000
+			dashspeed = 700
 		else:
-			dashspeed = 600
+			dashspeed = 550
 		target_velocity = dash_direction * dashspeed
 		can_dash = false
 	elif parameter_direction.x > 0:
@@ -67,7 +67,7 @@ func jump():
 		can_double_jump = true
 		can_dash = true
 		if Input.is_action_just_pressed("jump"):
-			target_velocity.y = -jump_impulse
+			target_velocity.y = -jump_impulse 
 			is_jumping = true
 			is_turning = false
 	elif Input.is_action_just_pressed("jump") and can_double_jump:
@@ -75,7 +75,7 @@ func jump():
 		can_double_jump = false
 		Global.double_jump_input_pressed = true	
 	else:
-		target_velocity.y += gravity
+		target_velocity.y += gravity 
 		is_turning = false
 	return target_velocity
 
