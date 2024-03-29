@@ -24,6 +24,9 @@ size = Vector2(9, 43)
 script = ExtResource("2_ba0l6")
 metadata/_edit_horizontal_guides_ = []
 
+[node name="Objects" parent="." index="0"]
+visible = true
+
 [node name="Brushes" type="Node2D" parent="Objects" index="1"]
 modulate = Color(0.0470588, 0.054902, 0.0745098, 0.27451)
 z_index = 2

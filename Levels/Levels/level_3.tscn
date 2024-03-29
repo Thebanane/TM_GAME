@@ -33,6 +33,9 @@ size = Vector2(20, 50)
 [node name="Level_3" instance=ExtResource("1_c7flt")]
 script = ExtResource("2_b8vl1")
 
+[node name="Objects" parent="." index="0"]
+visible = true
+
 [node name="Spike_folder" type="Node2D" parent="Objects" index="1"]
 z_index = 3
 position = Vector2(-1.09, 0)

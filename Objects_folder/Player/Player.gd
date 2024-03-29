@@ -13,7 +13,6 @@ var dash_direction: Vector2 = Vector2.ZERO
 @export var target_velocity = Vector2.ZERO
 
 #variables saut et gravité
-
 @export var gravity = 35
 @export var jump_impulse = 200
 var can_double_jump: bool = false
@@ -103,22 +102,17 @@ func jump():
 #fonction qui va permettre de faire le slide sur le mur
 func slide_and_jump(parameter_delta):
 	var wall_opposite = get_wall_normal()
-	if is_on_wall() and Input.is_action_pressed("grab"):
+	if is_on_wall():
 		print(wall_opposite)
 		can_double_jump = false
 		target_velocity.y += wall_gravity * parameter_delta
 		target_velocity.y = min(target_velocity.y, 300)
-	
-
 	else:
 		$delay.start()
 		if Input.is_action_just_pressed("jump") and slide_delay:			
 			can_double_jump = true
 			slide_delay = false
-
 			target_velocity.x = wall_opposite.x * wall_jump_speed
-				
-			
 			target_velocity.y = -jump_impulse 
 
 
@@ -129,7 +123,7 @@ func animation(parameter_target_velocity):
 	if is_on_floor() and is_turning:
 		$AnimationPlayer.play("turn") 
 		$Sprites_folder/Turn.flip_h = not $Sprites_folder/girl_animation_sprites.flip_h
-	elif is_on_wall_only() and Input.is_action_pressed('grab'):
+	elif is_on_wall_only() :
 		$AnimationPlayer.play("slide")
 		$Sprites_folder/slide.flip_h = $Sprites_folder/girl_animation_sprites.flip_h	
 		if $Sprites_folder/slide.flip_h :
