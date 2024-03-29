@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=3 uid="uid://tjrpccxrcasb"]
+
+[ext_resource type="Texture2D" uid="uid://cjr8757v1bouo" path="res://Graphics/Tilemap/industrial.v1.png" id="1_jnj3c"]
+
+[node name="Spike" type="Node2D"]
+
+[node name="Spike" type="Sprite2D" parent="."]
+texture = ExtResource("1_jnj3c")
+hframes = 32
+vframes = 32
+frame = 76

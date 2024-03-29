@@ -9,12 +9,12 @@ var dash_direction: Vector2 = Vector2.ZERO
 #variables qui détérminera le déplacement du joueur
 @export var target_velocity = Vector2.ZERO
 #variables saut et gravité
-@export var gravity = 50
+@export var gravity = 35
 @export var jump_impulse = 200
 var can_double_jump: bool = false
+var can_jump : bool
 #variables wall slide
-@export var wall_gravity = 60
-@export var wall_slide_speed = 60
+@export var wall_gravity = 20
 #variables animations
 @export var is_jumping = false
 @export var is_turning = false
@@ -66,27 +66,32 @@ func jump():
 	if is_on_floor() :
 		can_double_jump = true
 		can_dash = true
-		if Input.is_action_just_pressed("jump"):
-			target_velocity.y = -jump_impulse 
-			is_jumping = true
-			is_turning = false
+		can_jump = true	
+	if Input.is_action_just_pressed("jump") and can_jump:
+		target_velocity.y = -jump_impulse 
+		is_jumping = true
+		is_turning = false
+		can_jump = false
 	elif Input.is_action_just_pressed("jump") and can_double_jump:
 		target_velocity.y = -jump_impulse
 		can_double_jump = false
 		Global.double_jump_input_pressed = true	
 	else:
-		target_velocity.y += gravity 
+		$Double_jump.start()
+		target_velocity.y += gravity
+		target_velocity.y = min(target_velocity.y, 900)
 		is_turning = false
-	return target_velocity
+
+
 
 #fonction qui va permettre de faire le slide sur le mur
 func slide(parameter):
 	if is_on_wall() and not is_on_floor() :
 		can_double_jump = false
 		target_velocity.y += wall_gravity * parameter
-		target_velocity.y = min(target_velocity.y, wall_slide_speed)
-		if Input.is_action_just_pressed("jump"):
-			target_velocity.y = -jump_impulse
+		target_velocity.y = min(target_velocity.y, 300)
+#		if Input.is_action_just_pressed("jump"):
+#			target_velocity.y = -jump_impulse
 
 #fonction qui va gérer toutes les animations du joueur
 func animation(parameter_target_velocity):
@@ -128,3 +133,6 @@ func _process(delta):
 #lorsque le timer atteint zéro, alors le dash se désactivera. Utile pour pas faire des dash à l'infini
 func _on_dash_stop_timeout():
 	dashing = false
+
+func _on_double_jump_timeout():
+	can_jump = false
