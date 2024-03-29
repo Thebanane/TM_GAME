@@ -13,6 +13,7 @@ var dash_direction: Vector2 = Vector2.ZERO
 @export var target_velocity = Vector2.ZERO
 
 #variables saut et gravité
+
 @export var gravity = 35
 @export var jump_impulse = 200
 var can_double_jump: bool = false
@@ -83,6 +84,10 @@ func jump():
 		is_jumping = true
 		is_turning = false
 		can_jump = false
+		if Input.is_action_just_pressed("jump"):
+			target_velocity.y = -jump_impulse
+			is_jumping = true
+			is_turning = false
 	elif Input.is_action_just_pressed("jump") and can_double_jump:
 		target_velocity.y = -jump_impulse
 		can_double_jump = false

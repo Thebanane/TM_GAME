@@ -24,6 +24,7 @@ Global="*res://Objects_folder/Global/Global.gd"
 
 window/size/viewport_width=1250
 window/size/viewport_height=720
+window/size/resizable=false
 
 [editor]
 
