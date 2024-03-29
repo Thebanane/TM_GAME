@@ -38,3 +38,21 @@ position = Vector2(-199, 130)
 
 [node name="plateform_test10" parent="Ground" index="9" instance=ExtResource("3_gxcku")]
 position = Vector2(-199, 75)
+
+[node name="plateform_test11" parent="Ground" index="10" instance=ExtResource("3_gxcku")]
+position = Vector2(-64, 186)
+
+[node name="plateform_test12" parent="Ground" index="11" instance=ExtResource("3_gxcku")]
+position = Vector2(-64, 131)
+
+[node name="plateform_test13" parent="Ground" index="12" instance=ExtResource("3_gxcku")]
+position = Vector2(-64, 77)
+
+[node name="plateform_test14" parent="Ground" index="13" instance=ExtResource("3_gxcku")]
+position = Vector2(-64, 22)
+
+[node name="Player" parent="." index="4"]
+position = Vector2(-134, 45)
+
+[node name="Camera2D" parent="Player" index="5"]
+position_smoothing_enabled = true

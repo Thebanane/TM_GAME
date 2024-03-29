@@ -602,10 +602,6 @@ script = ExtResource("1_gbx5n")
 speed = 300
 jump_impulse = 450
 
-[node name="dash_stop" type="Timer" parent="."]
-wait_time = 0.1
-autostart = true
-
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(1, 1.75)
 shape = SubResource("RectangleShape2D_n85v0")
@@ -639,15 +635,19 @@ texture = ExtResource("5_l376i")
 offset = Vector2(0.445, 0.73)
 hframes = 5
 
-[node name="Double_jump" type="Timer" parent="."]
-wait_time = 0.1
-autostart = true
-
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 speed_scale = 1.2
 libraries = {
 "": SubResource("AnimationLibrary_x2lti")
 }
 
+[node name="dash_stop" type="Timer" parent="."]
+wait_time = 0.1
+autostart = true
+
+[node name="delay" type="Timer" parent="."]
+wait_time = 0.5
+autostart = true
+
 [connection signal="timeout" from="dash_stop" to="." method="_on_dash_stop_timeout"]
-[connection signal="timeout" from="Double_jump" to="." method="_on_double_jump_timeout"]
+[connection signal="timeout" from="delay" to="." method="_on_delay_timeout"]
