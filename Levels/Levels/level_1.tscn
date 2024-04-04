@@ -10,9 +10,6 @@ size = Vector2(8, 48)
 [node name="Level_1" instance=ExtResource("1_s3u3i")]
 script = ExtResource("2_p0rew")
 
-[node name="Objects" parent="." index="0"]
-visible = true
-
 [node name="Brushes" type="Node2D" parent="Objects" index="1"]
 modulate = Color(0.0470588, 0.054902, 0.0745098, 0.27451)
 z_index = 2
@@ -51,7 +48,7 @@ shape = SubResource("RectangleShape2D_v5exj")
 z_index = 2
 position = Vector2(-6, 495)
 
-[node name="Camera2D" parent="Player" index="5"]
+[node name="Camera2D" parent="Player" index="7"]
 zoom = Vector2(4.24, 4.24)
 limit_left = -115
 limit_top = 370

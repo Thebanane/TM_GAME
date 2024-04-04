@@ -23,6 +23,9 @@ var can_jump : bool
 var wall_jump_speed  = 1500
 var slide_delay = true
 
+#variable pour le floor slide 
+var is_floor_slide : bool = false
+
 #variables animations
 @export var is_jumping = false
 @export var is_turning = false
@@ -103,23 +106,30 @@ func jump():
 func slide_and_jump(parameter_delta):
 	var wall_opposite = get_wall_normal()
 	if is_on_wall():
-		print(wall_opposite)
 		can_double_jump = false
 		target_velocity.y += wall_gravity * parameter_delta
 		target_velocity.y = min(target_velocity.y, 300)
-	else:
-		$delay.start()
-		if Input.is_action_just_pressed("jump") and slide_delay:			
-			can_double_jump = true
-			slide_delay = false
-			target_velocity.x = wall_opposite.x * wall_jump_speed
-			target_velocity.y = -jump_impulse 
+#	else:
+#		$delay.start()
+#		if Input.is_action_just_pressed("jump") and slide_delay:			
+#			can_double_jump = true
+#			slide_delay = false
+#			target_velocity.x = wall_opposite.x * wall_jump_speed
+#			target_velocity.y = -jump_impulse 
+	
+func floor_slide(): 
+	if Input.is_action_just_pressed("slide"): 
+		is_floor_slide = true
+		$floor_slide_stop.start()
 
 
 
 
 #fonction qui va gérer toutes les animations du joueur
 func animation(parameter_target_velocity):
+	$normal_collision.disabled = false
+	$floor_slide_collision.disabled = true
+	
 	if is_on_floor() and is_turning:
 		$AnimationPlayer.play("turn") 
 		$Sprites_folder/Turn.flip_h = not $Sprites_folder/girl_animation_sprites.flip_h
@@ -130,6 +140,10 @@ func animation(parameter_target_velocity):
 			$Sprites_folder/slide.offset.x = 2.8
 		else:
 			$Sprites_folder/slide.offset.x = -0.455
+	elif is_on_floor() and is_floor_slide: 
+		$AnimationPlayer.play("floor_slide")
+		$normal_collision.disabled = true
+		$floor_slide_collision.disabled = false
 	elif is_jumping and not is_on_floor():
 		$AnimationPlayer.play("jumping")
 	elif parameter_target_velocity.x == 0 and is_on_floor():  
@@ -139,6 +153,7 @@ func animation(parameter_target_velocity):
 		$AnimationPlayer.play("run")
 	elif is_on_floor() and parameter_target_velocity.x > 0:
 		$AnimationPlayer.play("run")
+
 	else: 
 		$AnimationPlayer.play("falling")
 
@@ -151,6 +166,7 @@ func _process(delta):
 	movement(direction)
 	jump()
 	slide_and_jump(delta)
+	floor_slide()
 	animation(target_velocity)
 #velocity est la variable interne du joueur et prendra la valeur de target velocity permettant ainsi de bouger et de sauter
 	velocity = target_velocity
@@ -164,4 +180,5 @@ func _on_delay_timeout():
 	can_jump = false
 	slide_delay = false
 
-
+func _on_floor_slide_stop_timeout():
+	is_floor_slide = false 
