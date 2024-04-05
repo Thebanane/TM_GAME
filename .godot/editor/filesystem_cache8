@@ -1,5 +1,5 @@
 ea4bc82a6ad023ab7ee23ee620429895
-::res://::1712212761
+::res://::1712324679
 icon.svg::CompressedTexture2D::8019696685545992702::1704022189::1704022196::1::::<><>::
 README.md::TextFile::-1::1711359941::0::1::::<><>::
 ::res://addons/::1709465256
@@ -10,7 +10,8 @@ THIRDPARTY.md::TextFile::-1::1709465258::0::1::::<><>::
 ::res://addons/godot-git-plugin/linux/::1709465257
 ::res://addons/godot-git-plugin/macos/::1709465258
 ::res://addons/godot-git-plugin/win64/::1709465257
-::res://Graphics/::1711708011
+::res://Graphics/::1712331816
+white.png::CompressedTexture2D::8026910998256713981::1712331816::1712331816::1::::<><>::
 ::res://Graphics/Brush/::1711708011
 brush044.png::CompressedTexture2D::4363957265033626441::1711708011::1711708011::1::::<><>::
 brush045.png::CompressedTexture2D::4620276628373681540::1711708011::1711708011::1::::<><>::
@@ -25,6 +26,14 @@ brush053.png::CompressedTexture2D::7511118430905609160::1711708011::1711708011::
 brush054.png::CompressedTexture2D::6846706864896264749::1711708011::1711708011::1::::<><>::
 brush055.png::CompressedTexture2D::2671209595117179420::1711708011::1711708011::1::::<><>::
 brush056.png::CompressedTexture2D::8398793362199754074::1711708011::1711708011::1::::<><>::
+::res://Graphics/Levels/::0
+::res://Graphics/Levels/Levels/::0
+level_1.tscn::PackedScene::1627574348260898581::1712331993::0::1::::<><>::uid://dl4uye3w6uwl5::::res://Levels/Level_parents/level_parents.tscn<>res://Levels/Levels/Level_1.gd<>uid://libdmxlhdbun::::res://Graphics/Brush/brush047.png
+level_2.tscn::PackedScene::5868808732617513289::1712331994::0::1::::<><>::uid://dl4uye3w6uwl5::::res://Levels/Level_parents/level_parents.tscn<>res://Levels/Levels/level_2.gd<>uid://dlghhiohsvnhn::::res://Graphics/Brush/brush046.png<>uid://libdmxlhdbun::::res://Graphics/Brush/brush047.png
+level_3.tscn::PackedScene::2304363636826373089::1712331994::0::1::::<><>::uid://dl4uye3w6uwl5::::res://Levels/Level_parents/level_parents.tscn<>res://Levels/Levels/level_3.gd<>uid://tjrpccxrcasb::::res://Objects_folder/Objet_interaction/spike.tscn<>uid://b63djs462gl37::::res://Graphics/Brush/brush045.png<>uid://libdmxlhdbun::::res://Graphics/Brush/brush047.png
+level_4.tscn::PackedScene::540385098319767939::1712331994::0::1::::<><>::uid://dl4uye3w6uwl5::::res://Levels/Level_parents/level_parents.tscn<>res://Levels/Levels/level_4.gd<>uid://dlghhiohsvnhn::::res://Graphics/Brush/brush046.png<>uid://libdmxlhdbun::::res://Graphics/Brush/brush047.png<>uid://b63djs462gl37::::res://Graphics/Brush/brush045.png<>uid://cixm21dumwah5::::res://Objects_folder/Objet_interaction/switch.tscn<>uid://tjrpccxrcasb::::res://Objects_folder/Objet_interaction/spike.tscn<>uid://dqo5nm6ncimhr::::res://Objects_folder/Objet_interaction/door.tscn
+::res://Graphics/Levels/Level_parents/::0
+level_parents.tscn::PackedScene::7992463739264181564::1712331993::0::1::::<><>::res://Levels/Level_parents/level_parents.gd<>uid://3gxb6h3b4kng::::res://Graphics/Tilemap/Blockworld_Tileset.png<>uid://cjr8757v1bouo::::res://Graphics/Tilemap/industrial.v1.png<>uid://ou7p3edh6txw::::res://Objects_folder/Effects/effects.tscn<>uid://cxocvyngllghe::::res://Objects_folder/Player/Player.tscn
 ::res://Graphics/Red hood free (zipped) Folder/::1706256522
 red hood itch free Copy-Sheet.png::CompressedTexture2D::1165049348447921091::1705859534::1706256466::1::::<><>::
 run turnaround-Sheet.png::CompressedTexture2D::8217928637463194410::1706009985::1706256465::1::::<><>::
@@ -44,18 +53,18 @@ Free Smoke Fx  Pixel 07.png::CompressedTexture2D::5316062915141241335::170603292
 Blockworld_Tileset.png::CompressedTexture2D::1979073805328964384::1707728592::1707728596::1::::<><>::
 industrial.v1.png::CompressedTexture2D::5441697814236950198::1706260063::1706260092::1::::<><>::
 ::res://Levels/::1707726214
-::res://Levels/Levels/::1712138625
+::res://Levels/Levels/::1712331718
 Level_1.gd::GDScript::-1::1711706899::0::1::::<>LevelParent<>::
-level_1.tscn::PackedScene::1627574348260898581::1712138625::0::1::::<><>::uid://dl4uye3w6uwl5::::res://Levels/Level_parents/level_parents.tscn<>res://Levels/Levels/Level_1.gd<>uid://libdmxlhdbun::::res://Graphics/Brush/brush047.png
+level_1.tscn::PackedScene::1627574348260898581::1712331718::0::1::::<><>::uid://dl4uye3w6uwl5::::res://Levels/Level_parents/level_parents.tscn<>res://Levels/Levels/Level_1.gd<>uid://libdmxlhdbun::::res://Graphics/Brush/brush047.png
 level_2.gd::GDScript::-1::1711708011::0::1::::<>LevelParent<>::
-level_2.tscn::PackedScene::5868808732617513289::1712138625::0::1::::<><>::uid://dl4uye3w6uwl5::::res://Levels/Level_parents/level_parents.tscn<>res://Levels/Levels/level_2.gd<>uid://dlghhiohsvnhn::::res://Graphics/Brush/brush046.png<>uid://libdmxlhdbun::::res://Graphics/Brush/brush047.png
+level_2.tscn::PackedScene::5868808732617513289::1712331718::0::1::::<><>::uid://dl4uye3w6uwl5::::res://Levels/Level_parents/level_parents.tscn<>res://Levels/Levels/level_2.gd<>uid://dlghhiohsvnhn::::res://Graphics/Brush/brush046.png<>uid://libdmxlhdbun::::res://Graphics/Brush/brush047.png
 level_3.gd::GDScript::-1::1711708011::0::1::::<>LevelParent<>::
-level_3.tscn::PackedScene::2304363636826373089::1712138625::0::1::::<><>::uid://dl4uye3w6uwl5::::res://Levels/Level_parents/level_parents.tscn<>uid://tjrpccxrcasb::::res://Objects_folder/Objet_interaction/spike.tscn<>res://Levels/Levels/level_3.gd<>uid://b63djs462gl37::::res://Graphics/Brush/brush045.png<>uid://libdmxlhdbun::::res://Graphics/Brush/brush047.png
-level_4.gd::GDScript::-1::1712135465::0::1::::<>LevelParent<>::
-level_4.tscn::PackedScene::540385098319767939::1712138625::0::1::::<><>::uid://dl4uye3w6uwl5::::res://Levels/Level_parents/level_parents.tscn<>res://Levels/Levels/level_4.gd
-::res://Levels/Level_parents/::1712138624
+level_3.tscn::PackedScene::2304363636826373089::1712331718::0::1::::<><>::uid://dl4uye3w6uwl5::::res://Levels/Level_parents/level_parents.tscn<>uid://tjrpccxrcasb::::res://Objects_folder/Objet_interaction/spike.tscn<>res://Levels/Levels/level_3.gd<>uid://b63djs462gl37::::res://Graphics/Brush/brush045.png<>uid://libdmxlhdbun::::res://Graphics/Brush/brush047.png
+level_4.gd::GDScript::-1::1712331718::0::1::::<>LevelParent<>::
+level_4.tscn::PackedScene::540385098319767939::1712331718::0::1::::<><>::uid://dl4uye3w6uwl5::::res://Levels/Level_parents/level_parents.tscn<>res://Levels/Levels/level_4.gd<>uid://cixm21dumwah5::::res://Objects_folder/Objet_interaction/switch.tscn<>uid://tjrpccxrcasb::::res://Objects_folder/Objet_interaction/spike.tscn<>uid://libdmxlhdbun::::res://Graphics/Brush/brush047.png<>uid://b63djs462gl37::::res://Graphics/Brush/brush045.png<>uid://dlghhiohsvnhn::::res://Graphics/Brush/brush046.png<>uid://dqo5nm6ncimhr::::res://Objects_folder/Objet_interaction/door.tscn
+::res://Levels/Level_parents/::1712331718
 level_parents.gd::GDScript::-1::1711708011::0::1::::LevelParent<>Node2D<>::
-level_parents.tscn::PackedScene::7992463739264181564::1712138624::0::1::::<><>::uid://cxocvyngllghe::::res://Objects_folder/Player/Player.tscn<>res://Levels/Level_parents/level_parents.gd<>uid://ou7p3edh6txw::::res://Objects_folder/Effects/effects.tscn<>uid://3gxb6h3b4kng::::res://Graphics/Tilemap/Blockworld_Tileset.png<>uid://cjr8757v1bouo::::res://Graphics/Tilemap/industrial.v1.png
+level_parents.tscn::PackedScene::7992463739264181564::1712331718::0::1::::<><>::uid://cxocvyngllghe::::res://Objects_folder/Player/Player.tscn<>res://Levels/Level_parents/level_parents.gd<>uid://ou7p3edh6txw::::res://Objects_folder/Effects/effects.tscn<>uid://3gxb6h3b4kng::::res://Graphics/Tilemap/Blockworld_Tileset.png<>uid://cjr8757v1bouo::::res://Graphics/Tilemap/industrial.v1.png
 ::res://Levels/Level_test/::1711707008
 level_test.gd::GDScript::-1::1711706899::0::1::::<>LevelParent<>::
 level_test.tscn::PackedScene::2196530708800134449::1711707008::0::1::::<><>::uid://dl4uye3w6uwl5
@@ -64,13 +73,16 @@ Level_test_2.tscn::PackedScene::8018316217047118283::1708076699::0::1::::<><>::u
 ::res://Objects_folder/Effects/::1711706899
 effects.gd::GDScript::-1::1711706899::0::1::::<>Node2D<>::
 effects.tscn::PackedScene::1025902573670672696::1708076698::0::1::::<><>::uid://bb5rwqjfk23wo
-::res://Objects_folder/Global/::1711708011
-Global.gd::GDScript::-1::1711708011::0::1::::<>Node<>::
-::res://Objects_folder/Objet_interaction/::1711708011
-spike.gd::GDScript::-1::1711708011::0::1::::<>RefCounted<>::
-spike.tscn::PackedScene::1353226513898877413::1711708011::0::1::::<><>::uid://cjr8757v1bouo
+::res://Objects_folder/Global/::1712217213
+Global.gd::GDScript::-1::1712217213::0::1::::<>Node<>::
+::res://Objects_folder/Objet_interaction/::1712331718
+door.tscn::PackedScene::8313030241711216111::1712331879::0::1::::<><>::uid://cjr8757v1bouo::::res://Graphics/Tilemap/industrial.v1.png<>uid://dmmkb0oa4yt2l::::res://Graphics/white.png
+spike.gd::GDScript::-1::1712328064::0::1::::<>Node2D<>::
+spike.tscn::PackedScene::1353226513898877413::1712329397::0::1::::<><>::res://Objects_folder/Objet_interaction/spike.gd<>uid://cjr8757v1bouo::::res://Graphics/Tilemap/industrial.v1.png
+switch.gd::GDScript::-1::1712217205::0::1::::<>Node2D<>::
+switch.tscn::PackedScene::5382610996349592252::1712329397::0::1::::<><>::uid://cjr8757v1bouo::::res://Graphics/Tilemap/industrial.v1.png<>res://Objects_folder/Objet_interaction/switch.gd
 ::res://Objects_folder/Others/::1706258613
 Plateform_test.tscn::PackedScene::8860310071856173497::1706258613::0::1::::<><>::uid://dmi2h6a1h7fq1
-::res://Objects_folder/Player/::1712138624
-Player.gd::GDScript::-1::1712137576::0::1::::<>CharacterBody2D<>::
-Player.tscn::PackedScene::6416246276205932178::1712138624::0::1::::<><>::res://Objects_folder/Player/Player.gd<>uid://qumgsudvu4s2::::res://Graphics/Red hood free (zipped) Folder/red hood itch free Copy-Sheet.png<>uid://d1tkbr2lw47a6::::res://Graphics/Red hood free (zipped) Folder/idle and  alter/idle sheet-Sheet.png<>uid://dugetixg5snog::::res://Graphics/Red hood free (zipped) Folder/idle and  alter/wall slide-Sheet.png<>uid://dpc3c4dynp52u::::res://Graphics/Red hood free (zipped) Folder/run turnaround-Sheet.png
+::res://Objects_folder/Player/::1712330749
+Player.gd::GDScript::-1::1712215232::0::1::::<>CharacterBody2D<>::
+Player.tscn::PackedScene::6416246276205932178::1712330749::0::1::::<><>::res://Objects_folder/Player/Player.gd<>uid://qumgsudvu4s2::::res://Graphics/Red hood free (zipped) Folder/red hood itch free Copy-Sheet.png<>uid://d1tkbr2lw47a6::::res://Graphics/Red hood free (zipped) Folder/idle and  alter/idle sheet-Sheet.png<>uid://dugetixg5snog::::res://Graphics/Red hood free (zipped) Folder/idle and  alter/wall slide-Sheet.png<>uid://dpc3c4dynp52u::::res://Graphics/Red hood free (zipped) Folder/run turnaround-Sheet.png

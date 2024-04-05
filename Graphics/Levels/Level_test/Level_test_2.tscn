@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://dmieq5cr7dg80"]
+
+[ext_resource type="PackedScene" uid="uid://dl4uye3w6uwl5" path="res://Levels/Level_parents/level_parents.tscn" id="1_tet0k"]
+
+[node name="Level_parents" instance=ExtResource("1_tet0k")]
+
+[node name="TileMap" parent="." index="1"]
+layer_0/tile_data = PackedInt32Array(-4, 1245185, 0, 65532, 1245185, 0, 131068, 1245185, 0, 196604, 1245185, 0, 262140, 1245185, 0, 262141, 1245185, 0, 262142, 1245185, 0, 262143, 1245185, 0, 196608, 1245185, 0, 196609, 1245185, 0, 196610, 1245185, 0, 196611, 1245185, 0, 196612, 1245185, 0, 131076, 1245185, 0, 65540, 1245185, 0, 65539, 1245185, 0, 3, 1245185, 0, -65533, 1245185, 0)
