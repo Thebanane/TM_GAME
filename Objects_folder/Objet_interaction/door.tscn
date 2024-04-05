@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://dqo5nm6ncimhr"]
 
 [ext_resource type="Texture2D" uid="uid://cjr8757v1bouo" path="res://Graphics/Tilemap/industrial.v1.png" id="1_swgyv"]
-[ext_resource type="Texture2D" uid="uid://dmmkb0oa4yt2l" path="res://Graphics/white.png" id="2_vywcf"]
+[ext_resource type="Texture2D" uid="uid://cgyab8qmtupxh" path="res://Graphics/circle.png" id="2_b87im"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6023l"]
 size = Vector2(21, 32)
@@ -19,9 +19,20 @@ visible = false
 position = Vector2(0.5, 0)
 shape = SubResource("RectangleShape2D_6023l")
 
-[node name="Node2D" type="Node2D" parent="."]
-
-[node name="PointLight2D" type="PointLight2D" parent="Node2D"]
+[node name="PointLight2D" type="PointLight2D" parent="."]
 position = Vector2(4, 0)
-scale = Vector2(0.1369, 0.1369)
-texture = ExtResource("2_vywcf")
+scale = Vector2(0.03, 0.03)
+energy = 1.5
+texture = ExtResource("2_b87im")
+
+[node name="PointLight2D2" type="PointLight2D" parent="."]
+position = Vector2(4, -9)
+scale = Vector2(0.02, 0.01875)
+energy = 1.5
+texture = ExtResource("2_b87im")
+
+[node name="PointLight2D3" type="PointLight2D" parent="."]
+position = Vector2(4, 9)
+scale = Vector2(0.03, 0.03)
+energy = 1.5
+texture = ExtResource("2_b87im")

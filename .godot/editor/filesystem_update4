@@ -1,16 +1,3 @@
-res://Levels/Levels/level_4.tscn
-res://Objects_folder/Effects/effects.gd
-res://Objects_folder/Global/Global.gd
-res://Levels/Levels/Level_1.gd
-res://Levels/Levels/level_2.gd
-res://Levels/Levels/level_3.gd
-res://Levels/Levels/level_4.gd
-res://Levels/Level_parents/level_parents.gd
-res://Objects_folder/Player/Player.gd
-res://Objects_folder/Objet_interaction/spike.gd
-res://Objects_folder/Objet_interaction/switch.gd
-res://Levels/Levels/level_1.tscn
 res://Objects_folder/Objet_interaction/door.tscn
-res://Levels/Levels/level_3.tscn
 res://Levels/Level_parents/level_parents.tscn
-res://Levels/Levels/level_2.tscn
+res://Levels/Levels/level_4.tscn

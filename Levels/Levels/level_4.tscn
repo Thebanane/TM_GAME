@@ -17,7 +17,7 @@ func _ready():
 func _on_camera_change_body_entered(body):
 	if body == $Player :
 		var tween = create_tween()
-		tween.tween_property($Player/Camera2D, \"zoom\", Vector2(2,2), 0.3)
+		tween.tween_property($Player/Camera2D, \"zoom\", Vector2(2,2), 0.5)
 
 
 func _on_camera_change_2_body_entered(body):
@@ -28,7 +28,10 @@ func _on_camera_change_2_body_entered(body):
 
 func _on_switch_switch_on():
 	var tween = create_tween()
+	var tween2 = create_tween()
 	tween.tween_property($Objects/Door, \"position\", Vector2(-906,37.66), 1)
+	tween2.tween_property($Player/Camera2D,\"limit_left\", -1060, 1)
+	
 "
 
 [sub_resource type="CanvasTexture" id="CanvasTexture_cf0oq"]
@@ -75,18 +78,25 @@ z_index = -1
 position = Vector2(0, 418.5)
 scale = Vector2(4691, 4369)
 
-[node name="Backround_down" type="Sprite2D" parent="Objects" index="2"]
+[node name="Backround_up" type="Sprite2D" parent="Objects" index="2"]
+modulate = Color(0, 0, 0, 1)
+z_index = 4
+position = Vector2(-191, -501.746)
+scale = Vector2(98, 1003.49)
+texture = SubResource("CanvasTexture_cf0oq")
+
+[node name="Backround_down" type="Sprite2D" parent="Objects" index="3"]
 modulate = Color(0, 0, 0, 1)
 z_index = 2
 position = Vector2(-939.5, 928.282)
 scale = Vector2(151, 1824.56)
 texture = SubResource("CanvasTexture_cf0oq")
 
-[node name="Switch" parent="Objects" index="3" instance=ExtResource("3_vmphh")]
+[node name="Switch" parent="Objects" index="4" instance=ExtResource("3_vmphh")]
 z_index = 1
 position = Vector2(-723, -248)
 
-[node name="Spîke_folder" type="Node2D" parent="Objects" index="4"]
+[node name="Spîke_folder" type="Node2D" parent="Objects" index="5"]
 z_index = 1
 scale = Vector2(1.6, 1.6)
 
@@ -110,14 +120,14 @@ position = Vector2(-273.875, 11.875)
 z_index = 1
 position = Vector2(-257.875, 11.875)
 
-[node name="StaticBody2D" type="StaticBody2D" parent="Objects" index="5"]
+[node name="StaticBody2D" type="StaticBody2D" parent="Objects" index="6"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Objects/StaticBody2D" index="0"]
 z_index = 1
 position = Vector2(9.5, -5)
 shape = SubResource("RectangleShape2D_8y70c")
 
-[node name="Door" parent="Objects" index="6" instance=ExtResource("8_nneij")]
+[node name="Door" parent="Objects" index="7" instance=ExtResource("8_nneij")]
 modulate = Color(0.584314, 0.584314, 0.584314, 1)
 z_index = 1
 position = Vector2(-906, -5)
@@ -152,8 +162,9 @@ position = Vector2(-19, -1)
 
 [node name="Camera2D" parent="Player" index="7"]
 zoom = Vector2(3.325, 3.325)
-limit_left = -907
-limit_top = -300
+limit_left = -910
+limit_top = -286
+limit_right = 15
 limit_bottom = 50
 
 [node name="Camera_change" type="Area2D" parent="." index="4"]
@@ -165,7 +176,7 @@ shape = SubResource("RectangleShape2D_bm2c1")
 [node name="Camera_change_2" type="Area2D" parent="." index="5"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Camera_change_2" index="0"]
-position = Vector2(-932, -8)
+position = Vector2(-932, -4)
 shape = SubResource("RectangleShape2D_0r5xa")
 
 [connection signal="switch_on" from="Objects/Switch" to="." method="_on_switch_switch_on"]
