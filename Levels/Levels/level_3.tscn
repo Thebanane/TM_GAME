@@ -1,22 +1,10 @@
-[gd_scene load_steps=14 format=3 uid="uid://73isdqrc6y7j"]
+[gd_scene load_steps=10 format=3 uid="uid://73isdqrc6y7j"]
 
 [ext_resource type="PackedScene" uid="uid://dl4uye3w6uwl5" path="res://Levels/Level_parents/level_parents.tscn" id="1_c7flt"]
 [ext_resource type="PackedScene" uid="uid://tjrpccxrcasb" path="res://Objects_folder/Objet_interaction/spike.tscn" id="2_4ee3y"]
 [ext_resource type="Script" path="res://Levels/Levels/level_3.gd" id="2_b8vl1"]
 [ext_resource type="Texture2D" uid="uid://b63djs462gl37" path="res://Graphics/Brush/brush045.png" id="4_oiex3"]
 [ext_resource type="Texture2D" uid="uid://libdmxlhdbun" path="res://Graphics/Brush/brush047.png" id="5_qs53k"]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_iap6x"]
-size = Vector2(3.33334, 126.667)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_jdlpj"]
-size = Vector2(3.58334, 77)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_utdm1"]
-size = Vector2(46, 4)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_ngt4u"]
-size = Vector2(374.03, 20)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ahbcl"]
 size = Vector2(11, 91)
@@ -106,50 +94,27 @@ rotation = -4.71238
 position = Vector2(-65.8984, 325.333)
 rotation = -4.71238
 
-[node name="Death_zone" type="Area2D" parent="Objects" index="2"]
-z_index = 1
-position = Vector2(-1.09, 0)
-scale = Vector2(1.5, 1.5)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Objects/Death_zone" index="0"]
-position = Vector2(-54.2733, 189.333)
-shape = SubResource("RectangleShape2D_iap6x")
-
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="Objects/Death_zone" index="1"]
-position = Vector2(-72.6067, 340.333)
-shape = SubResource("RectangleShape2D_jdlpj")
-
-[node name="CollisionShape2D3" type="CollisionShape2D" parent="Objects/Death_zone" index="2"]
-position = Vector2(-53.94, 451.667)
-rotation = 1.57079
-shape = SubResource("RectangleShape2D_utdm1")
-
-[node name="CollisionShape2D4" type="CollisionShape2D" parent="Objects/Death_zone" index="3"]
-z_index = 1
-position = Vector2(-324.288, 896)
-shape = SubResource("RectangleShape2D_ngt4u")
-
-[node name="Camera out" type="Area2D" parent="Objects" index="3"]
+[node name="Camera out" type="Area2D" parent="Objects" index="2"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Objects/Camera out" index="0"]
 z_index = 1
 position = Vector2(-172, 754)
 shape = SubResource("RectangleShape2D_ahbcl")
 
-[node name="Camera in" type="Area2D" parent="Objects" index="4"]
+[node name="Camera in" type="Area2D" parent="Objects" index="3"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Objects/Camera in" index="0"]
 z_index = 1
 position = Vector2(-831.125, 1186)
 shape = SubResource("RectangleShape2D_ipwem")
 
-[node name="StaticBody2D" type="StaticBody2D" parent="Objects" index="5"]
+[node name="StaticBody2D" type="StaticBody2D" parent="Objects" index="4"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Objects/StaticBody2D" index="0"]
 z_index = 1
 shape = SubResource("RectangleShape2D_n2a3s")
 
-[node name="Brush" type="Node2D" parent="Objects" index="6"]
+[node name="Brush" type="Node2D" parent="Objects" index="5"]
 modulate = Color(0.0470588, 0.054902, 0.0745098, 0.27451)
 z_index = 2
 
@@ -173,7 +138,7 @@ position = Vector2(-196, 1341)
 scale = Vector2(0.605014, 0.540875)
 texture = ExtResource("4_oiex3")
 
-[node name="next_level" type="Area2D" parent="Objects" index="7"]
+[node name="next_level" type="Area2D" parent="Objects" index="6"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Objects/next_level" index="0"]
 z_index = 1
@@ -217,7 +182,6 @@ limit_right = 45
 limit_bottom = 1230
 position_smoothing_enabled = true
 
-[connection signal="body_entered" from="Objects/Death_zone" to="." method="_on_area_2d_body_entered"]
 [connection signal="body_entered" from="Objects/Camera out" to="." method="_on_camera_body_entered"]
 [connection signal="body_entered" from="Objects/Camera in" to="." method="_on_camera_in_body_entered"]
 [connection signal="body_entered" from="Objects/next_level" to="." method="_on_next_level_body_entered"]

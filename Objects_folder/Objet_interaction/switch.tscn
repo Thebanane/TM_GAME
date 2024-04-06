@@ -53,6 +53,7 @@ vframes = 32
 frame = 261
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+speed_scale = 1.75
 libraries = {
 "": SubResource("AnimationLibrary_e2rbr")
 }
@@ -63,3 +64,4 @@ libraries = {
 shape = SubResource("RectangleShape2D_jj3yj")
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]

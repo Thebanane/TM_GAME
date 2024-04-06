@@ -1,6 +1,6 @@
 extends LevelParent
 
-
+#Si le joueur entre dans cette zone, on recharge la scène, et par conséquent le joueur se fait téléporter au début du niveau
 func _on_area_2d_body_entered(body):
 	if body == $Player:
 		get_tree().reload_current_scene()
