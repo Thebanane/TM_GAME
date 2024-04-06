@@ -1,13 +1,38 @@
 [gd_scene load_steps=13 format=3 uid="uid://hx1cfspeigh4"]
 
 [ext_resource type="PackedScene" uid="uid://dl4uye3w6uwl5" path="res://Levels/Level_parents/level_parents.tscn" id="1_n272f"]
-[ext_resource type="Script" path="res://Levels/Levels/level_4.gd" id="2_ooosv"]
 [ext_resource type="Texture2D" uid="uid://dlghhiohsvnhn" path="res://Graphics/Brush/brush046.png" id="3_n2spi"]
 [ext_resource type="PackedScene" uid="uid://cixm21dumwah5" path="res://Objects_folder/Objet_interaction/switch.tscn" id="3_vmphh"]
 [ext_resource type="Texture2D" uid="uid://libdmxlhdbun" path="res://Graphics/Brush/brush047.png" id="4_f1e3r"]
 [ext_resource type="Texture2D" uid="uid://b63djs462gl37" path="res://Graphics/Brush/brush045.png" id="5_s5ysv"]
 [ext_resource type="PackedScene" uid="uid://tjrpccxrcasb" path="res://Objects_folder/Objet_interaction/spike.tscn" id="7_72dj7"]
 [ext_resource type="PackedScene" uid="uid://dqo5nm6ncimhr" path="res://Objects_folder/Objet_interaction/door.tscn" id="8_nneij"]
+
+[sub_resource type="GDScript" id="GDScript_r7wq1"]
+script/source = "extends LevelParent
+
+func _ready():
+	$Player/Sprites_folder/girl_animation_sprites.flip_h = false
+
+func _on_camera_change_body_entered(body):
+	if body == $Player :
+		var tween = create_tween()
+		tween.tween_property($Player/Camera2D, \"zoom\", Vector2(2,2), 0.5)
+
+
+func _on_camera_change_2_body_entered(body):
+	if body == $Player :
+		var tween = create_tween()
+		tween.tween_property($Player/Camera2D, \"zoom\", Vector2(3.325,3.325), 0.3)
+
+
+func _on_switch_switch_on():
+	var tween = create_tween()
+	var tween2 = create_tween()
+	tween.tween_property($Objects/Door, \"position\", Vector2(-906,37.66), 1)
+	tween2.tween_property($Player/Camera2D,\"limit_left\", -1060, 1)
+	
+"
 
 [sub_resource type="CanvasTexture" id="CanvasTexture_cf0oq"]
 
@@ -21,7 +46,7 @@ size = Vector2(20, 48)
 size = Vector2(20, 46.8871)
 
 [node name="Level_4" instance=ExtResource("1_n272f")]
-script = ExtResource("2_ooosv")
+script = SubResource("GDScript_r7wq1")
 
 [node name="Brushes" type="Node2D" parent="Objects" index="0"]
 modulate = Color(0.0470588, 0.054902, 0.0745098, 0.27451)

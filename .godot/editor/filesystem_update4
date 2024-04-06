@@ -1,5 +1,3 @@
 res://Objects_folder/Objet_interaction/door.tscn
-res://Objects_folder/Player/Player.gd
+res://Levels/Level_parents/level_parents.tscn
 res://Levels/Levels/level_4.tscn
-res://Objects_folder/Player/Player.tscn
-res://Levels/Levels/level_4.gd
