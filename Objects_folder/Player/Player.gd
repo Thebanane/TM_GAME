@@ -35,35 +35,34 @@ var compare: bool  = true
 
 	
 #fonction qui va donner la vitesse du dash et deplacement du joueur
-func dash():
-	if dashing:
-		if dash_direction == Vector2(0,-1) or dash_direction == Vector2(0,1):
-			dashspeed = 500
-		elif dash_direction == Vector2(1,0) or dash_direction == Vector2(-1,0):
-			dashspeed = 700
-		else:
-			dashspeed = 550
-		target_velocity = dash_direction * dashspeed
-		can_dash = false
-		
-func movement(parameter_direction) : 		
-	if parameter_direction.x > 0:
-		$Sprites_folder/girl_animation_sprites.flip_h = true
-	elif parameter_direction.x < 0:
-		$Sprites_folder/girl_animation_sprites.flip_h = false
-	else:
-		target_velocity.x = 0
-	target_velocity.x = parameter_direction.x * speed
-	
+func dash(parameter_direction):
 #permet d'avoir la direction au moment de l'appuie comme ça on une direction fixe	
 	if Input.is_action_just_pressed("dash") and can_dash and! parameter_direction == Vector2(0,0):
 		dashing = true
 		dash_direction = round(parameter_direction)
-		$dash_stop.start()
-#voir fonction must_turn_or_not
+		$dash_stop.start()	
+	
+	if dashing:
+		if dash_direction == Vector2(0,-1) or dash_direction == Vector2(0,1):
+			speed = 600
+		elif dash_direction == Vector2(1,0) or dash_direction == Vector2(-1,0):
+			speed = 600
+		else:
+			speed = 550
+		target_velocity = dash_direction * speed
+		can_dash = false
+	else :
+		if parameter_direction.x < 0 : 
+			$Sprites_folder/girl_animation_sprites.flip_h = false	
+		else : 
+			$Sprites_folder/girl_animation_sprites.flip_h = true
+		target_velocity.x = parameter_direction.x * speed
+		
+	#voir fonction must_turn_or_not
 	if Input.is_action_just_pressed("right") or Input.is_action_just_pressed("left") and is_on_floor():
 		must_turn_or_not()
-	return target_velocity
+
+
 
 #fonction qui va permettre de faire l'animation turn seulement si on tourne le joueur. Si ce n'est pas le cas, l'animation ne se déclanchera pas
 #c'est concrétement un XOR
@@ -117,6 +116,7 @@ func slide_and_jump(parameter_delta):
 #			target_velocity.x = wall_opposite.x * wall_jump_speed
 #			target_velocity.y = -jump_impulse 
 	
+
 func floor_slide(): 
 	if Input.is_action_just_pressed("slide"): 
 		is_floor_slide = true
@@ -149,21 +149,21 @@ func animation(parameter_target_velocity):
 	elif parameter_target_velocity.x == 0 and is_on_floor():  
 		$Sprites_folder/idle.flip_h = not $Sprites_folder/girl_animation_sprites.flip_h
 		$AnimationPlayer.play("idle")
-	elif is_on_floor() and parameter_target_velocity.x < 0:
+	elif is_on_floor() and parameter_target_velocity.x < 0:	
 		$AnimationPlayer.play("run")
 	elif is_on_floor() and parameter_target_velocity.x > 0:
 		$AnimationPlayer.play("run")
-
 	else: 
 		$AnimationPlayer.play("falling")
+		
+
 
 # fonction qui s'applique lorsque le jeu tourne et s'update chaque frame 
 func _process(delta):
 #direction sera un vecteur x et y avec comme valeur max = 1. Noramized donne l'angle mais prend comme valeur de x et y = 1 
 	var direction = Input.get_vector("left","right","up","down").normalized()
 #appelle de toutes les fonction permettant à' l'action du joueur
-	dash()
-	movement(direction)
+	dash(direction)
 	jump()
 	slide_and_jump(delta)
 	floor_slide()
@@ -175,6 +175,7 @@ func _process(delta):
 #lorsque le timer atteint zéro, alors le dash se désactivera. Utile pour pas faire des dash à l'infini
 func _on_dash_stop_timeout():
 	dashing = false
+	speed = 300
 
 func _on_delay_timeout():
 	can_jump = false
