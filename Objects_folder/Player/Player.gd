@@ -89,14 +89,15 @@ func jump():
 	else:
 		$delay.start()
 		target_velocity.y += gravity
-		target_velocity.y = min(target_velocity.y, 900)
+		target_velocity.y = min(target_velocity.y, 800)
 
 
 #Cette fonction va permettre de faire le slide sur le mur. C'est un peu le même principe que pour la gravité sauf qu'on dit que ça doit être le cas seulement si le joueur est sur un mur
-func slide(parameter_delta):
-	if is_on_wall():
+func wall_slide(parameter_delta):
+	if is_on_wall() and Input.is_action_pressed("grab"):
 		target_velocity.y += wall_gravity * parameter_delta
-		target_velocity.y = min(target_velocity.y, 300)
+		target_velocity.y = min(target_velocity.y, 250)
+		can_double_jump = true
 
 
 #La fonction floor_slide va permettre de faire comme son nom l'indique, une glissade sur le sol. Le timer permet de dire quand arrêter l'animation de la glissade. 
@@ -104,20 +105,17 @@ func floor_slide():
 	if Input.is_action_just_pressed("slide") and is_on_floor(): 
 		is_floor_slide = true
 		$floor_slide_stop.start()
+		$normal_collision.disabled = true
+		$floor_slide_collision.disabled = false
 	
 
 #fonction qui va gérer toutes les animations du joueur. Les deux prmières variables sont les collisions du joueur lors du slide et lorsqu'il est debout.
 func animation(parameter_target_velocity):
-	$normal_collision.disabled = false
-	$floor_slide_collision.disabled = true
-	
-	if is_on_wall_only() :
+	if is_on_wall_only() and Input.is_action_pressed("grab") :
 		$AnimationPlayer.play("slide")
 		$Sprites_folder/slide.flip_h = $Sprites_folder/girl_animation_sprites.flip_h	
-		
 		if $Sprites_folder/slide.flip_h :
 			$Sprites_folder/slide.offset.x = 2.8
-		
 		else:
 			$Sprites_folder/slide.offset.x = -0.455
 	
@@ -158,7 +156,7 @@ func _process(delta):
 #On appelle de toutes les fonction permettant au joueur de bouger
 	movement_dash(direction, axis)
 	jump()
-	slide(delta)
+	wall_slide(delta)
 	floor_slide()
 	animation(target_velocity)
 
@@ -177,3 +175,5 @@ func _on_delay_timeout():
 
 func _on_floor_slide_stop_timeout():
 	is_floor_slide = false 
+	$normal_collision.disabled = false
+	$floor_slide_collision.disabled = true

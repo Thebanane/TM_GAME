@@ -1,4 +1,11 @@
 extends LevelParent
+func _ready():
+	var tween = create_tween()
+	tween.tween_property($Objects/Door_entrance,"position", Vector2(-82,-7), 0.5)
+
+
+
+
 
 #Si le joueur entre dans cette zone, on recharge la scène, et par conséquent le joueur se fait téléporter au début du niveau
 func _on_area_2d_body_entered(body):

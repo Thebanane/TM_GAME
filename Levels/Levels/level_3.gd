@@ -4,7 +4,8 @@ extends LevelParent
 func _ready():
 	$Player/Sprites_folder/girl_animation_sprites.flip_h = false
 
-#Lrosque le joueur entre cette zonne, on va mettre de nouvelles valeurs à certaines variables mais surtout on va faire une petite animation. 
+
+#Lorsque le joueur entre cette zonne, on va mettre de nouvelles valeurs à certaines variables mais surtout on va faire une petite animation. 
 func _on_camera_body_entered(body):
 	if body == $Player :
 		$Player/Camera2D.limit_top = 630
@@ -24,3 +25,11 @@ func _on_camera_in_body_entered(body):
 func _on_next_level_body_entered(body):
 	if body == $Player : 
 		get_tree().change_scene_to_file("res://Levels/Levels/level_4.tscn")
+
+
+func _on_door_animation_body_entered(body):
+	if body == $Player: 
+		var tween1 = create_tween()
+		tween1.tween_property($Player/Camera2D, "limit_top", 80, 0.5)  
+		var tween = create_tween()
+		tween.tween_property($Objects/Door_entrance, "position", Vector2(0,90), 0.5)
