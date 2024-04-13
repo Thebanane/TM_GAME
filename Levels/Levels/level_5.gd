@@ -10,7 +10,7 @@ func _ready():
 func _on_switch_switch_on():
 	var tween = create_tween()
 	tween.tween_property($Objects/Door_exit, "position", Vector2(-1086,584), 0.5)
-	tween.tween_property($Objects/Door_exit, "position", Vector2(-1086,642.775), 2)
+	tween.tween_property($Objects/Door_exit, "position", Vector2(-1086,642.775), 2.1)
 
 
 func _on_camera_change_body_entered(_body):

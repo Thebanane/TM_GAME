@@ -1651,7 +1651,6 @@ z_index = 1
 position = Vector2(-257.875, 11.875)
 
 [node name="Door" parent="Objects" instance=ExtResource("8_nneij")]
-modulate = Color(0.584314, 0.584314, 0.584314, 1)
 z_index = 1
 position = Vector2(-907, -5)
 scale = Vector2(1.335, 1.335)

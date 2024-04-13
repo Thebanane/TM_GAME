@@ -17,12 +17,14 @@ size = Vector2(22.1684, 1.78431)
 script = ExtResource("1_m1g3d")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+modulate = Color(0.584314, 0.584314, 0.584314, 1)
 texture = ExtResource("1_swgyv")
 hframes = 23
 vframes = 16
 frame = 75
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
 position = Vector2(0, -0.5)
 shape = SubResource("RectangleShape2D_6023l")
 
@@ -45,6 +47,7 @@ energy = 1.5
 texture = ExtResource("2_b87im")
 
 [node name="Area2D" type="Area2D" parent="."]
+visible = false
 
 [node name="death_zone" type="CollisionShape2D" parent="Area2D"]
 position = Vector2(0, 14)

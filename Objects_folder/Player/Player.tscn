@@ -738,7 +738,7 @@ libraries = {
 }
 
 [node name="dash_stop" type="Timer" parent="."]
-wait_time = 0.1
+wait_time = 0.15
 autostart = true
 
 [node name="delay" type="Timer" parent="."]
