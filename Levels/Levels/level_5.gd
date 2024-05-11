@@ -2,7 +2,7 @@ extends LevelParent
 
 func _ready():
 	var tween = create_tween()
-	tween.tween_property($Objects/Door_entrance, "position", Vector2(177,-5), 0.5)
+	tween.tween_property($Objects/Door_entrance, "position", Vector2(177,-5), 0.2)
 	$Player/Sprites_folder/girl_animation_sprites.flip_h = false
 	
 

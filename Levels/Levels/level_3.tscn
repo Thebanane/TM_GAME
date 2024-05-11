@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://73isdqrc6y7j"]
+[gd_scene load_steps=13 format=3 uid="uid://73isdqrc6y7j"]
 
 [ext_resource type="PackedScene" uid="uid://dl4uye3w6uwl5" path="res://Levels/Level_parents/level_parents.tscn" id="1_c7flt"]
 [ext_resource type="PackedScene" uid="uid://tjrpccxrcasb" path="res://Objects_folder/Objet_interaction/spike.tscn" id="2_4ee3y"]
@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://b63djs462gl37" path="res://Graphics/Brush/brush045.png" id="4_oiex3"]
 [ext_resource type="Texture2D" uid="uid://libdmxlhdbun" path="res://Graphics/Brush/brush047.png" id="5_qs53k"]
 [ext_resource type="PackedScene" uid="uid://dqo5nm6ncimhr" path="res://Objects_folder/Objet_interaction/door.tscn" id="6_5ivhm"]
+[ext_resource type="Texture2D" uid="uid://cgyab8qmtupxh" path="res://Graphics/circle.png" id="7_8coda"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ahbcl"]
 size = Vector2(11, 91)
@@ -190,13 +191,45 @@ layer_6/tile_data = PackedInt32Array(1, 1114113, 0, 65537, 1114113, 0, 131073, 1
 [node name="Player" parent="." index="3"]
 position = Vector2(-1, 25)
 
-[node name="Camera2D" parent="Player" index="7"]
+[node name="Camera2D" parent="Player" index="8"]
 zoom = Vector2(3.375, 3.375)
 limit_left = -917
 limit_top = 20
 limit_right = 45
 limit_bottom = 1230
 position_smoothing_enabled = true
+
+[node name="PointLight2D" type="PointLight2D" parent="lights" index="1"]
+modulate = Color(0.843137, 0.27451, 0.603922, 1)
+position = Vector2(-48, 145)
+scale = Vector2(0.09125, 0.1)
+color = Color(0.913725, 0.223529, 0.552941, 1)
+energy = 2.0
+texture = ExtResource("7_8coda")
+
+[node name="PointLight2D2" type="PointLight2D" parent="lights" index="2"]
+modulate = Color(0.843137, 0.27451, 0.603922, 1)
+position = Vector2(-144, 753)
+scale = Vector2(0.09125, 0.1)
+color = Color(0.913725, 0.223529, 0.552941, 1)
+energy = 2.0
+texture = ExtResource("7_8coda")
+
+[node name="PointLight2D3" type="PointLight2D" parent="lights" index="3"]
+modulate = Color(0.843137, 0.27451, 0.603922, 1)
+position = Vector2(-513, 960)
+scale = Vector2(0.09125, 0.1)
+color = Color(0.913725, 0.223529, 0.552941, 1)
+energy = 2.0
+texture = ExtResource("7_8coda")
+
+[node name="PointLight2D4" type="PointLight2D" parent="lights" index="4"]
+modulate = Color(0.843137, 0.27451, 0.603922, 1)
+position = Vector2(-833, 1168)
+scale = Vector2(0.09125, 0.1)
+color = Color(0.913725, 0.223529, 0.552941, 1)
+energy = 2.0
+texture = ExtResource("7_8coda")
 
 [connection signal="body_entered" from="Objects/Camera out" to="." method="_on_camera_body_entered"]
 [connection signal="body_entered" from="Objects/Camera in" to="." method="_on_camera_in_body_entered"]

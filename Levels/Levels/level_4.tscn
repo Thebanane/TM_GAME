@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://hx1cfspeigh4"]
+[gd_scene load_steps=21 format=3 uid="uid://hx1cfspeigh4"]
 
 [ext_resource type="Script" path="res://Levels/Levels/level_4.gd" id="2_ooosv"]
 [ext_resource type="Texture2D" uid="uid://dlghhiohsvnhn" path="res://Graphics/Brush/brush046.png" id="3_n2spi"]
@@ -11,6 +11,7 @@
 [ext_resource type="Texture2D" uid="uid://cjr8757v1bouo" path="res://Graphics/Tilemap/industrial.v1.png" id="9_my26a"]
 [ext_resource type="PackedScene" uid="uid://ou7p3edh6txw" path="res://Objects_folder/Effects/effects.tscn" id="10_wb435"]
 [ext_resource type="PackedScene" uid="uid://cxocvyngllghe" path="res://Objects_folder/Player/Player.tscn" id="11_qoaj5"]
+[ext_resource type="Texture2D" uid="uid://cgyab8qmtupxh" path="res://Graphics/circle.png" id="12_inemo"]
 
 [sub_resource type="CanvasTexture" id="CanvasTexture_4mbrx"]
 
@@ -1623,7 +1624,7 @@ scale = Vector2(127.63, 556.746)
 texture = SubResource("CanvasTexture_herbo")
 
 [node name="Switch" parent="Objects" instance=ExtResource("3_vmphh")]
-z_index = 1
+z_index = 2
 position = Vector2(-856, -248)
 
 [node name="Spîke_folder" type="Node2D" parent="Objects"]
@@ -1740,6 +1741,45 @@ shape = SubResource("RectangleShape2D_fnkf4")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="level_change"]
 position = Vector2(-1005, -4)
 shape = SubResource("RectangleShape2D_g3cjh")
+
+[node name="lights" type="Node2D" parent="."]
+
+[node name="PointLight2D" type="PointLight2D" parent="lights"]
+modulate = Color(0.843137, 0.27451, 0.603922, 1)
+position = Vector2(-464, -47)
+scale = Vector2(0.09125, 0.1)
+color = Color(0.913725, 0.223529, 0.552941, 1)
+energy = 2.0
+texture = ExtResource("12_inemo")
+
+[node name="PointLight2D2" type="PointLight2D" parent="lights"]
+modulate = Color(0.843137, 0.27451, 0.603922, 1)
+position = Vector2(-785, -32)
+scale = Vector2(0.09125, 0.1)
+color = Color(0.913725, 0.223529, 0.552941, 1)
+energy = 2.0
+texture = ExtResource("12_inemo")
+
+[node name="PointLight2D3" type="PointLight2D" parent="lights"]
+modulate = Color(0.843137, 0.27451, 0.603922, 1)
+position = Vector2(-785, -111)
+scale = Vector2(0.09125, 0.1)
+color = Color(0.913725, 0.223529, 0.552941, 1)
+energy = 2.0
+texture = ExtResource("12_inemo")
+
+[node name="PointLight2D4" type="PointLight2D" parent="lights"]
+modulate = Color(0.843137, 0.27451, 0.603922, 1)
+position = Vector2(-785, -193)
+scale = Vector2(0.09125, 0.1)
+color = Color(0.913725, 0.223529, 0.552941, 1)
+energy = 2.0
+texture = ExtResource("12_inemo")
+
+[node name="DirectionalLight2D" type="DirectionalLight2D" parent="lights"]
+color = Color(0.482353, 0.513726, 0.592157, 1)
+energy = 1.15
+blend_mode = 1
 
 [connection signal="switch_on" from="Objects/Switch" to="." method="_on_switch_switch_on"]
 [connection signal="body_entered" from="Camera_change" to="." method="_on_camera_change_body_entered"]

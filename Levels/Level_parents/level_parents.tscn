@@ -1604,3 +1604,10 @@ layer_5/tile_data = PackedInt32Array()
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
 zoom = Vector2(4.175, 4.175)
+
+[node name="lights" type="Node2D" parent="."]
+
+[node name="DirectionalLight2D" type="DirectionalLight2D" parent="lights"]
+color = Color(0.482353, 0.513726, 0.592157, 1)
+energy = 1.15
+blend_mode = 1

@@ -3,7 +3,7 @@ extends LevelParent
 func _ready():
 	$Player/Sprites_folder/girl_animation_sprites.flip_h = false
 	var tween = create_tween()
-	tween.tween_property($Objects/Door_entrance, "position", Vector2(161,-6), 0.5)
+	tween.tween_property($Objects/Door_entrance, "position", Vector2(161,-6), 0.2)
 
 func _on_camera_change_body_entered(body):	
 	if body == $Player :

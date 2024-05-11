@@ -33,6 +33,10 @@ rotation = -1.57079
 [node name="Player" parent="." index="4"]
 position = Vector2(158, 495)
 
-[node name="Camera2D" parent="Player" index="7"]
+[node name="Camera2D" parent="Player" index="8"]
 zoom = Vector2(4.01, 4.01)
 limit_right = 195
+
+[node name="DirectionalLight2D" parent="lights" index="0"]
+color = Color(0.423529, 0.423529, 0, 1)
+energy = 1.0

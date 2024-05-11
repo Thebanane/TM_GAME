@@ -1,10 +1,11 @@
-[gd_scene load_steps=17 format=3 uid="uid://cxocvyngllghe"]
+[gd_scene load_steps=18 format=3 uid="uid://cxocvyngllghe"]
 
 [ext_resource type="Script" path="res://Objects_folder/Player/Player.gd" id="1_gbx5n"]
 [ext_resource type="Texture2D" uid="uid://qumgsudvu4s2" path="res://Graphics/Red hood free (zipped) Folder/red hood itch free Copy-Sheet.png" id="2_05e3d"]
 [ext_resource type="Texture2D" uid="uid://d1tkbr2lw47a6" path="res://Graphics/Red hood free (zipped) Folder/idle and  alter/idle sheet-Sheet.png" id="3_tatn4"]
 [ext_resource type="Texture2D" uid="uid://dugetixg5snog" path="res://Graphics/Red hood free (zipped) Folder/idle and  alter/wall slide-Sheet.png" id="4_ba7u5"]
 [ext_resource type="Texture2D" uid="uid://dpc3c4dynp52u" path="res://Graphics/Red hood free (zipped) Folder/run turnaround-Sheet.png" id="5_l376i"]
+[ext_resource type="Texture2D" uid="uid://cgyab8qmtupxh" path="res://Graphics/circle.png" id="6_7ninb"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_n85v0"]
 size = Vector2(16, 30.5)
@@ -748,6 +749,12 @@ autostart = true
 [node name="floor_slide_stop" type="Timer" parent="."]
 wait_time = 0.5
 autostart = true
+
+[node name="PointLight2D" type="PointLight2D" parent="."]
+position = Vector2(1.99997, 1)
+scale = Vector2(0.24875, 0.23875)
+energy = 0.5
+texture = ExtResource("6_7ninb")
 
 [connection signal="timeout" from="dash_stop" to="." method="_on_dash_stop_timeout"]
 [connection signal="timeout" from="delay" to="." method="_on_delay_timeout"]

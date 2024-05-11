@@ -30,6 +30,6 @@ func _on_next_level_body_entered(body):
 func _on_door_animation_body_entered(body):
 	if body == $Player: 
 		var tween1 = create_tween()
-		tween1.tween_property($Player/Camera2D, "limit_top", 80, 0.5)  
+		tween1.tween_property($Player/Camera2D, "limit_top", 80, 0.3)  
 		var tween = create_tween()
-		tween.tween_property($Objects/Door_entrance, "position", Vector2(0,90), 0.5)
+		tween.tween_property($Objects/Door_entrance, "position", Vector2(0,90), 0.2)

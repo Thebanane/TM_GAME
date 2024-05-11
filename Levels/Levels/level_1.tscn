@@ -48,7 +48,7 @@ shape = SubResource("RectangleShape2D_v5exj")
 z_index = 2
 position = Vector2(-6, 495)
 
-[node name="Camera2D" parent="Player" index="7"]
+[node name="Camera2D" parent="Player" index="8"]
 zoom = Vector2(4.24, 4.24)
 limit_left = -115
 limit_top = 370

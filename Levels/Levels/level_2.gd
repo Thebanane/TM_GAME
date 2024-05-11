@@ -1,7 +1,7 @@
 extends LevelParent
 func _ready():
 	var tween = create_tween()
-	tween.tween_property($Objects/Door_entrance,"position", Vector2(-82,-7), 0.5)
+	tween.tween_property($Objects/Door_entrance,"position", Vector2(-82,-7), 0.2)
 
 
 

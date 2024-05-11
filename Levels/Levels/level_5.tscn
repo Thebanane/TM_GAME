@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://x2ta7qjm5hos"]
+[gd_scene load_steps=14 format=3 uid="uid://x2ta7qjm5hos"]
 
 [ext_resource type="PackedScene" uid="uid://dl4uye3w6uwl5" path="res://Levels/Level_parents/level_parents.tscn" id="1_dfm8d"]
 [ext_resource type="Script" path="res://Levels/Levels/level_5.gd" id="2_km2gt"]
@@ -8,6 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://b63djs462gl37" path="res://Graphics/Brush/brush045.png" id="6_0kv0m"]
 [ext_resource type="Texture2D" uid="uid://libdmxlhdbun" path="res://Graphics/Brush/brush047.png" id="7_3foji"]
 [ext_resource type="Texture2D" uid="uid://dlghhiohsvnhn" path="res://Graphics/Brush/brush046.png" id="8_ukixv"]
+[ext_resource type="Texture2D" uid="uid://cgyab8qmtupxh" path="res://Graphics/circle.png" id="9_5428i"]
 
 [sub_resource type="CanvasTexture" id="CanvasTexture_cf0oq"]
 
@@ -45,35 +46,27 @@ scale = Vector2(1.785, 1.785)
 
 [node name="Spike" parent="Objects/Spike_folder/Spikes_1" index="0" instance=ExtResource("3_o6swr")]
 position = Vector2(-198.319, -34.7339)
-scale = Vector2(1, 1)
 
 [node name="Spike2" parent="Objects/Spike_folder/Spikes_1" index="1" instance=ExtResource("3_o6swr")]
 position = Vector2(-182.694, -34.7339)
-scale = Vector2(1, 1)
 
 [node name="Spike3" parent="Objects/Spike_folder/Spikes_1" index="2" instance=ExtResource("3_o6swr")]
 position = Vector2(-167.069, -34.7339)
-scale = Vector2(1, 1)
 
 [node name="Spike4" parent="Objects/Spike_folder/Spikes_1" index="3" instance=ExtResource("3_o6swr")]
 position = Vector2(-151.444, -34.7339)
-scale = Vector2(1, 1)
 
 [node name="Spike5" parent="Objects/Spike_folder/Spikes_1" index="4" instance=ExtResource("3_o6swr")]
 position = Vector2(-135.819, -34.7339)
-scale = Vector2(1, 1)
 
 [node name="Spike6" parent="Objects/Spike_folder/Spikes_1" index="5" instance=ExtResource("3_o6swr")]
 position = Vector2(-120.194, -34.7339)
-scale = Vector2(1, 1)
 
 [node name="Spike7" parent="Objects/Spike_folder/Spikes_1" index="6" instance=ExtResource("3_o6swr")]
 position = Vector2(-104.569, -34.7339)
-scale = Vector2(1, 1)
 
 [node name="Spike8" parent="Objects/Spike_folder/Spikes_1" index="7" instance=ExtResource("3_o6swr")]
 position = Vector2(-88.9443, -34.7339)
-scale = Vector2(1, 1)
 
 [node name="Spikes_2" type="Node2D" parent="Objects/Spike_folder" index="1"]
 
@@ -228,7 +221,7 @@ layer_6/tile_data = PackedInt32Array(65547, 1179649, 0, 65546, 1179649, 0, 65545
 [node name="Player" parent="." index="3"]
 position = Vector2(129, -1)
 
-[node name="Camera2D" parent="Player" index="7"]
+[node name="Camera2D" parent="Player" index="8"]
 zoom = Vector2(3.325, 3.325)
 limit_left = -1080
 limit_top = -207
@@ -260,6 +253,78 @@ shape = SubResource("RectangleShape2D_b5ppf")
 z_index = 1
 position = Vector2(-1149.29, 643)
 shape = SubResource("RectangleShape2D_5sp5i")
+
+[node name="PointLight2D3" type="PointLight2D" parent="lights" index="1"]
+modulate = Color(0.843137, 0.27451, 0.603922, 1)
+position = Vector2(48, -129)
+scale = Vector2(0.09125, 0.1)
+color = Color(0.913725, 0.223529, 0.552941, 1)
+energy = 2.6
+texture = ExtResource("9_5428i")
+
+[node name="PointLight2D4" type="PointLight2D" parent="lights" index="2"]
+modulate = Color(0.843137, 0.27451, 0.603922, 1)
+position = Vector2(-256, -127)
+scale = Vector2(0.09125, 0.1)
+color = Color(0.913725, 0.223529, 0.552941, 1)
+energy = 2.6
+texture = ExtResource("9_5428i")
+
+[node name="PointLight2D5" type="PointLight2D" parent="lights" index="3"]
+modulate = Color(0.843137, 0.27451, 0.603922, 1)
+position = Vector2(-528, -127)
+scale = Vector2(0.09125, 0.1)
+color = Color(0.913725, 0.223529, 0.552941, 1)
+energy = 2.6
+texture = ExtResource("9_5428i")
+
+[node name="PointLight2D6" type="PointLight2D" parent="lights" index="4"]
+modulate = Color(0.843137, 0.27451, 0.603922, 1)
+position = Vector2(-529, 65)
+scale = Vector2(0.09125, 0.1)
+color = Color(0.913725, 0.223529, 0.552941, 1)
+energy = 2.6
+texture = ExtResource("9_5428i")
+
+[node name="PointLight2D7" type="PointLight2D" parent="lights" index="5"]
+modulate = Color(0.843137, 0.27451, 0.603922, 1)
+position = Vector2(-416, 175)
+scale = Vector2(0.09125, 0.1)
+color = Color(0.913725, 0.223529, 0.552941, 1)
+energy = 2.6
+texture = ExtResource("9_5428i")
+
+[node name="PointLight2D8" type="PointLight2D" parent="lights" index="6"]
+modulate = Color(0.843137, 0.27451, 0.603922, 1)
+position = Vector2(-416, 352)
+scale = Vector2(0.09125, 0.1)
+color = Color(0.913725, 0.223529, 0.552941, 1)
+energy = 2.6
+texture = ExtResource("9_5428i")
+
+[node name="PointLight2D9" type="PointLight2D" parent="lights" index="7"]
+modulate = Color(0.843137, 0.27451, 0.603922, 1)
+position = Vector2(-576, 351)
+scale = Vector2(0.09125, 0.1)
+color = Color(0.913725, 0.223529, 0.552941, 1)
+energy = 2.6
+texture = ExtResource("9_5428i")
+
+[node name="PointLight2D10" type="PointLight2D" parent="lights" index="8"]
+modulate = Color(0.843137, 0.27451, 0.603922, 1)
+position = Vector2(-528, 641)
+scale = Vector2(0.09125, 0.1)
+color = Color(0.913725, 0.223529, 0.552941, 1)
+energy = 2.6
+texture = ExtResource("9_5428i")
+
+[node name="PointLight2D11" type="PointLight2D" parent="lights" index="9"]
+modulate = Color(0.843137, 0.27451, 0.603922, 1)
+position = Vector2(-913, 640)
+scale = Vector2(0.09125, 0.1)
+color = Color(0.913725, 0.223529, 0.552941, 1)
+energy = 2.6
+texture = ExtResource("9_5428i")
 
 [connection signal="switch_on" from="Objects/Switch" to="." method="_on_switch_switch_on"]
 [connection signal="bodyhere" from="Objects/Door_exit" to="." method="_on_door_bodyhere"]
