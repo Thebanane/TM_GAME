@@ -65,9 +65,6 @@ limit_top = 370
 limit_right = 180
 limit_bottom = 520
 
-[node name="DirectionalLight2D" parent="lights" index="0"]
-color = Color(0.482353, 0.513726, 0.592157, 1)
-
 [node name="GPUParticles2D" type="GPUParticles2D" parent="." index="6"]
 z_index = 2
 position = Vector2(-63, 395)

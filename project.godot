@@ -10,7 +10,7 @@ config_version=5
 
 [application]
 
-config/name="TM"
+config/name="Chrono_Run_(TM)"
 run/main_scene="res://Levels/UI/main_menu.tscn"
 config/features=PackedStringArray("4.1", "Mobile")
 run/max_fps=60

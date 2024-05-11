@@ -1558,6 +1558,7 @@ scale = Vector2(4691, 4088.5)
 texture = SubResource("CanvasTexture_cf0oq")
 
 [node name="TileMap" type="TileMap" parent="."]
+texture_filter = 1
 tile_set = SubResource("TileSet_mj701")
 format = 2
 layer_0/name = "Bckrnd1"

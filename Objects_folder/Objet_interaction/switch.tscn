@@ -48,6 +48,7 @@ size = Vector2(44, 20.75)
 script = ExtResource("1_s8500")
 
 [node name="Switch_sprite" type="Sprite2D" parent="."]
+texture_filter = 1
 texture = ExtResource("1_2qb7l")
 hframes = 32
 vframes = 32
