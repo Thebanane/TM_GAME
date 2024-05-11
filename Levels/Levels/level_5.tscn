@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://x2ta7qjm5hos"]
+[gd_scene load_steps=16 format=3 uid="uid://x2ta7qjm5hos"]
 
 [ext_resource type="PackedScene" uid="uid://dl4uye3w6uwl5" path="res://Levels/Level_parents/level_parents.tscn" id="1_dfm8d"]
 [ext_resource type="Script" path="res://Levels/Levels/level_5.gd" id="2_km2gt"]
@@ -20,6 +20,30 @@ size = Vector2(20, 28.8914)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5sp5i"]
 size = Vector2(20, 64)
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_jwrs5"]
+particle_flag_disable_z = true
+direction = Vector3(0, 0, 0)
+gravity = Vector3(0, 98, 0)
+orbit_velocity_min = 0.0
+orbit_velocity_max = 0.0
+linear_accel_max = 4.2
+scale_max = 2.0
+color = Color(0, 0.611765, 0.611765, 0.847059)
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_7hdol"]
+particle_flag_disable_z = true
+direction = Vector3(0, 1, 0)
+gravity = Vector3(2, 98, 0)
+initial_velocity_min = 3.0
+initial_velocity_max = 7.0
+angular_velocity_min = 50.0
+angular_velocity_max = 100.0
+orbit_velocity_min = 0.0
+orbit_velocity_max = 0.0
+scale_min = 1.75
+scale_max = 6.71
+color = Color(0.529412, 0.529412, 0.529412, 1)
 
 [node name="level_5" instance=ExtResource("1_dfm8d")]
 script = ExtResource("2_km2gt")
@@ -325,6 +349,48 @@ scale = Vector2(0.09125, 0.1)
 color = Color(0.913725, 0.223529, 0.552941, 1)
 energy = 2.6
 texture = ExtResource("9_5428i")
+
+[node name="GPUParticles2D3" type="GPUParticles2D" parent="." index="9"]
+z_index = 2
+position = Vector2(-530, -202)
+amount = 5
+sub_emitter = NodePath(".")
+process_material = SubResource("ParticleProcessMaterial_jwrs5")
+lifetime = 6.95
+fixed_fps = 60
+collision_base_size = 0.0
+
+[node name="GPUParticles2D4" type="GPUParticles2D" parent="." index="10"]
+z_index = 2
+position = Vector2(-404.53, 20.4802)
+amount = 5
+sub_emitter = NodePath(".")
+process_material = SubResource("ParticleProcessMaterial_jwrs5")
+lifetime = 6.95
+fixed_fps = 60
+collision_base_size = 0.0
+
+[node name="GPUParticles2D5" type="GPUParticles2D" parent="." index="11"]
+z_index = 2
+position = Vector2(-946, 613)
+amount = 2
+sub_emitter = NodePath(".")
+process_material = SubResource("ParticleProcessMaterial_jwrs5")
+lifetime = 1.15
+fixed_fps = 60
+collision_base_size = 0.0
+
+[node name="GPUParticles2D2" type="GPUParticles2D" parent="." index="12"]
+position = Vector2(-232, -195)
+process_material = SubResource("ParticleProcessMaterial_7hdol")
+lifetime = 0.78
+fixed_fps = 60
+
+[node name="GPUParticles2D6" type="GPUParticles2D" parent="." index="13"]
+position = Vector2(-280, -195)
+process_material = SubResource("ParticleProcessMaterial_7hdol")
+lifetime = 0.78
+fixed_fps = 60
 
 [connection signal="switch_on" from="Objects/Switch" to="." method="_on_switch_switch_on"]
 [connection signal="bodyhere" from="Objects/Door_exit" to="." method="_on_door_bodyhere"]

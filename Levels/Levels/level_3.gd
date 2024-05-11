@@ -33,3 +33,8 @@ func _on_door_animation_body_entered(body):
 		tween1.tween_property($Player/Camera2D, "limit_top", 80, 0.3)  
 		var tween = create_tween()
 		tween.tween_property($Objects/Door_entrance, "position", Vector2(0,90), 0.2)
+
+
+func _on_death_zones_body_entered(body):
+	if body == $Player : 
+		get_tree().reload_current_scene()

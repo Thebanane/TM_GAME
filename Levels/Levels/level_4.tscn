@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=3 uid="uid://hx1cfspeigh4"]
+[gd_scene load_steps=23 format=3 uid="uid://hx1cfspeigh4"]
 
 [ext_resource type="Script" path="res://Levels/Levels/level_4.gd" id="2_ooosv"]
 [ext_resource type="Texture2D" uid="uid://dlghhiohsvnhn" path="res://Graphics/Brush/brush046.png" id="3_n2spi"]
@@ -1565,6 +1565,29 @@ size = Vector2(90, 20)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_g3cjh"]
 size = Vector2(20, 41)
 
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_6geps"]
+particle_flag_disable_z = true
+gravity = Vector3(50, 0, 0)
+initial_velocity_min = 3.0
+initial_velocity_max = 7.0
+angular_velocity_min = 50.0
+angular_velocity_max = 100.0
+orbit_velocity_min = 0.0
+orbit_velocity_max = 0.0
+scale_min = 1.75
+scale_max = 6.71
+color = Color(0.529412, 0.529412, 0.529412, 1)
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_s2xbl"]
+particle_flag_disable_z = true
+direction = Vector3(0, 0, 0)
+gravity = Vector3(0, 98, 0)
+orbit_velocity_min = 0.0
+orbit_velocity_max = 0.0
+linear_accel_max = 4.2
+scale_max = 2.0
+color = Color(0, 0.611765, 0.611765, 0.847059)
+
 [node name="Level_4" type="Node2D"]
 script = ExtResource("2_ooosv")
 
@@ -1714,7 +1737,7 @@ layer_6/tile_data = PackedInt32Array(65536, 1179649, 0, 131071, 1179649, 0, 1310
 [node name="Effects" parent="." instance=ExtResource("10_wb435")]
 
 [node name="Player" parent="." instance=ExtResource("11_qoaj5")]
-position = Vector2(133, -1)
+position = Vector2(122, -1)
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
 zoom = Vector2(3.325, 3.325)
@@ -1780,6 +1803,38 @@ texture = ExtResource("12_inemo")
 color = Color(0.482353, 0.513726, 0.592157, 1)
 energy = 1.15
 blend_mode = 1
+
+[node name="GPUParticles2D" type="GPUParticles2D" parent="."]
+position = Vector2(-883, -136)
+process_material = SubResource("ParticleProcessMaterial_6geps")
+lifetime = 0.78
+fixed_fps = 60
+
+[node name="GPUParticles2D2" type="GPUParticles2D" parent="."]
+position = Vector2(-884.727, -168.355)
+process_material = SubResource("ParticleProcessMaterial_6geps")
+lifetime = 0.78
+fixed_fps = 60
+
+[node name="GPUParticles2D3" type="GPUParticles2D" parent="."]
+z_index = 2
+position = Vector2(-472.479, -107.664)
+amount = 2
+sub_emitter = NodePath(".")
+process_material = SubResource("ParticleProcessMaterial_s2xbl")
+lifetime = 1.55
+fixed_fps = 60
+collision_base_size = 0.0
+
+[node name="GPUParticles2D4" type="GPUParticles2D" parent="."]
+z_index = 2
+position = Vector2(-36.5475, -29.1754)
+amount = 2
+sub_emitter = NodePath(".")
+process_material = SubResource("ParticleProcessMaterial_s2xbl")
+lifetime = 1.06
+fixed_fps = 60
+collision_base_size = 0.0
 
 [connection signal="switch_on" from="Objects/Switch" to="." method="_on_switch_switch_on"]
 [connection signal="body_entered" from="Camera_change" to="." method="_on_camera_change_body_entered"]
