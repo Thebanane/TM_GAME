@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://bx87aq1i6th0k"
+path="res://.godot/imported/Modern4.wav-bbd8b9de9c07810f666d799a0d4df8bb.sample"
+
+[deps]
+
+source_file="res://Graphics/UI Soundpack/UI Soundpack/WAV/Modern4.wav"
+dest_files=["res://.godot/imported/Modern4.wav-bbd8b9de9c07810f666d799a0d4df8bb.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

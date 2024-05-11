@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://2us5modwqiva"
+path="res://.godot/imported/Retro1.wav-acd222a41889b8322b9d2c38d9d8bfe5.sample"
+
+[deps]
+
+source_file="res://Graphics/UI Soundpack/UI Soundpack/WAV/Retro1.wav"
+dest_files=["res://.godot/imported/Retro1.wav-acd222a41889b8322b9d2c38d9d8bfe5.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0
