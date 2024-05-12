@@ -75,4 +75,12 @@ lifetime = 1.55
 fixed_fps = 60
 collision_base_size = 0.0
 
+[node name="Front" type="ColorRect" parent="." index="7"]
+z_index = 35
+offset_left = -193.0
+offset_top = 301.0
+offset_right = 253.0
+offset_bottom = 587.0
+color = Color(0, 0, 0, 1)
+
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

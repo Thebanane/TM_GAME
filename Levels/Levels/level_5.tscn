@@ -16,7 +16,7 @@
 size = Vector2(30, 20)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_b5ppf"]
-size = Vector2(20, 28.8914)
+size = Vector2(20, 107)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5sp5i"]
 size = Vector2(20, 64)
@@ -261,14 +261,14 @@ shape = SubResource("RectangleShape2D_16375")
 [node name="Camera_change2" type="Area2D" parent="." index="5"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Camera_change2" index="0"]
-position = Vector2(-429.212, -96.4457)
+position = Vector2(-429.212, -137.5)
 shape = SubResource("RectangleShape2D_b5ppf")
 
 [node name="Camera_change3" type="Area2D" parent="." index="6"]
 position = Vector2(-116, -96)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Camera_change3" index="0"]
-position = Vector2(33, 1)
+position = Vector2(32, -40)
 shape = SubResource("RectangleShape2D_b5ppf")
 
 [node name="level_change" type="Area2D" parent="." index="7"]

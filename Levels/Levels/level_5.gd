@@ -24,8 +24,9 @@ func _on_camera_change_3_body_entered(_body):
 	$Player/Camera2D.limit_bottom = 5
 
 
-func _on_camera_change_2_body_entered(_body):
-	$Player/Camera2D.limit_bottom = 100000000
+func _on_camera_change_2_body_entered(body):
+	if body == $Player:
+		$Player/Camera2D.limit_bottom = 100000000
 
 
 func _on_door_bodyhere(body):
