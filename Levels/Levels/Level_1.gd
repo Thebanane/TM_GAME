@@ -1,11 +1,12 @@
 #On dit que le level est une extension du code déja écrit dans LevelParent
 extends LevelParent
 
-
-
 func _ready():
+	get_tree().paused = true
 	$AnimationPlayer.play("Transition")
-	Global.level_time = 7
+	await get_tree().create_timer(4.5).timeout
+	get_tree().paused = false
+	
 	
 	
 func _process(_delta):
