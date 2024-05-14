@@ -1,8 +1,9 @@
 extends RichTextLabel
 
-var text_1 = '"Le temps passe et la mort vient."
-					- french quotation'
+var text_1 = '"Time flies and death comes."
+			- french quotation'
 
+#Le temps passe et la mort vient.
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -13,7 +14,7 @@ func scroll_text(text_input) :
 	text = text_input
 	for i in get_parsed_text() : 
 		visible_characters += 1
-		await get_tree().create_timer(0.07).timeout
+		await get_tree().create_timer(0.05).timeout
 	
 	await get_tree().create_timer(2).timeout
 	visible_characters = len(text_1)

@@ -1,7 +1,14 @@
 ColorRect
+CanvasLayer
 Button
 VBoxContainer
+PanelContainer
+Container
+OptionButton
+CheckButton
 Label
+LineEdit
+TextEdit
 RichTextLabel
 CodeEdit
 Node2D

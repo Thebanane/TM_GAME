@@ -5,6 +5,7 @@
 [ext_resource type="FontFile" uid="uid://d1ejdlnb4xa3" path="res://Graphics/monogram/monogram/ttf/monogram-extended.ttf" id="3_vjow2"]
 
 [node name="Main menu" type="Control"]
+process_mode = 3
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -38,7 +39,7 @@ offset_bottom = 2.67999
 grow_horizontal = 2
 theme_override_fonts/font = ExtResource("2_k7ygx")
 theme_override_font_sizes/font_size = 115
-text = "Chrono Run
+text = "Memento Mori
 "
 horizontal_alignment = 1
 
@@ -50,9 +51,9 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -102.5
-offset_top = 4.0
+offset_top = -7.0
 offset_right = 97.5
-offset_bottom = 116.0
+offset_bottom = 359.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/separation = 7
@@ -64,7 +65,14 @@ theme_override_fonts/font = ExtResource("3_vjow2")
 theme_override_font_sizes/font_size = 38
 text = "Play"
 
-[node name="Button" type="Button" parent="VBoxContainer"]
+[node name="Option" type="Button" parent="VBoxContainer"]
+texture_filter = 1
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_vjow2")
+theme_override_font_sizes/font_size = 38
+text = "Option"
+
+[node name="Credits" type="Button" parent="VBoxContainer"]
 texture_filter = 1
 layout_mode = 2
 theme_override_fonts/font = ExtResource("3_vjow2")
@@ -90,5 +98,5 @@ grow_vertical = 2
 color = Color(0, 0, 0, 0)
 
 [connection signal="pressed" from="VBoxContainer/New game" to="." method="_on_new_game_pressed"]
-[connection signal="pressed" from="VBoxContainer/Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/Option" to="." method="_on_button_pressed"]
 [connection signal="pressed" from="VBoxContainer/Quit" to="." method="_on_quit_pressed"]

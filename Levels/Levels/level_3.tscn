@@ -9,7 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://cgyab8qmtupxh" path="res://Graphics/circle.png" id="7_8coda"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ahbcl"]
-size = Vector2(11, 91)
+size = Vector2(96.5, 57.5)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ipwem"]
 size = Vector2(114.25, 60)
@@ -108,7 +108,7 @@ rotation = -4.71238
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Objects/Camera out" index="0"]
 z_index = 1
-position = Vector2(-172, 754)
+position = Vector2(-129.25, 770.75)
 shape = SubResource("RectangleShape2D_ahbcl")
 
 [node name="Camera in" type="Area2D" parent="Objects" index="3"]

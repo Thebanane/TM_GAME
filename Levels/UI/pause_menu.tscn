@@ -1,0 +1,94 @@
+[gd_scene load_steps=6 format=3 uid="uid://80cvuthr36b6"]
+
+[ext_resource type="Script" path="res://Levels/UI/pause_menu.gd" id="1_pgs5m"]
+[ext_resource type="FontFile" uid="uid://d1ejdlnb4xa3" path="res://Graphics/monogram/monogram/ttf/monogram-extended.ttf" id="1_wx85n"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_354nv"]
+bg_color = Color(0.0823529, 0.0823529, 0.0823529, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ysn17"]
+bg_color = Color(0.0823529, 0.0823529, 0.0823529, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8son6"]
+bg_color = Color(0.0823529, 0.0823529, 0.0823529, 1)
+
+[node name="Pause_menu" type="Control"]
+process_mode = 3
+visible = false
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_pgs5m")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.356863)
+
+[node name="PanelContainer" type="PanelContainer" parent="."]
+self_modulate = Color(0.109804, 0.109804, 0.109804, 1)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -124.0
+offset_top = -143.0
+offset_right = 124.0
+offset_bottom = 143.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="Resume" type="Button" parent="PanelContainer/VBoxContainer"]
+texture_filter = 1
+layout_mode = 2
+size_flags_vertical = 10
+theme_override_fonts/font = ExtResource("1_wx85n")
+theme_override_font_sizes/font_size = 29
+theme_override_styles/normal = SubResource("StyleBoxFlat_354nv")
+text = "Resume	"
+
+[node name="Restart" type="Button" parent="PanelContainer/VBoxContainer"]
+texture_filter = 1
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 6
+theme_override_fonts/font = ExtResource("1_wx85n")
+theme_override_font_sizes/font_size = 29
+theme_override_styles/normal = SubResource("StyleBoxFlat_ysn17")
+text = "Restart"
+
+[node name="Main menu" type="Button" parent="PanelContainer/VBoxContainer"]
+texture_filter = 1
+layout_mode = 2
+size_flags_vertical = 2
+theme_override_fonts/font = ExtResource("1_wx85n")
+theme_override_font_sizes/font_size = 29
+theme_override_styles/normal = SubResource("StyleBoxFlat_8son6")
+text = "Main Menu"
+
+[node name="front_screen" type="ColorRect" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0)
+
+[connection signal="pressed" from="PanelContainer/VBoxContainer/Resume" to="." method="_on_resume_pressed"]
+[connection signal="pressed" from="PanelContainer/VBoxContainer/Restart" to="." method="_on_restart_pressed"]
+[connection signal="pressed" from="PanelContainer/VBoxContainer/Main menu" to="." method="_on_main_menu_pressed"]

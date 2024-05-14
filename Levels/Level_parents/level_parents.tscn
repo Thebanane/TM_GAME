@@ -1,10 +1,11 @@
-[gd_scene load_steps=10 format=3 uid="uid://dl4uye3w6uwl5"]
+[gd_scene load_steps=11 format=3 uid="uid://dl4uye3w6uwl5"]
 
 [ext_resource type="PackedScene" uid="uid://cxocvyngllghe" path="res://Objects_folder/Player/Player.tscn" id="1_n8pkd"]
 [ext_resource type="Script" path="res://Levels/Level_parents/level_parents.gd" id="1_wc6bw"]
 [ext_resource type="PackedScene" uid="uid://ou7p3edh6txw" path="res://Objects_folder/Effects/effects.tscn" id="3_5pjls"]
 [ext_resource type="Texture2D" uid="uid://3gxb6h3b4kng" path="res://Graphics/Tilemap/Blockworld_Tileset.png" id="3_yxmbu"]
 [ext_resource type="Texture2D" uid="uid://cjr8757v1bouo" path="res://Graphics/Tilemap/industrial.v1.png" id="4_xf0d8"]
+[ext_resource type="PackedScene" uid="uid://80cvuthr36b6" path="res://Levels/UI/pause_menu.tscn" id="6_breiy"]
 
 [sub_resource type="CanvasTexture" id="CanvasTexture_cf0oq"]
 
@@ -1612,3 +1613,7 @@ zoom = Vector2(4.175, 4.175)
 color = Color(0.482353, 0.513726, 0.592157, 1)
 energy = 1.15
 blend_mode = 1
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Pause_menu" parent="CanvasLayer" instance=ExtResource("6_breiy")]
