@@ -1,4 +1,7 @@
-[gd_scene format=3 uid="uid://crmdvf5ppxtlj"]
+[gd_scene load_steps=3 format=3 uid="uid://crmdvf5ppxtlj"]
+
+[ext_resource type="FontFile" uid="uid://d1ejdlnb4xa3" path="res://Graphics/monogram/monogram/ttf/monogram-extended.ttf" id="1_76mws"]
+[ext_resource type="Script" path="res://Levels/UI/timer.gd" id="1_fpeeq"]
 
 [node name="Timer" type="Control"]
 layout_mode = 3
@@ -9,12 +12,21 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="Label" type="Label" parent="."]
+process_mode = 1
+texture_filter = 1
+custom_minimum_size = Vector2(0, -7.875)
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -20.5
-offset_right = 20.5
-offset_bottom = 26.0
+offset_left = -84.9999
+offset_top = 30.0
+offset_right = 53.0001
+offset_bottom = 81.0001
 grow_horizontal = 2
-text = "00:00"
+scale = Vector2(1.25, 1.25)
+theme_override_fonts/font = ExtResource("1_76mws")
+theme_override_font_sizes/font_size = 60
+text = "03:000"
+horizontal_alignment = 1
+script = ExtResource("1_fpeeq")

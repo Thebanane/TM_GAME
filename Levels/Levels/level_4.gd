@@ -20,9 +20,10 @@ func _on_switch_switch_on():
 
 func _on_death_body_entered(body):
 	if body == $Player: 
-		get_tree().reload_current_scene()
+		Global.must_die = true
 
 
 func _on_level_change_body_entered(body):
 	if body == $Player: 
+		Global.level_time = 9.5
 		get_tree().change_scene_to_file("res://Levels/Levels/level_5.tscn")

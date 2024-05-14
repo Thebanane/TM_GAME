@@ -1,6 +1,6 @@
 extends RichTextLabel
 
-var text_1 = '"Time flies and death comes."
+var text_1 = '"When time flies, death comes."
 			- french quotation'
 
 #Le temps passe et la mort vient.
@@ -22,6 +22,7 @@ func scroll_text(text_input) :
 		visible_characters -= 1
 		await get_tree().create_timer(0.01).timeout
 	
+	Global.level_time = 3
 	get_tree().change_scene_to_file("res://Levels/Levels/level_1.tscn")
 
 

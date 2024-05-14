@@ -1,6 +1,7 @@
 extends LevelParent
 
 func _ready():
+	Global.level_time = 12
 	var tween = create_tween()
 	tween.tween_property($Objects/Door_entrance, "position", Vector2(177,-5), 0.2)
 	$Player/Sprites_folder/girl_animation_sprites.flip_h = false
@@ -31,7 +32,7 @@ func _on_camera_change_2_body_entered(body):
 
 func _on_door_bodyhere(body):
 	if body == $Player:
-		get_tree().reload_current_scene()
+		Global.must_die = true
 
 
 func _on_level_change_body_entered(body):

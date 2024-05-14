@@ -1,11 +1,12 @@
-[gd_scene load_steps=6 format=3 uid="uid://xgn587n7yswb"]
+[gd_scene load_steps=9 format=3 uid="uid://xgn587n7yswb"]
 
 [ext_resource type="PackedScene" uid="uid://dl4uye3w6uwl5" path="res://Levels/Level_parents/level_parents.tscn" id="1_s3u3i"]
 [ext_resource type="Script" path="res://Levels/Levels/Level_1.gd" id="2_p0rew"]
 [ext_resource type="Texture2D" uid="uid://libdmxlhdbun" path="res://Graphics/Brush/brush047.png" id="3_hnr4n"]
+[ext_resource type="PackedScene" uid="uid://dqo5nm6ncimhr" path="res://Objects_folder/Objet_interaction/door.tscn" id="4_6y6hr"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_v5exj"]
-size = Vector2(11, 68)
+size = Vector2(11, 42)
 
 [sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_md1jo"]
 particle_flag_disable_z = true
@@ -16,6 +17,63 @@ orbit_velocity_max = 0.0
 linear_accel_max = 4.2
 scale_max = 2.0
 color = Color(0, 0.611765, 0.611765, 0.847059)
+
+[sub_resource type="Animation" id="Animation_uv3qg"]
+resource_name = "Transition"
+length = 5.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Front:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 1), Color(0, 0, 0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("CanvasLayer/Timer:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(3, 4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Objects/Door_entrance:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(4.2, 4.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(192, 489), Vector2(192, 446)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("CanvasLayer/Timer:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(3),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_6dpu2"]
+_data = {
+"Transition": SubResource("Animation_uv3qg")
+}
 
 [node name="Level_1" instance=ExtResource("1_s3u3i")]
 script = ExtResource("2_p0rew")
@@ -36,7 +94,14 @@ rotation = 2.85979
 scale = Vector2(0.210359, 0.113594)
 texture = ExtResource("3_hnr4n")
 
+[node name="Door_entrance" parent="Objects" index="2" instance=ExtResource("4_6y6hr")]
+z_index = 1
+position = Vector2(192, 489)
+rotation = 3.14159
+scale = Vector2(1.435, 1.435)
+
 [node name="TileMap" parent="." index="1"]
+collision_animatable = true
 layer_0/modulate = Color(0.435294, 0.435294, 0.435294, 1)
 layer_0/tile_data = PackedInt32Array(1572857, 65536, 0, 1638393, 65536, 1, 1703929, 65536, 1, 1769465, 65536, 1, 1835001, 65536, 1, 1900537, 65536, 1, 1966073, 65536, 1, 2031609, 65536, 1, 2097145, 65536, 1, 1572858, 65536, 0, 1638394, 65536, 1, 1703930, 65536, 1, 1769466, 65536, 1, 1835002, 65536, 1, 1900538, 65536, 1, 1966074, 65536, 1, 2031610, 65536, 1, 2097146, 65536, 1, 1572859, 65536, 0, 1638395, 65536, 1, 1703931, 65536, 1, 1769467, 65536, 1, 1835003, 65536, 1, 1900539, 65536, 1, 1966075, 65536, 1, 2031611, 65536, 1, 2097147, 65536, 1, 1572860, 65536, 0, 1638396, 65536, 1, 1703932, 65536, 1, 1769468, 65536, 1, 1835004, 65536, 1, 1900540, 65536, 1, 1966076, 65536, 1, 2031612, 65536, 1, 2097148, 65536, 1, 1572861, 65536, 0, 1638397, 65536, 1, 1703933, 65536, 1, 1769469, 65536, 1, 1835005, 65536, 1, 1900541, 65536, 1, 1966077, 65536, 1, 2031613, 65536, 1, 2097149, 65536, 1, 1572862, 65536, 0, 1638398, 65536, 1, 1703934, 65536, 1, 1769470, 65536, 1, 1835006, 65536, 1, 1900542, 65536, 1, 1966078, 65536, 1, 2031614, 65536, 1, 2097150, 65536, 1, 1572863, 65536, 0, 1638399, 65536, 1, 1703935, 65536, 1, 1769471, 65536, 1, 1835007, 65536, 1, 1900543, 65536, 1, 1966079, 65536, 1, 2031615, 65536, 1, 2097151, 65536, 1, 1507328, 65536, 0, 1572864, 65536, 1, 1638400, 65536, 1, 1703936, 65536, 1, 1769472, 65536, 1, 1835008, 65536, 1, 1900544, 65536, 1, 1966080, 65536, 1, 2031616, 65536, 1, 1507329, 65536, 0, 1572865, 65536, 1, 1638401, 65536, 1, 1703937, 65536, 1, 1769473, 65536, 1, 1835009, 65536, 1, 1900545, 65536, 1, 1966081, 65536, 1, 2031617, 65536, 1, 1507330, 65536, 0, 1572866, 65536, 1, 1638402, 65536, 1, 1703938, 65536, 1, 1769474, 65536, 1, 1966082, 65536, 1, 2031618, 65536, 1, 1507331, 65536, 0, 1572867, 65536, 1, 1638403, 65536, 1, 1703939, 65536, 1, 1769475, 65536, 1, 1835011, 65536, 1, 1900547, 65536, 1, 1966083, 65536, 1, 2031619, 65536, 1, 1507332, 65536, 0, 1572868, 65536, 1, 1638404, 65536, 1, 1703940, 65536, 1, 1769476, 65536, 1, 1835012, 65536, 1, 1900548, 65536, 1, 1966084, 65536, 1, 2031620, 65536, 1, 1507333, 65536, 0, 1572869, 65536, 1, 1638405, 65536, 1, 1703941, 65536, 1, 1769477, 65536, 1, 1835013, 65536, 1, 1900549, 65536, 1, 1966085, 65536, 1, 2031621, 65536, 1, 1507334, 65536, 0, 1572870, 65536, 1, 1638406, 65536, 1, 1703942, 65536, 1, 1769478, 65536, 1, 1835014, 65536, 1, 1900550, 65536, 1, 1966086, 65536, 1, 2031622, 65536, 1, 1507335, 65536, 0, 1572871, 65536, 1, 1638407, 65536, 1, 1703943, 65536, 1, 1769479, 65536, 1, 1835015, 65536, 1, 1900551, 65536, 1, 1966087, 65536, 1, 2031623, 65536, 1, 1507336, 65536, 0, 1572872, 65536, 1, 1638408, 65536, 1, 1703944, 65536, 1, 1769480, 65536, 1, 1835016, 65536, 1, 1900552, 65536, 1, 1966088, 65536, 1, 2031624, 65536, 1, 1507337, 65536, 0, 1572873, 65536, 1, 1638409, 65536, 1, 1703945, 65536, 1, 1769481, 65536, 1, 1835017, 65536, 1, 1900553, 65536, 1, 1966089, 65536, 1, 2031625, 65536, 1, 1507338, 65536, 0, 1572874, 65536, 1, 1638410, 65536, 1, 1703946, 65536, 1, 1769482, 65536, 1, 1835018, 65536, 1, 1900554, 65536, 1, 1966090, 65536, 1, 2031626, 65536, 1, 1900555, 65536, 1, 1966091, 65536, 1, 2031627, 65536, 1, 1900556, 65536, 1, 1966092, 65536, 1, 2031628, 65536, 1, 1900557, 65536, 1, 1966093, 65536, 1, 2031629, 65536, 1, 1900558, 65536, 1, 1966094, 65536, 1, 2031630, 65536, 1, 1835010, 65536, 1, 1900546, 65536, 1)
 layer_1/modulate = Color(0.486275, 0.501961, 0.388235, 0.862745)
@@ -51,10 +116,11 @@ layer_5/tile_data = PackedInt32Array(1572856, 1048577, 0, 1638392, 1048577, 0, 1
 [node name="Area2D" type="Area2D" parent="." index="3"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" index="0"]
-position = Vector2(181.5, 490)
+position = Vector2(186.135, 490)
 shape = SubResource("RectangleShape2D_v5exj")
 
 [node name="Player" parent="." index="4"]
+process_mode = 3
 z_index = 2
 position = Vector2(-6, 495)
 
@@ -76,11 +142,22 @@ fixed_fps = 60
 collision_base_size = 0.0
 
 [node name="Front" type="ColorRect" parent="." index="7"]
+process_mode = 3
 z_index = 35
 offset_left = -193.0
 offset_top = 301.0
 offset_right = 253.0
 offset_bottom = 587.0
 color = Color(0, 0, 0, 1)
+
+[node name="Timer" parent="CanvasLayer" index="0"]
+visible = false
+modulate = Color(1, 1, 1, 0)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." index="9"]
+process_mode = 3
+libraries = {
+"": SubResource("AnimationLibrary_6dpu2")
+}
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

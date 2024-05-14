@@ -1,5 +1,7 @@
-ColorRect
+AnimationPlayer
+AnimationTree
 CanvasLayer
+ColorRect
 Button
 VBoxContainer
 PanelContainer
@@ -20,8 +22,6 @@ GPUParticles2D
 DirectionalLight2D
 Camera2D
 StaticBody2D
-AnimationTree
-AnimationPlayer
 Timer
 Node
 TileMap

@@ -17,7 +17,7 @@ position = Vector2(210.5, 434.5)
 scale = Vector2(60.9999, 59)
 texture = SubResource("CanvasTexture_cf0oq")
 
-[node name="Door_entrance" parent="Objects" index="3" instance=ExtResource("3_5eqwa")]
+[node name="Door_entrance2" parent="Objects" index="3" instance=ExtResource("3_5eqwa")]
 z_index = 1
 position = Vector2(192, 449)
 rotation = 3.14159
@@ -92,3 +92,7 @@ visible = false
 
 [node name="Front" parent="." index="8"]
 visible = false
+
+[node name="Timer" parent="CanvasLayer" index="0"]
+visible = false
+modulate = Color(1, 1, 1, 0)

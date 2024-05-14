@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=3 uid="uid://hx1cfspeigh4"]
+[gd_scene load_steps=25 format=3 uid="uid://hx1cfspeigh4"]
 
 [ext_resource type="Script" path="res://Levels/Levels/level_4.gd" id="2_ooosv"]
 [ext_resource type="Texture2D" uid="uid://dlghhiohsvnhn" path="res://Graphics/Brush/brush046.png" id="3_n2spi"]
@@ -12,6 +12,8 @@
 [ext_resource type="PackedScene" uid="uid://ou7p3edh6txw" path="res://Objects_folder/Effects/effects.tscn" id="10_wb435"]
 [ext_resource type="PackedScene" uid="uid://cxocvyngllghe" path="res://Objects_folder/Player/Player.tscn" id="11_qoaj5"]
 [ext_resource type="Texture2D" uid="uid://cgyab8qmtupxh" path="res://Graphics/circle.png" id="12_inemo"]
+[ext_resource type="PackedScene" uid="uid://crmdvf5ppxtlj" path="res://Levels/UI/timer.tscn" id="13_spxm3"]
+[ext_resource type="PackedScene" uid="uid://80cvuthr36b6" path="res://Levels/UI/pause_menu.tscn" id="14_srtyv"]
 
 [sub_resource type="CanvasTexture" id="CanvasTexture_4mbrx"]
 
@@ -1835,6 +1837,12 @@ process_material = SubResource("ParticleProcessMaterial_s2xbl")
 lifetime = 1.06
 fixed_fps = 60
 collision_base_size = 0.0
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Timer" parent="CanvasLayer" instance=ExtResource("13_spxm3")]
+
+[node name="Pause_menu" parent="CanvasLayer" instance=ExtResource("14_srtyv")]
 
 [connection signal="switch_on" from="Objects/Switch" to="." method="_on_switch_switch_on"]
 [connection signal="body_entered" from="Camera_change" to="." method="_on_camera_change_body_entered"]

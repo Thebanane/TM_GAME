@@ -5,10 +5,10 @@ extends Control
 func _ready():
 	$VBoxContainer/OptionButton.grab_focus()
 	
-	if DisplayServer.WINDOW_MODE_WINDOWED : 
-		$VBoxContainer/OptionButton.selected = 1
-	else : 
+	if DisplayServer.WINDOW_MODE_FULLSCREEN:
 		$VBoxContainer/OptionButton.selected = 0
+	else : 
+		$VBoxContainer/OptionButton.selected = 1
 		
 
 
