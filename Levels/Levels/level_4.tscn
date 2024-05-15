@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=3 uid="uid://hx1cfspeigh4"]
+[gd_scene load_steps=26 format=3 uid="uid://hx1cfspeigh4"]
 
 [ext_resource type="Script" path="res://Levels/Levels/level_4.gd" id="2_ooosv"]
 [ext_resource type="Texture2D" uid="uid://dlghhiohsvnhn" path="res://Graphics/Brush/brush046.png" id="3_n2spi"]
@@ -14,6 +14,7 @@
 [ext_resource type="Texture2D" uid="uid://cgyab8qmtupxh" path="res://Graphics/circle.png" id="12_inemo"]
 [ext_resource type="PackedScene" uid="uid://crmdvf5ppxtlj" path="res://Levels/UI/timer.tscn" id="13_spxm3"]
 [ext_resource type="PackedScene" uid="uid://80cvuthr36b6" path="res://Levels/UI/pause_menu.tscn" id="14_srtyv"]
+[ext_resource type="AudioStream" uid="uid://cjnlcd8cymylw" path="res://Graphics/Music/EuropaIce.wav" id="15_ads7o"]
 
 [sub_resource type="CanvasTexture" id="CanvasTexture_4mbrx"]
 
@@ -1843,6 +1844,11 @@ collision_base_size = 0.0
 [node name="Timer" parent="CanvasLayer" instance=ExtResource("13_spxm3")]
 
 [node name="Pause_menu" parent="CanvasLayer" instance=ExtResource("14_srtyv")]
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("15_ads7o")
+autoplay = true
+stream_paused = true
 
 [connection signal="switch_on" from="Objects/Switch" to="." method="_on_switch_switch_on"]
 [connection signal="body_entered" from="Camera_change" to="." method="_on_camera_change_body_entered"]

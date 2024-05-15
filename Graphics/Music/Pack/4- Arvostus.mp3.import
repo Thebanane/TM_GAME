@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://7q7hqw8mqe5"
+path="res://.godot/imported/4- Arvostus.mp3-98a47ff8ff0a6f1dcc8937888d16a507.mp3str"
+
+[deps]
+
+source_file="res://Graphics/Music/Pack/4- Arvostus.mp3"
+dest_files=["res://.godot/imported/4- Arvostus.mp3-98a47ff8ff0a6f1dcc8937888d16a507.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

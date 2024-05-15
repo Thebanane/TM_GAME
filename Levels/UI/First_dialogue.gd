@@ -7,6 +7,7 @@ var text_1 = '"When time flies, death comes."
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	get_tree().paused = false
 	scroll_text(text_1)
 
 func scroll_text(text_input) : 

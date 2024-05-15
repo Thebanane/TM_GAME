@@ -1,6 +1,7 @@
 extends LevelParent
 
 func _ready():
+	$AudioStreamPlayer.play(Global.music_game_position)
 	var tween = create_tween()
 	tween.tween_property($Objects/Door_entrance, "position", Vector2(177,-5), 0.2)
 	$Player/Sprites_folder/girl_animation_sprites.flip_h = false
@@ -36,4 +37,5 @@ func _on_door_bodyhere(body):
 
 func _on_level_change_body_entered(body):
 	if body == $Player:
+		Global.music_game_position = $AudioStreamPlayer.get_playback_position()
 		get_tree().change_scene_to_file("res://Levels/Levels/safe_1.tscn")

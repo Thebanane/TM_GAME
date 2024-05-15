@@ -21,3 +21,5 @@ func _process(_delta):
 	double_jump_effect()
 	player_death()
 
+
+# JE DOIS CHANGER LE NOEUD DE MON AUDIO, AYDISTREAMPLAYER2D

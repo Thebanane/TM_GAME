@@ -42,4 +42,5 @@ func _on_main_menu_pressed():
 	tween.tween_property($front_screen,"color", Color(0,0,0), 2)
 	await get_tree().create_timer(2.5).timeout
 	get_tree().paused = false
+	Global.music_intro_position = 0
 	get_tree().change_scene_to_file("res://Levels/UI/main_menu.tscn")

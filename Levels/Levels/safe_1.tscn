@@ -63,6 +63,7 @@ position = Vector2(273, 611)
 rotation = -1.57079
 
 [node name="Player" parent="." index="5"]
+process_mode = 0
 position = Vector2(158, 495)
 
 [node name="Camera2D" parent="Player" index="8"]
@@ -101,3 +102,6 @@ offset_left = 11.0
 offset_top = -4.0
 offset_right = 11.0
 offset_bottom = -4.0
+
+[node name="AudioStreamPlayer" parent="." index="11"]
+volume_db = 0.0
