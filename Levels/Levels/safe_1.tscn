@@ -102,6 +102,3 @@ offset_left = 11.0
 offset_top = -4.0
 offset_right = 11.0
 offset_bottom = -4.0
-
-[node name="AudioStreamPlayer" parent="." index="11"]
-volume_db = 0.0

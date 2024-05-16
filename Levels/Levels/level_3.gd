@@ -2,9 +2,10 @@ extends LevelParent
 
 #Lors de la première frame (seulement la première), on force l'image du joueur à tourner car sinon ce n'est pas cohérent que le joueur regarde le mur
 func _ready():
-	$AudioStreamPlayer.play(Global.music_game_position)
+	$Player/AudioStreamPlayer.play(Global.music_game_position)
 	$Player/Sprites_folder/girl_animation_sprites.flip_h = false
-	
+
+
 
 
 #Lorsque le joueur entre cette zonne, on va mettre de nouvelles valeurs à certaines variables mais surtout on va faire une petite animation. 
@@ -27,7 +28,7 @@ func _on_camera_in_body_entered(body):
 func _on_next_level_body_entered(body):
 	if body == $Player : 
 		Global.level_time = 7
-		Global.music_game_position = $AudioStreamPlayer.get_playback_position()
+		Global.music_game_position = $Player/AudioStreamPlayer.get_playback_position()
 		get_tree().change_scene_to_file("res://Levels/Levels/level_4.tscn")
 		
 

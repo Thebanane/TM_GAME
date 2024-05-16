@@ -1,7 +1,9 @@
-[gd_scene load_steps=6 format=3 uid="uid://80cvuthr36b6"]
+[gd_scene load_steps=8 format=3 uid="uid://80cvuthr36b6"]
 
 [ext_resource type="Script" path="res://Levels/UI/pause_menu.gd" id="1_pgs5m"]
 [ext_resource type="FontFile" uid="uid://d1ejdlnb4xa3" path="res://Graphics/monogram/monogram/ttf/monogram-extended.ttf" id="1_wx85n"]
+[ext_resource type="AudioStream" uid="uid://c6mvch6knshy" path="res://Graphics/Music/UI_soundeffect/Minimalist7.mp3" id="3_873eo"]
+[ext_resource type="AudioStream" uid="uid://cr4lvik50wcfr" path="res://Graphics/Music/UI_soundeffect/Minimalist13.mp3" id="4_x2kfm"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_354nv"]
 bg_color = Color(0.0823529, 0.0823529, 0.0823529, 1)
@@ -90,6 +92,14 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 color = Color(0, 0, 0, 0)
+
+[node name="Tick_sound" type="AudioStreamPlayer2D" parent="."]
+process_mode = 3
+stream = ExtResource("3_873eo")
+
+[node name="Enter_sound" type="AudioStreamPlayer2D" parent="."]
+process_mode = 3
+stream = ExtResource("4_x2kfm")
 
 [connection signal="pressed" from="PanelContainer/VBoxContainer/Resume" to="." method="_on_resume_pressed"]
 [connection signal="pressed" from="PanelContainer/VBoxContainer/Restart" to="." method="_on_restart_pressed"]

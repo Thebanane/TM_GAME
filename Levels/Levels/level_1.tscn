@@ -131,6 +131,9 @@ limit_top = 370
 limit_right = 180
 limit_bottom = 520
 
+[node name="AudioStreamPlayer" parent="Player" index="9"]
+process_mode = 1
+
 [node name="GPUParticles2D" type="GPUParticles2D" parent="." index="6"]
 z_index = 2
 position = Vector2(-63, 395)
@@ -158,8 +161,5 @@ process_mode = 3
 libraries = {
 "": SubResource("AnimationLibrary_6dpu2")
 }
-
-[node name="AudioStreamPlayer" parent="." index="10"]
-process_mode = 0
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

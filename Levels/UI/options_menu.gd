@@ -15,7 +15,10 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta):
-	pass
+	if Input.is_action_just_pressed('ui_down') or Input.is_action_just_pressed('ui_up'):
+		$Tick_sound.play()
+	if Input.is_action_just_pressed("ui_accept") :
+		$Enter_sound.play()
 
 
 

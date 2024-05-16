@@ -6,7 +6,10 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta):
-	pass
+	if Input.is_action_just_pressed('ui_down') or Input.is_action_just_pressed('ui_up'):
+		$Tick_sound.play()
+	if Input.is_action_just_pressed("ui_accept") :
+		$Enter_sound.play()
 
 
 func _on_new_game_pressed():
@@ -21,6 +24,10 @@ func _on_new_game_pressed():
 
 
 func _on_quit_pressed():
+	$Front_transion.visible = true
+	var tween = create_tween()
+	tween.tween_property($Front_transion,"color", Color(0, 0, 0), 1.5)
+	await get_tree().create_timer(2).timeout
 	get_tree().quit()
 
 

@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://udobi322wbar"]
+[gd_scene load_steps=4 format=3 uid="uid://udobi322wbar"]
 
 [ext_resource type="Script" path="res://Levels/UI/First_dialogue.gd" id="1_m6myi"]
 [ext_resource type="FontFile" uid="uid://d1ejdlnb4xa3" path="res://Graphics/monogram/monogram/ttf/monogram-extended.ttf" id="1_xnihp"]
+[ext_resource type="AudioStream" uid="uid://nemrjr34a2yn" path="res://Graphics/Music/UI_soundeffect/Abstract1.mp3" id="3_nqbtf"]
 
 [node name="Introduction" type="Control"]
 layout_mode = 3
@@ -36,6 +37,11 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_fonts/normal_font = ExtResource("1_xnihp")
 theme_override_font_sizes/normal_font_size = 47
-text = "\"When time flies, death comes.\""
 fit_content = true
 script = ExtResource("1_m6myi")
+
+[node name="Tick_sound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_nqbtf")
+volume_db = 2.93
+pitch_scale = 0.3
+bus = &"Normal"

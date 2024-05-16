@@ -1,9 +1,11 @@
-[gd_scene load_steps=5 format=3 uid="uid://dlmywauagx1m4"]
+[gd_scene load_steps=7 format=3 uid="uid://dlmywauagx1m4"]
 
 [ext_resource type="Script" path="res://Levels/UI/main_menu.gd" id="1_da8ef"]
 [ext_resource type="FontFile" uid="uid://3jwrr8w5ouiw" path="res://Graphics/monogram/monogram/ttf/monogram-extended-italic.ttf" id="2_k7ygx"]
 [ext_resource type="FontFile" uid="uid://d1ejdlnb4xa3" path="res://Graphics/monogram/monogram/ttf/monogram-extended.ttf" id="3_vjow2"]
 [ext_resource type="AudioStream" uid="uid://d067oh80xyv8k" path="res://Graphics/Music/Pack/6- The Veil of Night.mp3" id="4_64sex"]
+[ext_resource type="AudioStream" uid="uid://c6mvch6knshy" path="res://Graphics/Music/UI_soundeffect/Minimalist7.mp3" id="5_627sx"]
+[ext_resource type="AudioStream" uid="uid://cr4lvik50wcfr" path="res://Graphics/Music/UI_soundeffect/Minimalist13.mp3" id="6_vgud4"]
 
 [node name="Main menu" type="Control"]
 process_mode = 3
@@ -103,7 +105,15 @@ color = Color(0, 0, 0, 0)
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 process_mode = 3
 stream = ExtResource("4_64sex")
+volume_db = -6.785
 autoplay = true
+bus = &"Normal"
+
+[node name="Tick_sound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("5_627sx")
+
+[node name="Enter_sound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("6_vgud4")
 
 [connection signal="pressed" from="VBoxContainer/New game" to="." method="_on_new_game_pressed"]
 [connection signal="pressed" from="VBoxContainer/Option" to="." method="_on_button_pressed"]

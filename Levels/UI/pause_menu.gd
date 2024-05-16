@@ -11,13 +11,19 @@ func _process(_delta):
 	if Input.is_action_just_pressed("pause_menu") and get_tree().paused: 
 		resume()		
 	elif Input.is_action_just_pressed("pause_menu") and! get_tree().paused:
-		pause() 
+		pause()
+		
+
 		
 	
 func pause(): 
 	get_tree().paused = true
 	$".".visible = true
 	$PanelContainer/VBoxContainer/Resume.grab_focus()
+	if Input.is_action_just_pressed('ui_down') or Input.is_action_just_pressed('ui_up'):
+		$Tick_sound.play()
+	if Input.is_action_just_pressed("ui_accept") :
+		$Enter_sound.play()
 
 func resume(): 
 	get_tree().paused = false
@@ -43,4 +49,5 @@ func _on_main_menu_pressed():
 	await get_tree().create_timer(2.5).timeout
 	get_tree().paused = false
 	Global.music_intro_position = 0
+	Global.music_game_position = 0 
 	get_tree().change_scene_to_file("res://Levels/UI/main_menu.tscn")
