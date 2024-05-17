@@ -1,7 +1,7 @@
 extends LevelParent
 
 func _ready():
-	$Player/AudioStreamPlayer.play(Global.music_game_position)
+	$Player/AudioStreamPlayer.play(Global.music_game_position )
 	var tween = create_tween()
 	tween.tween_property($Objects/Door_entrance, "position", Vector2(177,-5), 0.2)
 	$Player/Sprites_folder/girl_animation_sprites.flip_h = false

@@ -13,6 +13,8 @@ func player_death():
 	if Global.must_die: 
 		get_tree().reload_current_scene()
 		Global.must_die = false
+			
+	
 
 func _ready():
 	pass

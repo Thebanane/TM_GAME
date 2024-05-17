@@ -163,6 +163,9 @@ limit_right = 405
 limit_bottom = 195
 position_smoothing_enabled = true
 
+[node name="AudioStreamPlayer" parent="Player" index="9"]
+bus = &"Master"
+
 [node name="Area" type="Node2D" parent="." index="4"]
 
 [node name="next_scene" type="Area2D" parent="Area" index="0"]

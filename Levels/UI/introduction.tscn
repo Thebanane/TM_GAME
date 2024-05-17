@@ -44,4 +44,3 @@ script = ExtResource("1_m6myi")
 stream = ExtResource("3_nqbtf")
 volume_db = 2.93
 pitch_scale = 0.3
-bus = &"Normal"

@@ -1753,7 +1753,6 @@ limit_bottom = 40
 stream = ExtResource("15_kme11")
 volume_db = -6.0
 autoplay = true
-bus = &"Effets"
 
 [node name="Camera_change" type="Area2D" parent="."]
 
