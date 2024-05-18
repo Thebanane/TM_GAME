@@ -73,9 +73,6 @@ position = Vector2(158, 495)
 zoom = Vector2(4.01, 4.01)
 limit_right = 195
 
-[node name="DirectionalLight2D" parent="lights" index="0"]
-color = Color(0.482353, 0.513726, 0.592157, 1)
-
 [node name="PointLight2D" type="PointLight2D" parent="lights" index="1"]
 modulate = Color(0.843137, 0.27451, 0.603922, 1)
 position = Vector2(-48, 448)

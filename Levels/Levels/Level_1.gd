@@ -2,11 +2,19 @@
 extends LevelParent
 
 func _ready():
-	get_tree().paused = true
+	
 	Global.level_time = 3
-	$AnimationPlayer.play("Transition")
-	await get_tree().create_timer(4.5).timeout
-	get_tree().paused = false
+	if Global.must_close : 
+		get_tree().paused = true
+		$AnimationPlayer.play("Transition")
+		Global.must_close = false
+		await get_tree().create_timer(4.5).timeout
+		get_tree().paused = false
+	else : 
+		$Objects/Door_entrance.position = Vector2(192,446)
+		$Front.color = Color('00000000')
+		$CanvasLayer/Timer.modulate = Color('ffffff')
+	
 	$Player/AudioStreamPlayer.play(0)
 
 	
@@ -17,4 +25,5 @@ func _on_area_2d_body_entered(body):
 	if body == $Player : 
 		Global.level_time = 4
 		Global.music_game_position = $Player/AudioStreamPlayer.get_playback_position()
+		Global.must_close = true
 		get_tree().change_scene_to_file("res://Levels/Levels/level_2.tscn")
