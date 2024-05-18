@@ -17,6 +17,11 @@ func _process(delta):
 		timer_on = false
 		time = 0
 		Global.must_die = true
+		
+	if time <= 2 : 
+		$".".modulate = Color('f500f5')
+	else : 
+		$".".modulate = Color('ffffff')
 			
 		
 	var sec = fmod(time,60)

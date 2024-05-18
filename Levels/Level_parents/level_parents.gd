@@ -17,11 +17,13 @@ func player_death():
 	
 
 func _ready():
-	pass
+	Global.light = false
+	$lights/DirectionalLight2D.color = Color('7b8397')
 	
 func _process(_delta):
 	double_jump_effect()
 	player_death()
 	Global.music_game_position = $Player/AudioStreamPlayer.get_playback_position()
+
 
 

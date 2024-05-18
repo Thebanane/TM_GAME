@@ -28,6 +28,7 @@ func _on_camera_in_body_entered(body):
 func _on_next_level_body_entered(body):
 	if body == $Player : 
 		Global.level_time = 6.5
+		Global.must_close = true
 		Global.music_game_position = $Player/AudioStreamPlayer.get_playback_position()
 		get_tree().change_scene_to_file("res://Levels/Levels/level_4.tscn")
 		
@@ -37,8 +38,12 @@ func _on_door_animation_body_entered(body):
 	if body == $Player: 
 		var tween1 = create_tween()
 		tween1.tween_property($Player/Camera2D, "limit_top", 80, 0.3)  
-		var tween = create_tween()
-		tween.tween_property($Objects/Door_entrance, "position", Vector2(0,90), 0.2)
+		if Global.must_close :
+			var tween = create_tween()
+			tween.tween_property($Objects/Door_entrance, "position", Vector2(0,90), 0.2)
+			Global.must_close = false
+		else :
+			$Objects/Door_entrance.position = Vector2(0,90)
 
 
 func _on_death_zones_body_entered(body):

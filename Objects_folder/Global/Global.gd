@@ -7,4 +7,4 @@ var level_time : float
 var must_die: bool
 var music_intro_position: float = 0
 var music_game_position: float = 0
-
+var must_close: bool = true

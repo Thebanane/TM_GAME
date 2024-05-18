@@ -133,7 +133,6 @@ limit_bottom = 520
 
 [node name="AudioStreamPlayer" parent="Player" index="9"]
 process_mode = 1
-bus = &"Master"
 
 [node name="GPUParticles2D" type="GPUParticles2D" parent="." index="6"]
 z_index = 2

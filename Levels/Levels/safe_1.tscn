@@ -58,6 +58,9 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
+[node name="Effects" parent="." index="3"]
+process_mode = 0
+
 [node name="CollisionShape2D" parent="Area2D" index="0"]
 position = Vector2(273, 611)
 rotation = -1.57079
@@ -69,6 +72,9 @@ position = Vector2(158, 495)
 [node name="Camera2D" parent="Player" index="8"]
 zoom = Vector2(4.01, 4.01)
 limit_right = 195
+
+[node name="DirectionalLight2D" parent="lights" index="0"]
+color = Color(0.482353, 0.513726, 0.592157, 1)
 
 [node name="PointLight2D" type="PointLight2D" parent="lights" index="1"]
 modulate = Color(0.843137, 0.27451, 0.603922, 1)
