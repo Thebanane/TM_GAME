@@ -1,4 +1,9 @@
-[gd_scene format=3 uid="uid://dbu1tr82f4oia"]
+[gd_scene load_steps=5 format=3 uid="uid://dbu1tr82f4oia"]
+
+[ext_resource type="FontFile" uid="uid://d1ejdlnb4xa3" path="res://Graphics/monogram/monogram/ttf/monogram-extended.ttf" id="1_it2ss"]
+[ext_resource type="Script" path="res://Levels/UI/credits.gd" id="1_xhlm2"]
+[ext_resource type="AudioStream" uid="uid://d067oh80xyv8k" path="res://Graphics/Music/Pack/6- The Veil of Night.mp3" id="3_5meba"]
+[ext_resource type="AudioStream" uid="uid://cr4lvik50wcfr" path="res://Graphics/Music/UI_soundeffect/Minimalist13.mp3" id="4_dts78"]
 
 [node name="Credits" type="Control"]
 layout_mode = 3
@@ -7,6 +12,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_xhlm2")
 
 [node name="ColorRect" type="ColorRect" parent="."]
 layout_mode = 1
@@ -18,12 +24,179 @@ grow_vertical = 2
 color = Color(0.0862745, 0.0980392, 0.109804, 1)
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
+layout_mode = 1
+anchors_preset = 13
+anchor_left = 0.5
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -170.0
+offset_right = 170.0
+grow_horizontal = 2
+grow_vertical = 2
 
 [node name="Label" type="Label" parent="VBoxContainer"]
 layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 6
+theme_override_fonts/font = ExtResource("1_it2ss")
+theme_override_font_sizes/font_size = 115
+text = "CREDITS"
 
-[node name="Button" type="Button" parent="VBoxContainer"]
+[node name="Character" type="HBoxContainer" parent="VBoxContainer"]
 layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 6
+
+[node name="Label" type="Label" parent="VBoxContainer/Character"]
+texture_filter = 1
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_it2ss")
+theme_override_font_sizes/font_size = 33
+text = "Character Sprite : "
+
+[node name="LinkButton" type="LinkButton" parent="VBoxContainer/Character"]
+texture_filter = 1
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_it2ss")
+theme_override_font_sizes/font_size = 33
+text = "Legnops"
+uri = "https://itch.io/profile/legnops"
+
+[node name="Bckrnd sprite" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 6
+
+[node name="Label" type="Label" parent="VBoxContainer/Bckrnd sprite"]
+texture_filter = 1
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_it2ss")
+theme_override_font_sizes/font_size = 33
+text = "Backround Tileset :"
+
+[node name="LinkButton" type="LinkButton" parent="VBoxContainer/Bckrnd sprite"]
+texture_filter = 1
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_it2ss")
+theme_override_font_sizes/font_size = 33
+text = "PolyB"
+uri = "https://datpolyb.itch.io/"
+
+[node name="Decoration sprite" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 6
+
+[node name="Label" type="Label" parent="VBoxContainer/Decoration sprite"]
+texture_filter = 1
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_it2ss")
+theme_override_font_sizes/font_size = 33
+text = "Decoration Tileset: "
+horizontal_alignment = 1
+
+[node name="LinkButton" type="LinkButton" parent="VBoxContainer/Decoration sprite"]
+texture_filter = 1
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_it2ss")
+theme_override_font_sizes/font_size = 33
+text = "0x72"
+uri = "https://0x72.itch.io/"
+
+[node name="Music intro" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 6
+
+[node name="Label" type="Label" parent="VBoxContainer/Music intro"]
+texture_filter = 1
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_it2ss")
+theme_override_font_sizes/font_size = 33
+text = "Main menu music : "
+
+[node name="LinkButton" type="LinkButton" parent="VBoxContainer/Music intro"]
+texture_filter = 1
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_it2ss")
+theme_override_font_sizes/font_size = 33
+text = "Crow Shade"
+uri = "https://crowshade.itch.io/"
+
+[node name="Music game" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 6
+
+[node name="Label" type="Label" parent="VBoxContainer/Music game"]
+texture_filter = 1
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_it2ss")
+theme_override_font_sizes/font_size = 33
+text = "In-Game music : "
+
+[node name="LinkButton" type="LinkButton" parent="VBoxContainer/Music game"]
+texture_filter = 1
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_it2ss")
+theme_override_font_sizes/font_size = 33
+text = "CoMiGo"
+uri = "https://comigo.itch.io/"
+
+[node name="UI music" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 6
+
+[node name="Label" type="Label" parent="VBoxContainer/UI music"]
+texture_filter = 1
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_it2ss")
+theme_override_font_sizes/font_size = 33
+text = "UI sound : "
+
+[node name="LinkButton" type="LinkButton" parent="VBoxContainer/UI music"]
+texture_filter = 1
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_it2ss")
+theme_override_font_sizes/font_size = 33
+text = "Ellr"
+uri = "https://ellr.itch.io/universal-ui-soundpack"
+
+[node name="Text font" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 6
+
+[node name="Label" type="Label" parent="VBoxContainer/Text font"]
+texture_filter = 1
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_it2ss")
+theme_override_font_sizes/font_size = 33
+text = "Text Font : "
+
+[node name="LinkButton" type="LinkButton" parent="VBoxContainer/Text font"]
+texture_filter = 1
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_it2ss")
+theme_override_font_sizes/font_size = 33
+text = "Datagoblin"
+uri = "https://datagoblin.itch.io/monogram"
+
+[node name="Quit" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 6
+theme_override_fonts/font = ExtResource("1_it2ss")
+theme_override_font_sizes/font_size = 57
+text = "Main menu"
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_5meba")
+volume_db = -6.785
+autoplay = true
+
+[node name="Enter_sound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_dts78")
+
+[connection signal="pressed" from="VBoxContainer/Quit" to="." method="_on_quit_pressed"]

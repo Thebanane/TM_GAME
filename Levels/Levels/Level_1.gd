@@ -15,7 +15,7 @@ func _ready():
 		$Front.color = Color('00000000')
 		$CanvasLayer/Timer.modulate = Color('ffffff')
 	
-	$Player/AudioStreamPlayer.play(0)
+	$Player/AudioStreamPlayer.play(Global.music_game_position)
 
 	
 

@@ -45,10 +45,10 @@ func movement_dash(parameter_direction, parameter_axis):
 		if dash_direction == Vector2(0,-1) or dash_direction == Vector2(0,1):
 			speed = 350
 		elif dash_direction == Vector2(1,0) or dash_direction == Vector2(-1,0):
-			speed = 500
+			speed = 500 
 		else:
-			speed = 400
-		target_velocity = dash_direction * speed
+			speed = 400 
+		target_velocity = dash_direction * speed 
 		can_dash = false
 	
 #Si on ne dash pas, alors le joueur se déplace. Si le dit comme ça, alors les deux mouvements ne se superposerons pas. Cet else est utilisé pour d'une part avoir le déplacement du joueur sur le sol mais aussi pour
@@ -60,7 +60,7 @@ func movement_dash(parameter_direction, parameter_axis):
 			$Sprites_folder/girl_animation_sprites.flip_h = false
 		else : 
 			target_velocity.x = 0
-		target_velocity.x = parameter_axis * speed	
+		target_velocity.x = parameter_axis * speed
 
 
 # Cette fonction, comme son nom l'indique, permettra au joueur de sauter. La première étape est de tput d'abords réinitaliser tous les variables lorsque le joueur est sur le sol. 
@@ -142,7 +142,7 @@ func animation(parameter_target_velocity):
 
 
 # Cette fonction principale est celle qui va tourner tout au long du jeu et s'update à chaque frame. Ici, on prend deux varibales de mouvement: direction et axis
-func _process(delta):
+func _physics_process(delta):
 
 #Direction permettra d'avoir les coordonées x et y du joystick. Mais il y a un soucis: si le joueur actionne un tout petit peu le joystick, 
 #alors le joueur avancera lentement. Pour les claviers, il n'y a pas ce soucis. C'est pour cela qu'il y a le normalized.

@@ -1592,9 +1592,11 @@ scale_max = 2.0
 color = Color(0, 0.611765, 0.611765, 0.847059)
 
 [node name="Level_4" type="Node2D"]
+texture_filter = 1
 script = ExtResource("2_ooosv")
 
 [node name="Objects" type="Sprite2D" parent="."]
+texture_filter = 1
 
 [node name="Brushes" type="Node2D" parent="Objects"]
 modulate = Color(0.0470588, 0.054902, 0.0745098, 0.27451)
@@ -1689,6 +1691,7 @@ rotation = 3.14159
 scale = Vector2(1.39, 1.39)
 
 [node name="TileMap" type="TileMap" parent="."]
+texture_filter = 1
 tile_set = SubResource("TileSet_bowo7")
 format = 2
 layer_0/name = "Bckrnd1"
@@ -1740,6 +1743,7 @@ layer_6/tile_data = PackedInt32Array(65536, 1179649, 0, 131071, 1179649, 0, 1310
 [node name="Effects" parent="." instance=ExtResource("10_wb435")]
 
 [node name="Player" parent="." instance=ExtResource("11_qoaj5")]
+texture_filter = 1
 position = Vector2(122, -1)
 
 [node name="Camera2D" type="Camera2D" parent="Player"]

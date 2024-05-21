@@ -19,7 +19,7 @@ func _process(delta):
 		Global.must_die = true
 		
 	if time <= 2 : 
-		$".".modulate = Color('f500f5')
+		$".".modulate = Color('fb004b')
 	else : 
 		$".".modulate = Color('ffffff')
 			
