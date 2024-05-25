@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://73isdqrc6y7j"]
+[gd_scene load_steps=20 format=3 uid="uid://73isdqrc6y7j"]
 
 [ext_resource type="PackedScene" uid="uid://dl4uye3w6uwl5" path="res://Levels/Level_parents/level_parents.tscn" id="1_c7flt"]
 [ext_resource type="PackedScene" uid="uid://tjrpccxrcasb" path="res://Objects_folder/Objet_interaction/spike.tscn" id="2_4ee3y"]
@@ -7,6 +7,9 @@
 [ext_resource type="Texture2D" uid="uid://libdmxlhdbun" path="res://Graphics/Brush/brush047.png" id="5_qs53k"]
 [ext_resource type="PackedScene" uid="uid://dqo5nm6ncimhr" path="res://Objects_folder/Objet_interaction/door.tscn" id="6_5ivhm"]
 [ext_resource type="Texture2D" uid="uid://cgyab8qmtupxh" path="res://Graphics/circle.png" id="7_8coda"]
+[ext_resource type="PackedScene" uid="uid://bvojuxaxgljne" path="res://Levels/UI/wall_slide.tscn" id="8_07uel"]
+[ext_resource type="Texture2D" uid="uid://bdixm5pm27mjs" path="res://Graphics/Icones/Shadow/32/Exclamation-Mark.png" id="8_gf05u"]
+[ext_resource type="PackedScene" uid="uid://dknh1pnw0hw7a" path="res://Levels/UI/dash.tscn" id="9_g5tt7"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ahbcl"]
 size = Vector2(96.5, 57.5)
@@ -27,6 +30,12 @@ size = Vector2(2693, 67.0001)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_f8cig"]
 size = Vector2(856, 20)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_5t7th"]
+radius = 38.1182
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1n6k7"]
+size = Vector2(65, 25.9999)
 
 [node name="Level_3" instance=ExtResource("1_c7flt")]
 script = ExtResource("2_b8vl1")
@@ -84,23 +93,19 @@ rotation = -1.57079
 
 [node name="Spike left" type="Node2D" parent="Objects/Spike_folder" index="1"]
 
-[node name="Spike2" parent="Objects/Spike_folder/Spike left" index="0" instance=ExtResource("2_4ee3y")]
-position = Vector2(-65.8984, 309.333)
-rotation = -4.71238
-
-[node name="Spike3" parent="Objects/Spike_folder/Spike left" index="1" instance=ExtResource("2_4ee3y")]
+[node name="Spike3" parent="Objects/Spike_folder/Spike left" index="0" instance=ExtResource("2_4ee3y")]
 position = Vector2(-65.8984, 371.333)
 rotation = -4.71238
 
-[node name="Spike4" parent="Objects/Spike_folder/Spike left" index="2" instance=ExtResource("2_4ee3y")]
+[node name="Spike4" parent="Objects/Spike_folder/Spike left" index="1" instance=ExtResource("2_4ee3y")]
 position = Vector2(-65.8984, 355.333)
 rotation = -4.71238
 
-[node name="Spike5" parent="Objects/Spike_folder/Spike left" index="3" instance=ExtResource("2_4ee3y")]
+[node name="Spike5" parent="Objects/Spike_folder/Spike left" index="2" instance=ExtResource("2_4ee3y")]
 position = Vector2(-65.8984, 340.333)
 rotation = -4.71238
 
-[node name="Spike6" parent="Objects/Spike_folder/Spike left" index="4" instance=ExtResource("2_4ee3y")]
+[node name="Spike6" parent="Objects/Spike_folder/Spike left" index="3" instance=ExtResource("2_4ee3y")]
 position = Vector2(-65.8984, 325.333)
 rotation = -4.71238
 
@@ -249,8 +254,47 @@ color = Color(0.913725, 0.223529, 0.552941, 1)
 energy = 2.0
 texture = ExtResource("7_8coda")
 
+[node name="Wall_slide" parent="CanvasLayer" index="2" instance=ExtResource("8_07uel")]
+visible = false
+
+[node name="Dash" parent="CanvasLayer" index="3" instance=ExtResource("9_g5tt7")]
+visible = false
+
+[node name="Sprite2D" type="Sprite2D" parent="." index="6"]
+visible = false
+z_index = 2
+texture_filter = 1
+position = Vector2(-27.423, 156.542)
+scale = Vector2(0.415, 0.415)
+texture = ExtResource("8_gf05u")
+
+[node name="Area2D" type="Area2D" parent="." index="7"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" index="0"]
+position = Vector2(-24, 166)
+shape = SubResource("CircleShape2D_5t7th")
+
+[node name="Sprite2D2" type="Sprite2D" parent="." index="8"]
+visible = false
+z_index = 2
+texture_filter = 1
+position = Vector2(-140.866, 779.172)
+scale = Vector2(0.415, 0.415)
+texture = ExtResource("8_gf05u")
+
+[node name="Area2D2" type="Area2D" parent="." index="9"]
+position = Vector2(-135.947, 791.633)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D2" index="0"]
+position = Vector2(22.4473, -6.633)
+shape = SubResource("RectangleShape2D_1n6k7")
+
 [connection signal="body_entered" from="Objects/Camera out" to="." method="_on_camera_body_entered"]
 [connection signal="body_entered" from="Objects/Camera in" to="." method="_on_camera_in_body_entered"]
 [connection signal="body_entered" from="Objects/next_level" to="." method="_on_next_level_body_entered"]
 [connection signal="body_entered" from="Objects/door_animation" to="." method="_on_door_animation_body_entered"]
 [connection signal="body_entered" from="Objects/Death zones" to="." method="_on_death_zones_body_entered"]
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]
+[connection signal="body_entered" from="Area2D2" to="." method="_on_area_2d_2_body_entered"]
+[connection signal="body_exited" from="Area2D2" to="." method="_on_area_2d_2_body_exited"]

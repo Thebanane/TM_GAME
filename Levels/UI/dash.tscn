@@ -1,0 +1,77 @@
+[gd_scene load_steps=7 format=3 uid="uid://dknh1pnw0hw7a"]
+
+[ext_resource type="PackedScene" uid="uid://ntrajlilsux4" path="res://Levels/UI/pop_up.tscn" id="1_s5t67"]
+[ext_resource type="FontFile" uid="uid://d1ejdlnb4xa3" path="res://Graphics/monogram/monogram/ttf/monogram-extended.ttf" id="2_3x3mk"]
+[ext_resource type="Script" path="res://Levels/UI/dash.gd" id="2_otq5k"]
+[ext_resource type="Texture2D" uid="uid://dbi1sfw0gyvs3" path="res://Graphics/Input/Computer/SHIFT.png" id="3_bytul"]
+[ext_resource type="Texture2D" uid="uid://bvmfin6apnjx8" path="res://Graphics/Input/Controller/BOX_BUTTON.png" id="5_5gqdi"]
+[ext_resource type="Texture2D" uid="uid://qu4bmik2su08" path="res://Graphics/Input/Controller/X_BUTTON.png" id="6_smdst"]
+
+[node name="Dash" instance=ExtResource("1_s5t67")]
+visible = true
+script = ExtResource("2_otq5k")
+
+[node name="Label" type="Label" parent="." index="2"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -24.0
+offset_top = -144.0
+offset_right = 17.0
+offset_bottom = -118.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("2_3x3mk")
+theme_override_font_sizes/font_size = 60
+text = "Dash"
+
+[node name="TextureRect" type="TextureRect" parent="." index="3"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -282.0
+offset_top = -76.0
+offset_right = 230.0
+offset_bottom = 436.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.285, 0.285)
+texture = ExtResource("3_bytul")
+
+[node name="TextureRect2" type="TextureRect" parent="." index="4"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 123.0
+offset_top = -76.0
+offset_right = 635.0
+offset_bottom = 436.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.285, 0.285)
+texture = ExtResource("5_5gqdi")
+
+[node name="TextureRect3" type="TextureRect" parent="." index="5"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -76.0
+offset_top = -77.0
+offset_right = 436.0
+offset_bottom = 435.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.285, 0.285)
+texture = ExtResource("6_smdst")

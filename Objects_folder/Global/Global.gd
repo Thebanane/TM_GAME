@@ -8,3 +8,7 @@ var must_die: bool
 var music_intro_position: float = 0
 var music_game_position: float = 0
 var must_close: bool = true
+var has_played_once: bool = false
+var mode: String
+var Pop_can_show: bool
+var dash_pop : bool

@@ -25,38 +25,64 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-color = Color(0.0862745, 0.0980392, 0.109804, 1)
+color = Color(0, 0, 0, 1)
 
-[node name="VBoxContainer" type="VBoxContainer" parent="."]
-process_mode = 1
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -53.0
-offset_top = -88.5
-offset_right = 53.0
-offset_bottom = 88.5
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_constants/separation = 7
-
-[node name="Label" type="Label" parent="VBoxContainer"]
+[node name="Label" type="Label" parent="."]
+modulate = Color(1, 1, 1, 0)
 texture_filter = 1
 layout_mode = 2
+offset_left = 367.5
+offset_top = 219.0
+offset_right = 883.5
+offset_bottom = 317.0
 theme_override_fonts/font = ExtResource("2_k7ygx")
 theme_override_font_sizes/font_size = 115
 text = "Memento Mori
 "
 horizontal_alignment = 1
 
+[node name="Label2" type="Label" parent="."]
+visible = false
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -135.5
+offset_top = -169.0
+offset_right = 136.5
+offset_bottom = -143.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_fonts/font = ExtResource("3_vjow2")
+theme_override_font_sizes/font_size = 29
+text = "In this mode, you have one chance."
+horizontal_alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+process_mode = 1
+modulate = Color(1, 1, 1, 0)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -257.5
+offset_top = -36.0
+offset_right = 258.5
+offset_bottom = 141.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 7
+
 [node name="New game" type="Button" parent="VBoxContainer"]
 texture_filter = 1
 layout_mode = 2
 size_flags_horizontal = 4
-size_flags_vertical = 6
+size_flags_vertical = 8
 theme_override_fonts/font = ExtResource("3_vjow2")
 theme_override_font_sizes/font_size = 38
 text = "Play"
@@ -89,6 +115,39 @@ theme_override_font_sizes/font_size = 38
 text = "Quit
 "
 
+[node name="VBoxContainer2" type="VBoxContainer" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -257.5
+offset_top = -21.0
+offset_right = 258.5
+offset_bottom = 131.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Peace" type="Button" parent="VBoxContainer2"]
+texture_filter = 1
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 6
+theme_override_fonts/font = ExtResource("3_vjow2")
+theme_override_font_sizes/font_size = 37
+text = "Normal"
+
+[node name="Hardcore" type="Button" parent="VBoxContainer2"]
+texture_filter = 1
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 6
+theme_override_fonts/font = ExtResource("3_vjow2")
+theme_override_font_sizes/font_size = 37
+text = "One life"
+
 [node name="Front_transion" type="ColorRect" parent="."]
 process_mode = 3
 visible = false
@@ -116,3 +175,5 @@ stream = ExtResource("6_vgud4")
 [connection signal="pressed" from="VBoxContainer/Option" to="." method="_on_button_pressed"]
 [connection signal="pressed" from="VBoxContainer/Credits" to="." method="_on_credits_pressed"]
 [connection signal="pressed" from="VBoxContainer/Quit" to="." method="_on_quit_pressed"]
+[connection signal="pressed" from="VBoxContainer2/Peace" to="." method="_on_peace_pressed"]
+[connection signal="pressed" from="VBoxContainer2/Hardcore" to="." method="_on_hardcore_pressed"]

@@ -11,12 +11,6 @@ func _ready():
 
 
 
-#Si le joueur entre dans cette zone, on recharge la scène, et par conséquent le joueur se fait téléporter au début du niveau
-func _on_area_2d_body_entered(body):
-	if body == $Player:
-		get_tree().reload_current_scene()
-
-
 func _on_area_2d_2_body_entered(body):
 	if body == $Player: 
 		Global.level_time = 6.5
@@ -28,3 +22,20 @@ func _on_area_2d_2_body_entered(body):
 func _on_death_zones_body_entered(body):
 	if body == $Player : 
 		Global.must_die = true
+
+
+func _on_popup_body_entered(_body):
+	$Sprite2D.visible = true
+	Global.Pop_can_show = true
+		
+
+func _on_popup_body_exited(_body):
+	$Sprite2D.visible = false
+	Global.Pop_can_show = false
+
+
+	
+
+
+
+

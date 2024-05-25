@@ -13,12 +13,6 @@ func _ready():
 func scroll_text(text_input) : 
 	visible_characters = 0
 	text = text_input
-	var tween = create_tween()
-	tween.tween_property($"../Label","modulate",Color('ffffff'),3)
-	await get_tree().create_timer(5).timeout
-	var tween2 = create_tween()
-	tween2.tween_property($"../Label","modulate",Color('ffffff00'),2)
-	await get_tree().create_timer(2.5).timeout
 	for i in get_parsed_text() : 
 		visible_characters += 1
 		$"../Tick_sound".play()

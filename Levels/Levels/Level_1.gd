@@ -2,7 +2,7 @@
 extends LevelParent
 
 func _ready():
-	
+	Global.has_played_once = false
 	Global.level_time = 3
 	if Global.must_close : 
 		get_tree().paused = true

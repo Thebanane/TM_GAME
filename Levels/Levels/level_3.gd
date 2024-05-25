@@ -1,4 +1,5 @@
 extends LevelParent
+var popup: bool = false
 
 #Lors de la première frame (seulement la première), on force l'image du joueur à tourner car sinon ce n'est pas cohérent que le joueur regarde le mur
 func _ready():
@@ -49,3 +50,27 @@ func _on_door_animation_body_entered(body):
 func _on_death_zones_body_entered(body):
 	if body == $Player : 
 		Global.must_die = true
+
+
+
+func _on_area_2d_body_entered(_body):
+	$Sprite2D.visible = true
+	Global.Pop_can_show = true	
+
+
+func _on_area_2d_body_exited(_body):
+	$Sprite2D.visible = false
+	Global.Pop_can_show = false	
+
+
+func _on_area_2d_2_body_entered(_body):
+	$Sprite2D2.visible = true
+	Global.dash_pop = true	
+
+
+func _on_area_2d_2_body_exited(_body):
+	$Sprite2D2.visible = false
+	Global.dash_pop = false	
+	
+
+

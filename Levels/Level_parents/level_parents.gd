@@ -9,10 +9,15 @@ func double_jump_effect():
 		Global.double_jump_input_pressed = false
 		Global.is_double_jumping = true
 		
-func player_death(): 
-	if Global.must_die: 
-		get_tree().reload_current_scene()
-		Global.must_die = false
+func player_death():
+	if Global.mode == 'normal' :
+		if Global.must_die: 
+			get_tree().reload_current_scene()
+			Global.must_die = false
+	elif Global.mode == 'hard':
+		if Global.must_die: 
+			get_tree().change_scene_to_file("res://Levels/UI/main_menu.tscn")
+			Global.must_die = false
 			
 	
 

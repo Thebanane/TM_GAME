@@ -1603,7 +1603,6 @@ layer_5/z_index = 6
 layer_5/tile_data = PackedInt32Array()
 
 [node name="Effects" parent="." instance=ExtResource("3_5pjls")]
-process_mode = 3
 
 [node name="Player" parent="." instance=ExtResource("1_n8pkd")]
 

@@ -1,6 +1,12 @@
+PointLight2D
+CollisionShape2D
+Area2D
+Sprite2D
+TextureRect
+HBoxContainer
 Label
 Button
-HBoxContainer
+VBoxContainer
 LinkButton
 FlowContainer
 AudioStreamPlayer2D
@@ -9,7 +15,6 @@ AnimationPlayer
 AnimationTree
 CanvasLayer
 ColorRect
-VBoxContainer
 PanelContainer
 Container
 OptionButton
@@ -19,14 +24,9 @@ TextEdit
 RichTextLabel
 CodeEdit
 Node2D
-Sprite2D
-PointLight2D
-CollisionShape2D
-Area2D
 GPUParticles2D
 DirectionalLight2D
 Camera2D
 StaticBody2D
 Timer
 Node
-TileMap
