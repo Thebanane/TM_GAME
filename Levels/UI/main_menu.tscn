@@ -1,11 +1,23 @@
-[gd_scene load_steps=7 format=3 uid="uid://dlmywauagx1m4"]
+[gd_scene load_steps=11 format=3 uid="uid://dlmywauagx1m4"]
 
-[ext_resource type="Script" path="res://Levels/UI/main_menu.gd" id="1_da8ef"]
+[ext_resource type="Script" path="res://Levels/UI/Main_menu_2.gd" id="1_qyrqn"]
 [ext_resource type="FontFile" uid="uid://3jwrr8w5ouiw" path="res://Graphics/monogram/monogram/ttf/monogram-extended-italic.ttf" id="2_k7ygx"]
 [ext_resource type="FontFile" uid="uid://d1ejdlnb4xa3" path="res://Graphics/monogram/monogram/ttf/monogram-extended.ttf" id="3_vjow2"]
 [ext_resource type="AudioStream" uid="uid://d067oh80xyv8k" path="res://Graphics/Music/Pack/6- The Veil of Night.mp3" id="4_64sex"]
 [ext_resource type="AudioStream" uid="uid://c6mvch6knshy" path="res://Graphics/Music/UI_soundeffect/Minimalist7.mp3" id="5_627sx"]
 [ext_resource type="AudioStream" uid="uid://cr4lvik50wcfr" path="res://Graphics/Music/UI_soundeffect/Minimalist13.mp3" id="6_vgud4"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5xncx"]
+bg_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_20l8m"]
+bg_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_acwts"]
+bg_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vme5r"]
+bg_color = Color(0, 0, 0, 1)
 
 [node name="Main menu" type="Control"]
 process_mode = 3
@@ -16,7 +28,7 @@ anchor_bottom = 1.0
 offset_right = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_da8ef")
+script = ExtResource("1_qyrqn")
 
 [node name="backround" type="ColorRect" parent="."]
 layout_mode = 1
@@ -85,7 +97,8 @@ size_flags_horizontal = 4
 size_flags_vertical = 8
 theme_override_fonts/font = ExtResource("3_vjow2")
 theme_override_font_sizes/font_size = 38
-text = "Play"
+theme_override_styles/normal = SubResource("StyleBoxFlat_5xncx")
+text = "NEW GAME"
 
 [node name="Option" type="Button" parent="VBoxContainer"]
 texture_filter = 1
@@ -94,7 +107,8 @@ size_flags_horizontal = 4
 size_flags_vertical = 6
 theme_override_fonts/font = ExtResource("3_vjow2")
 theme_override_font_sizes/font_size = 38
-text = "Option"
+theme_override_styles/normal = SubResource("StyleBoxFlat_20l8m")
+text = "OPTIONS"
 
 [node name="Credits" type="Button" parent="VBoxContainer"]
 texture_filter = 1
@@ -103,7 +117,8 @@ size_flags_horizontal = 4
 size_flags_vertical = 6
 theme_override_fonts/font = ExtResource("3_vjow2")
 theme_override_font_sizes/font_size = 38
-text = "Credits"
+theme_override_styles/normal = SubResource("StyleBoxFlat_acwts")
+text = "CREDITS"
 
 [node name="Quit" type="Button" parent="VBoxContainer"]
 texture_filter = 1
@@ -112,8 +127,8 @@ size_flags_horizontal = 4
 size_flags_vertical = 6
 theme_override_fonts/font = ExtResource("3_vjow2")
 theme_override_font_sizes/font_size = 38
-text = "Quit
-"
+theme_override_styles/normal = SubResource("StyleBoxFlat_acwts")
+text = "QUIT"
 
 [node name="VBoxContainer2" type="VBoxContainer" parent="."]
 visible = false
@@ -137,7 +152,8 @@ size_flags_horizontal = 4
 size_flags_vertical = 6
 theme_override_fonts/font = ExtResource("3_vjow2")
 theme_override_font_sizes/font_size = 37
-text = "Normal"
+theme_override_styles/normal = SubResource("StyleBoxFlat_vme5r")
+text = "NORMAL"
 
 [node name="Hardcore" type="Button" parent="VBoxContainer2"]
 texture_filter = 1
@@ -146,7 +162,8 @@ size_flags_horizontal = 4
 size_flags_vertical = 6
 theme_override_fonts/font = ExtResource("3_vjow2")
 theme_override_font_sizes/font_size = 37
-text = "One life"
+theme_override_styles/normal = SubResource("StyleBoxFlat_vme5r")
+text = "ONE LIFE"
 
 [node name="Front_transion" type="ColorRect" parent="."]
 process_mode = 3

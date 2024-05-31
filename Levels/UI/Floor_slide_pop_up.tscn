@@ -1,11 +1,11 @@
-[gd_scene load_steps=5 format=3 uid="uid://bvojuxaxgljne"]
+[gd_scene load_steps=5 format=3 uid="uid://do8tfr7iyd0fy"]
 
-[ext_resource type="PackedScene" uid="uid://ntrajlilsux4" path="res://Levels/UI/pop_up.tscn" id="1_b50uv"]
-[ext_resource type="Texture2D" uid="uid://dhblj44eo0wi2" path="res://Graphics/Input/Computer/CTRL.png" id="2_d4kmo"]
-[ext_resource type="Texture2D" uid="uid://boyu4x4synx33" path="res://Graphics/Input/Controller/R2.png" id="3_tav42"]
-[ext_resource type="FontFile" uid="uid://d1ejdlnb4xa3" path="res://Graphics/monogram/monogram/ttf/monogram-extended.ttf" id="4_awbri"]
+[ext_resource type="PackedScene" uid="uid://ntrajlilsux4" path="res://Levels/UI/pop_up.tscn" id="1_4fkbc"]
+[ext_resource type="Texture2D" uid="uid://cfrhd5eiwis5t" path="res://Graphics/Input/Computer/ALT.png" id="2_p245y"]
+[ext_resource type="Texture2D" uid="uid://dxc01n4klbo88" path="res://Graphics/Input/Controller/L2.png" id="3_bl0b3"]
+[ext_resource type="FontFile" uid="uid://d1ejdlnb4xa3" path="res://Graphics/monogram/monogram/ttf/monogram-extended.ttf" id="4_yaeol"]
 
-[node name="Wall_slide" instance=ExtResource("1_b50uv")]
+[node name="PopUp" instance=ExtResource("1_4fkbc")]
 visible = true
 
 [node name="TextureRect" type="TextureRect" parent="." index="2"]
@@ -22,7 +22,7 @@ offset_bottom = 436.0
 grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(0.285, 0.285)
-texture = ExtResource("2_d4kmo")
+texture = ExtResource("2_p245y")
 
 [node name="TextureRect2" type="TextureRect" parent="." index="3"]
 layout_mode = 1
@@ -38,7 +38,7 @@ offset_bottom = 436.0
 grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(0.285, 0.285)
-texture = ExtResource("3_tav42")
+texture = ExtResource("3_bl0b3")
 
 [node name="Label" type="Label" parent="." index="4"]
 layout_mode = 1
@@ -53,6 +53,6 @@ offset_right = 17.0
 offset_bottom = -118.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_fonts/font = ExtResource("4_awbri")
+theme_override_fonts/font = ExtResource("4_yaeol")
 theme_override_font_sizes/font_size = 60
-text = "WALL SLIDE"
+text = "FLOOR SLIDE"

@@ -1,10 +1,14 @@
-PointLight2D
 CollisionShape2D
 Area2D
+Label
+ColorRect
+ParallaxLayer
+ParallaxBackground
+PointLight2D
+CanvasModulate
 Sprite2D
 TextureRect
 HBoxContainer
-Label
 Button
 VBoxContainer
 LinkButton
@@ -14,7 +18,6 @@ AudioStreamPlayer
 AnimationPlayer
 AnimationTree
 CanvasLayer
-ColorRect
 PanelContainer
 Container
 OptionButton
@@ -27,6 +30,3 @@ Node2D
 GPUParticles2D
 DirectionalLight2D
 Camera2D
-StaticBody2D
-Timer
-Node

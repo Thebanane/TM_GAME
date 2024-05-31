@@ -33,7 +33,18 @@ func _on_death_body_entered(body):
 
 func _on_level_change_body_entered(body):
 	if body == $Player: 
-		Global.level_time = 10
+		Global.level_time = 11
 		Global.must_close = true
 		Global.music_game_position = $Player/AudioStreamPlayer.get_playback_position()
 		get_tree().change_scene_to_file("res://Levels/Levels/level_5.tscn")
+
+
+func _on_pop_up_body_entered(body):
+	if body == $Player : 
+		$Sprite2D.visible = true
+		Global.Pop_can_show = true
+
+
+func _on_pop_up_body_exited(_body):
+	$Sprite2D.visible = false
+	Global.Pop_can_show = false

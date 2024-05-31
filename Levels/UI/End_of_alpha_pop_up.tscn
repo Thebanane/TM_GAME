@@ -1,0 +1,31 @@
+[gd_scene load_steps=4 format=3 uid="uid://b2qavgdjchqww"]
+
+[ext_resource type="PackedScene" uid="uid://ntrajlilsux4" path="res://Levels/UI/pop_up.tscn" id="1_d4afh"]
+[ext_resource type="FontFile" uid="uid://d1ejdlnb4xa3" path="res://Graphics/monogram/monogram/ttf/monogram-extended.ttf" id="2_mhytw"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_bha0j"]
+font = ExtResource("2_mhytw")
+font_size = 35
+
+[node name="PopUp" instance=ExtResource("1_d4afh")]
+visible = true
+
+[node name="Label" type="Label" parent="." index="2"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -510.0
+offset_top = -64.0
+offset_right = 510.0
+offset_bottom = 70.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "This is the end of the first alpha. 
+If you've seen any bugs or have any suggestions, don't hesitate to let me know. 
+If the game have a little success, I'll continue to develop it and add new levels. 
+A big thanks to you to have played my Game"
+label_settings = SubResource("LabelSettings_bha0j")
+horizontal_alignment = 1

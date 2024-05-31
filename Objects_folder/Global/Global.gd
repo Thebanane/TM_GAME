@@ -10,5 +10,5 @@ var music_game_position: float = 0
 var must_close: bool = true
 var has_played_once: bool = false
 var mode: String
-var Pop_can_show: bool
+var Pop_can_show: bool = false
 var dash_pop : bool

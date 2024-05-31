@@ -26,6 +26,7 @@ script = ExtResource("2_ba0l6")
 metadata/_edit_horizontal_guides_ = []
 
 [node name="Sprite2D" type="Sprite2D" parent="." index="0"]
+visible = false
 z_index = 2
 texture_filter = 1
 position = Vector2(13.432, -4.892)
@@ -213,21 +214,25 @@ color = Color(0.913725, 0.223529, 0.498039, 1)
 energy = 2.0
 texture = ExtResource("6_rwlso")
 
-[node name="PointLight2D4" type="PointLight2D" parent="lights" index="4"]
-modulate = Color(0.843137, 0.27451, 0.603922, 1)
-position = Vector2(192, 96)
-scale = Vector2(0.09125, 0.1)
-color = Color(0.913725, 0.223529, 0.498039, 1)
-energy = 2.0
-texture = ExtResource("6_rwlso")
-
-[node name="PointLight2D5" type="PointLight2D" parent="lights" index="5"]
+[node name="PointLight2D5" type="PointLight2D" parent="lights" index="4"]
 modulate = Color(0.843137, 0.27451, 0.603922, 1)
 position = Vector2(-32.5203, 95.9574)
 scale = Vector2(0.09125, 0.1)
 color = Color(0.913725, 0.223529, 0.498039, 1)
 energy = 2.0
 texture = ExtResource("6_rwlso")
+
+[node name="PointLight2D6" type="PointLight2D" parent="lights" index="5"]
+modulate = Color(0.843137, 0.27451, 0.603922, 1)
+position = Vector2(191.466, 96.3122)
+scale = Vector2(0.09125, 0.1)
+color = Color(0.913725, 0.223529, 0.498039, 1)
+energy = 2.0
+texture = ExtResource("6_rwlso")
+
+[node name="Exit" parent="lights" index="6"]
+position = Vector2(-33, 191.25)
+scale = Vector2(1.6375, 1.81875)
 
 [node name="PopUp" parent="CanvasLayer" index="2" instance=ExtResource("8_kehhv")]
 process_mode = 0

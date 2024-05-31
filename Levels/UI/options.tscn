@@ -41,7 +41,7 @@ layout_mode = 2
 size_flags_vertical = 6
 theme_override_fonts/font = ExtResource("1_6n8ev")
 theme_override_font_sizes/font_size = 115
-text = "Option"
+text = "OPTIONS"
 horizontal_alignment = 1
 
 [node name="OptionButton" type="OptionButton" parent="VBoxContainer"]
@@ -55,9 +55,9 @@ alignment = 1
 item_count = 2
 selected = 0
 allow_reselect = true
-popup/item_0/text = "Windowed"
+popup/item_0/text = "WINDOWED"
 popup/item_0/id = 1
-popup/item_1/text = "Fullscreen"
+popup/item_1/text = "FULLSCREEN"
 popup/item_1/id = 2
 
 [node name="Quit" type="Button" parent="VBoxContainer"]
@@ -66,7 +66,7 @@ size_flags_horizontal = 4
 size_flags_vertical = 6
 theme_override_fonts/font = ExtResource("1_6n8ev")
 theme_override_font_sizes/font_size = 57
-text = "Main Menu"
+text = "MAIN MENU"
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("3_hh8qk")

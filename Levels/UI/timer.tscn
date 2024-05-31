@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://crmdvf5ppxtlj"]
 
 [ext_resource type="FontFile" uid="uid://d1ejdlnb4xa3" path="res://Graphics/monogram/monogram/ttf/monogram-extended.ttf" id="1_76mws"]
-[ext_resource type="Script" path="res://Levels/UI/timer.gd" id="1_fpeeq"]
+[ext_resource type="Script" path="res://Levels/UI/Timer_2.gd" id="2_0jv2i"]
 
 [node name="Timer" type="Control"]
 layout_mode = 3
@@ -29,4 +29,4 @@ theme_override_fonts/font = ExtResource("1_76mws")
 theme_override_font_sizes/font_size = 60
 text = "03 : 000"
 horizontal_alignment = 1
-script = ExtResource("1_fpeeq")
+script = ExtResource("2_0jv2i")

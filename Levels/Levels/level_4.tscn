@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=3 uid="uid://hx1cfspeigh4"]
+[gd_scene load_steps=29 format=3 uid="uid://hx1cfspeigh4"]
 
 [ext_resource type="Script" path="res://Levels/Levels/level_4.gd" id="2_ooosv"]
 [ext_resource type="Texture2D" uid="uid://dlghhiohsvnhn" path="res://Graphics/Brush/brush046.png" id="3_n2spi"]
@@ -15,6 +15,8 @@
 [ext_resource type="PackedScene" uid="uid://crmdvf5ppxtlj" path="res://Levels/UI/timer.tscn" id="13_spxm3"]
 [ext_resource type="PackedScene" uid="uid://80cvuthr36b6" path="res://Levels/UI/pause_menu.tscn" id="14_srtyv"]
 [ext_resource type="AudioStream" uid="uid://b4ckghyybgy1u" path="res://Graphics/Music/EuropaIce Extended.wav" id="15_kme11"]
+[ext_resource type="PackedScene" uid="uid://do8tfr7iyd0fy" path="res://Levels/UI/Floor_slide_pop_up.tscn" id="16_26cvp"]
+[ext_resource type="Texture2D" uid="uid://bdixm5pm27mjs" path="res://Graphics/Icones/Shadow/32/Exclamation-Mark.png" id="17_amfyx"]
 
 [sub_resource type="CanvasTexture" id="CanvasTexture_4mbrx"]
 
@@ -1568,6 +1570,9 @@ size = Vector2(90, 20)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_g3cjh"]
 size = Vector2(20, 41)
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_ubmrp"]
+radius = 18.0
+
 [sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_6geps"]
 particle_flag_disable_z = true
 gravity = Vector3(50, 0, 0)
@@ -1777,6 +1782,12 @@ shape = SubResource("RectangleShape2D_fnkf4")
 position = Vector2(-1005, -4)
 shape = SubResource("RectangleShape2D_g3cjh")
 
+[node name="PopUp" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PopUp"]
+position = Vector2(-40, -2)
+shape = SubResource("CircleShape2D_ubmrp")
+
 [node name="lights" type="Node2D" parent="."]
 
 [node name="PointLight2D" type="PointLight2D" parent="lights"]
@@ -1811,10 +1822,16 @@ color = Color(0.913725, 0.223529, 0.552941, 1)
 energy = 2.0
 texture = ExtResource("12_inemo")
 
-[node name="DirectionalLight2D" type="DirectionalLight2D" parent="lights"]
-color = Color(0.482353, 0.513726, 0.592157, 1)
-energy = 1.15
-blend_mode = 1
+[node name="CanvasModulate" type="CanvasModulate" parent="lights"]
+color = Color(0.388235, 0.419608, 0.494118, 1)
+
+[node name="Exit" type="PointLight2D" parent="lights"]
+position = Vector2(-1000.25, -1)
+scale = Vector2(1.95625, 1.4375)
+color = Color(1, 1, 0, 1)
+energy = 1.95
+texture = ExtResource("12_inemo")
+texture_scale = 0.1
 
 [node name="GPUParticles2D" type="GPUParticles2D" parent="."]
 position = Vector2(-883, -136)
@@ -1854,7 +1871,20 @@ collision_base_size = 0.0
 
 [node name="Pause_menu" parent="CanvasLayer" instance=ExtResource("14_srtyv")]
 
+[node name="PopUp" parent="CanvasLayer" instance=ExtResource("16_26cvp")]
+visible = false
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+visible = false
+z_index = 2
+texture_filter = 1
+position = Vector2(-33.25, -0.875)
+scale = Vector2(0.415, 0.415)
+texture = ExtResource("17_amfyx")
+
 [connection signal="switch_on" from="Objects/Switch" to="." method="_on_switch_switch_on"]
 [connection signal="body_entered" from="Camera_change" to="." method="_on_camera_change_body_entered"]
 [connection signal="body_entered" from="Death" to="." method="_on_death_body_entered"]
 [connection signal="body_entered" from="level_change" to="." method="_on_level_change_body_entered"]
+[connection signal="body_entered" from="PopUp" to="." method="_on_pop_up_body_entered"]
+[connection signal="body_exited" from="PopUp" to="." method="_on_pop_up_body_exited"]

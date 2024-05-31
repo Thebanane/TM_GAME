@@ -72,4 +72,4 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_fonts/font = ExtResource("5_x8a0d")
 theme_override_font_sizes/font_size = 60
-text = "Jump"
+text = "JUMP"

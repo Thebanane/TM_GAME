@@ -1,8 +1,13 @@
-[gd_scene load_steps=4 format=3 uid="uid://cccp3kco457xs"]
+[gd_scene load_steps=7 format=3 uid="uid://cccp3kco457xs"]
 
 [ext_resource type="PackedScene" uid="uid://xgn587n7yswb" path="res://Levels/Levels/level_1.tscn" id="1_tviqj"]
 [ext_resource type="Script" path="res://Levels/Levels/Safe_1.gd" id="2_dqr6c"]
 [ext_resource type="Texture2D" uid="uid://cgyab8qmtupxh" path="res://Graphics/circle.png" id="3_51jok"]
+[ext_resource type="Texture2D" uid="uid://bdixm5pm27mjs" path="res://Graphics/Icones/Shadow/32/Exclamation-Mark.png" id="4_4snv6"]
+[ext_resource type="PackedScene" uid="uid://b2qavgdjchqww" path="res://Levels/UI/End_of_alpha_pop_up.tscn" id="4_jhxio"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_h614m"]
+radius = 36.7986
 
 [node name="Safe_1" instance=ExtResource("1_tviqj")]
 script = ExtResource("2_dqr6c")
@@ -17,27 +22,50 @@ position = Vector2(329.607, 601.443)
 process_mode = 0
 position = Vector2(150, 495)
 
-[node name="PointLight2D" type="PointLight2D" parent="lights" index="1"]
+[node name="PointLight2D" type="PointLight2D" parent="lights" index="0"]
 position = Vector2(39.5028, 487.768)
-energy = 2.13
+energy = 0.93
 texture = ExtResource("3_51jok")
 texture_scale = 0.35
 
-[node name="PointLight2D2" type="PointLight2D" parent="lights" index="2"]
+[node name="PointLight2D2" type="PointLight2D" parent="lights" index="1"]
 modulate = Color(0.843137, 0.27451, 0.603922, 1)
 position = Vector2(-32, 448)
 scale = Vector2(0.09125, 0.1)
 color = Color(0.913725, 0.223529, 0.552941, 1)
-energy = 2.0
+energy = 2.05
 texture = ExtResource("3_51jok")
 
-[node name="PointLight2D3" type="PointLight2D" parent="lights" index="3"]
+[node name="PointLight2D3" type="PointLight2D" parent="lights" index="2"]
 modulate = Color(0.843137, 0.27451, 0.603922, 1)
 position = Vector2(95.9775, 448.573)
 scale = Vector2(0.09125, 0.1)
 color = Color(0.913725, 0.223529, 0.552941, 1)
-energy = 2.0
+energy = 2.05
 texture = ExtResource("3_51jok")
 
 [node name="Front" parent="." index="7"]
 visible = false
+
+[node name="Timer" parent="CanvasLayer" index="0"]
+visible = false
+
+[node name="PopUp" parent="CanvasLayer" index="2" instance=ExtResource("4_jhxio")]
+visible = false
+
+[node name="Sprite2D" type="Sprite2D" parent="." index="10"]
+visible = false
+z_index = 2
+texture_filter = 1
+position = Vector2(46.6587, 480.1)
+scale = Vector2(0.415, 0.415)
+texture = ExtResource("4_4snv6")
+
+[node name="Area2D2" type="Area2D" parent="." index="11"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D2" index="0"]
+position = Vector2(40.2016, 486.872)
+shape = SubResource("CircleShape2D_h614m")
+
+[connection signal="body_entered" from="Area2D2" to="." method="_on_area_2d_2_body_entered"]
+[connection signal="body_exited" from="Area2D2" to="." method="_on_area_2d_2_body_exited"]

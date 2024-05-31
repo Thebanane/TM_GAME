@@ -43,11 +43,11 @@ func movement_dash(parameter_direction, parameter_axis):
 #Lors du dash, on modifie la valeur de la vitesse de base du déplacement. On aura alors une sensation de dash.
 	if dashing:
 		if dash_direction == Vector2(0,-1) or dash_direction == Vector2(0,1):
-			speed = 350
+			speed = 400
 		elif dash_direction == Vector2(1,0) or dash_direction == Vector2(-1,0):
 			speed = 500 
 		else:
-			speed = 400 
+			speed = 450 
 		target_velocity = dash_direction * speed 
 		can_dash = false
 	
@@ -98,6 +98,7 @@ func wall_slide(parameter_delta):
 		target_velocity.y += wall_gravity * parameter_delta
 		target_velocity.y = min(target_velocity.y, 250)
 		can_double_jump = true
+		can_dash = true
 
 
 #La fonction floor_slide va permettre de faire comme son nom l'indique, une glissade sur le sol. Le timer permet de dire quand arrêter l'animation de la glissade. 

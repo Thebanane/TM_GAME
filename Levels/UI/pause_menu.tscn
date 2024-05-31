@@ -24,6 +24,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_pgs5m")
+metadata/_edit_horizontal_guides_ = []
 
 [node name="ColorRect" type="ColorRect" parent="."]
 layout_mode = 1
@@ -62,7 +63,7 @@ size_flags_vertical = 6
 theme_override_fonts/font = ExtResource("1_wx85n")
 theme_override_font_sizes/font_size = 29
 theme_override_styles/normal = SubResource("StyleBoxFlat_354nv")
-text = "Resume	"
+text = "RESUME"
 
 [node name="Restart" type="Button" parent="PanelContainer/VBoxContainer"]
 texture_filter = 1
@@ -72,7 +73,7 @@ size_flags_vertical = 6
 theme_override_fonts/font = ExtResource("1_wx85n")
 theme_override_font_sizes/font_size = 29
 theme_override_styles/normal = SubResource("StyleBoxFlat_ysn17")
-text = "Restart"
+text = "RESTART"
 
 [node name="Main menu" type="Button" parent="PanelContainer/VBoxContainer"]
 texture_filter = 1
@@ -81,7 +82,7 @@ size_flags_vertical = 6
 theme_override_fonts/font = ExtResource("1_wx85n")
 theme_override_font_sizes/font_size = 29
 theme_override_styles/normal = SubResource("StyleBoxFlat_8son6")
-text = "Main Menu"
+text = "MAIN MENU"
 
 [node name="front_screen" type="ColorRect" parent="."]
 visible = false

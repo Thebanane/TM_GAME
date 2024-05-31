@@ -80,15 +80,15 @@ position = Vector2(-60.6067, 213.667)
 rotation = -1.57079
 
 [node name="Spike9" parent="Objects/Spike_folder/Spike right" index="8" instance=ExtResource("2_4ee3y")]
-position = Vector2(-60.6067, 436.667)
+position = Vector2(-60.6067, 444.667)
 rotation = -1.57079
 
 [node name="Spike10" parent="Objects/Spike_folder/Spike right" index="9" instance=ExtResource("2_4ee3y")]
-position = Vector2(-60.6067, 451.667)
+position = Vector2(-60.6067, 459.667)
 rotation = -1.57079
 
 [node name="Spike11" parent="Objects/Spike_folder/Spike right" index="10" instance=ExtResource("2_4ee3y")]
-position = Vector2(-60.6067, 467.667)
+position = Vector2(-60.6067, 475.667)
 rotation = -1.57079
 
 [node name="Spike left" type="Node2D" parent="Objects/Spike_folder" index="1"]
@@ -222,7 +222,7 @@ limit_right = 45
 limit_bottom = 1230
 position_smoothing_enabled = true
 
-[node name="PointLight2D" type="PointLight2D" parent="lights" index="1"]
+[node name="PointLight2D" type="PointLight2D" parent="lights" index="0"]
 modulate = Color(0.843137, 0.27451, 0.603922, 1)
 position = Vector2(-48, 145)
 scale = Vector2(0.09125, 0.1)
@@ -230,7 +230,7 @@ color = Color(0.913725, 0.223529, 0.552941, 1)
 energy = 2.0
 texture = ExtResource("7_8coda")
 
-[node name="PointLight2D2" type="PointLight2D" parent="lights" index="2"]
+[node name="PointLight2D2" type="PointLight2D" parent="lights" index="1"]
 modulate = Color(0.843137, 0.27451, 0.603922, 1)
 position = Vector2(-144, 753)
 scale = Vector2(0.09125, 0.1)
@@ -238,7 +238,7 @@ color = Color(0.913725, 0.223529, 0.552941, 1)
 energy = 2.0
 texture = ExtResource("7_8coda")
 
-[node name="PointLight2D3" type="PointLight2D" parent="lights" index="3"]
+[node name="PointLight2D3" type="PointLight2D" parent="lights" index="2"]
 modulate = Color(0.843137, 0.27451, 0.603922, 1)
 position = Vector2(-513, 960)
 scale = Vector2(0.09125, 0.1)
@@ -246,13 +246,17 @@ color = Color(0.913725, 0.223529, 0.552941, 1)
 energy = 2.0
 texture = ExtResource("7_8coda")
 
-[node name="PointLight2D4" type="PointLight2D" parent="lights" index="4"]
+[node name="PointLight2D4" type="PointLight2D" parent="lights" index="3"]
 modulate = Color(0.843137, 0.27451, 0.603922, 1)
 position = Vector2(-833, 1168)
 scale = Vector2(0.09125, 0.1)
 color = Color(0.913725, 0.223529, 0.552941, 1)
 energy = 2.0
 texture = ExtResource("7_8coda")
+
+[node name="Exit" parent="lights" index="5"]
+position = Vector2(-984.25, 1198)
+scale = Vector2(1.80625, 1.4375)
 
 [node name="Wall_slide" parent="CanvasLayer" index="2" instance=ExtResource("8_07uel")]
 visible = false
