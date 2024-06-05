@@ -1,6 +1,6 @@
 ea4bc82a6ad023ab7ee23ee620429895
-::res://::1717603554
-export_presets.cfg::TextFile::-1::1717603415::0::1::::<><>::
+::res://::1717604660
+export_presets.cfg::TextFile::-1::1717603667::0::1::::<><>::
 README.md::TextFile::-1::1711359941::0::1::::<><>::
 ::res://addons/::1709465256
 ::res://addons/godot-git-plugin/::1709465258
@@ -181,7 +181,7 @@ industrial.v1.png::CompressedTexture2D::5441697814236950198::1706260063::1706260
 Level_1.gd::GDScript::-1::1717600517::0::1::::<>LevelParent<>::
 level_1.tscn::PackedScene::1627574348260898581::1717601104::0::1::::<><>::uid://dl4uye3w6uwl5
 level_2.gd::GDScript::-1::1717133544::0::1::::<>LevelParent<>::
-level_2.tscn::PackedScene::5868808732617513289::1717602610::0::1::::<><>::uid://dl4uye3w6uwl5::::res://Levels/Level_parents/level_parents.tscn<>res://Levels/Levels/level_2.gd<>uid://bdixm5pm27mjs::::res://Graphics/Icones/Shadow/32/Exclamation-Mark.png<>uid://dlghhiohsvnhn::::res://Graphics/Brush/brush046.png<>uid://libdmxlhdbun::::res://Graphics/Brush/brush047.png<>uid://dqo5nm6ncimhr::::res://Objects_folder/Objet_interaction/door.tscn<>uid://tjrpccxrcasb::::res://Objects_folder/Objet_interaction/spike.tscn<>uid://cgyab8qmtupxh::::res://Graphics/circle.png<>uid://cbcqrpf4v8l3l::::res://Levels/UI/jump_pop_up.tscn
+level_2.tscn::PackedScene::5868808732617513289::1717602610::0::1::::<><>::uid://dl4uye3w6uwl5
 level_3.gd::GDScript::-1::1717133551::0::1::::<>LevelParent<>::
 level_3.tscn::PackedScene::2304363636826373089::1717600456::0::1::::<><>::uid://dl4uye3w6uwl5
 level_4.gd::GDScript::-1::1717133734::0::1::::<>LevelParent<>::
@@ -190,10 +190,10 @@ level_5.gd::GDScript::-1::1716567060::0::1::::<>LevelParent<>::
 level_5.tscn::PackedScene::1671236931787139418::1717600450::0::1::::<><>::uid://dl4uye3w6uwl5
 Safe_1.gd::GDScript::-1::1717135589::0::1::::<>LevelParent<>::
 safe_1.tscn::PackedScene::4918309096290397344::1717601104::0::1::::<><>::uid://xgn587n7yswb
-::res://Levels/Level_parents/::1717603447
+::res://Levels/Level_parents/::1717603654
 level_parents.gd::GDScript::-1::1716559797::0::1::::LevelParent<>Node2D<>::
-level_parents.tscn::PackedScene::7992463739264181564::1717603447::0::1::::<><>::uid://cxocvyngllghe::::res://Objects_folder/Player/Player.tscn<>res://Levels/Level_parents/level_parents.gd<>uid://ou7p3edh6txw::::res://Objects_folder/Effects/effects.tscn<>uid://3gxb6h3b4kng::::res://Graphics/Tilemap/Blockworld_Tileset.png<>uid://cjr8757v1bouo::::res://Graphics/Tilemap/industrial.v1.png<>uid://80cvuthr36b6::::res://Levels/UI/pause_menu.tscn<>uid://cgyab8qmtupxh::::res://Graphics/circle.png<>uid://crmdvf5ppxtlj::::res://Levels/UI/timer.tscn<>uid://b4ckghyybgy1u::::res://Graphics/Music/EuropaIce Extended.wav
-::res://Levels/UI/::1717603447
+level_parents.tscn::PackedScene::7992463739264181564::1717603654::0::1::::<><>::uid://cxocvyngllghe::::res://Objects_folder/Player/Player.tscn<>res://Levels/Level_parents/level_parents.gd<>uid://ou7p3edh6txw::::res://Objects_folder/Effects/effects.tscn<>uid://3gxb6h3b4kng::::res://Graphics/Tilemap/Blockworld_Tileset.png<>uid://cjr8757v1bouo::::res://Graphics/Tilemap/industrial.v1.png<>uid://80cvuthr36b6::::res://Levels/UI/pause_menu.tscn<>uid://cgyab8qmtupxh::::res://Graphics/circle.png<>uid://crmdvf5ppxtlj::::res://Levels/UI/timer.tscn<>uid://b4ckghyybgy1u::::res://Graphics/Music/EuropaIce Extended.wav
+::res://Levels/UI/::1717603654
 Button_(new_game).gd::GDScript::-1::1715521075::0::1::::<>Button<>::
 credits.gd::GDScript::-1::1716113356::0::1::::<>Control<>::
 credits.tscn::PackedScene::7272351966804744736::1717134284::0::1::::<><>::uid://d1ejdlnb4xa3
@@ -205,14 +205,14 @@ First_dialogue.gd::GDScript::-1::1716558411::0::1::::<>RichTextLabel<>::
 Floor_slide_pop_up.tscn::PackedScene::8211193822454212670::1717134003::0::1::::<><>::uid://ntrajlilsux4
 introduction.tscn::PackedScene::1410822294420490581::1716559798::0::1::::<><>::res://Levels/UI/First_dialogue.gd<>uid://d1ejdlnb4xa3
 jump_pop_up.tscn::PackedScene::4848161593834276007::1717134003::0::1::::<><>::uid://ntrajlilsux4
-main_menu.tscn::PackedScene::7957608390343720373::1717602678::0::1::::<><>::res://Levels/UI/Main_menu_2.gd<>uid://3jwrr8w5ouiw::::res://Graphics/monogram/monogram/ttf/monogram-extended-italic.ttf<>uid://d1ejdlnb4xa3::::res://Graphics/monogram/monogram/ttf/monogram-extended.ttf<>uid://d067oh80xyv8k::::res://Graphics/Music/Pack/6- The Veil of Night.mp3<>uid://c6mvch6knshy::::res://Graphics/Music/UI_soundeffect/Minimalist7.mp3<>uid://cr4lvik50wcfr::::res://Graphics/Music/UI_soundeffect/Minimalist13.mp3
-Main_menu_2.gd::GDScript::-1::1717600246::0::1::::<>Control<>::
+main_menu.tscn::PackedScene::7957608390343720373::1717603654::0::1::::<><>::res://Levels/UI/Main_menu_2.gd<>uid://3jwrr8w5ouiw::::res://Graphics/monogram/monogram/ttf/monogram-extended-italic.ttf<>uid://d1ejdlnb4xa3::::res://Graphics/monogram/monogram/ttf/monogram-extended.ttf<>uid://d067oh80xyv8k::::res://Graphics/Music/Pack/6- The Veil of Night.mp3<>uid://c6mvch6knshy::::res://Graphics/Music/UI_soundeffect/Minimalist7.mp3<>uid://cr4lvik50wcfr::::res://Graphics/Music/UI_soundeffect/Minimalist13.mp3
+Main_menu_2.gd::GDScript::-1::1717603634::0::1::::<>Control<>::
 MyCredit.gd::GDScript::-1::1716571975::0::1::::<>Control<>::
-mycredits.tscn::PackedScene::6113910391818296759::1717602630::0::1::::<><>::res://Levels/UI/MyCredit.gd<>uid://d1ejdlnb4xa3::::res://Graphics/monogram/monogram/ttf/monogram-extended.ttf
+mycredits.tscn::PackedScene::6113910391818296759::1717602630::0::1::::<><>::res://Levels/UI/MyCredit.gd<>uid://d1ejdlnb4xa3
 options.tscn::PackedScene::4455372920757084135::1717134276::0::1::::<><>::uid://d1ejdlnb4xa3
 options_menu.gd::GDScript::-1::1715872506::0::1::::<>Control<>::
 pause_menu.gd::GDScript::-1::1717600347::0::1::::<>Control<>::
-pause_menu.tscn::PackedScene::2368001299724287693::1717603447::0::1::::<><>::res://Levels/UI/pause_menu.gd<>uid://d1ejdlnb4xa3::::res://Graphics/monogram/monogram/ttf/monogram-extended.ttf<>uid://c6mvch6knshy::::res://Graphics/Music/UI_soundeffect/Minimalist7.mp3<>uid://cr4lvik50wcfr::::res://Graphics/Music/UI_soundeffect/Minimalist13.mp3
+pause_menu.tscn::PackedScene::2368001299724287693::1717603654::0::1::::<><>::res://Levels/UI/pause_menu.gd<>uid://d1ejdlnb4xa3::::res://Graphics/monogram/monogram/ttf/monogram-extended.ttf<>uid://c6mvch6knshy::::res://Graphics/Music/UI_soundeffect/Minimalist7.mp3<>uid://cr4lvik50wcfr::::res://Graphics/Music/UI_soundeffect/Minimalist13.mp3
 PopUp.gd::GDScript::-1::1716570692::0::1::::<>Control<>::
 pop_up.tscn::PackedScene::952710823580500987::1716564773::0::1::::<><>::res://Levels/UI/PopUp.gd
 Quit.gd::GDScript::-1::1715584009::0::1::::<>Button<>::
