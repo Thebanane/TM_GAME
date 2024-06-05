@@ -14,6 +14,7 @@ func _ready():
 		$Objects/Door_entrance.position = Vector2(192,446)
 		$Front.color = Color('00000000')
 		$CanvasLayer/Timer.modulate = Color('ffffff')
+		$lights/Exit.visible = true
 	
 	$Player/AudioStreamPlayer.play(Global.music_game_position)
 
@@ -23,7 +24,7 @@ func _ready():
 #Lors le joueur entre dans cette zone, on passe à la scène suivant, c'est à dire le level 2
 func _on_area_2d_body_entered(body):
 	if body == $Player : 
-		Global.level_time = 5
+		Global.level_time = 5.5
 		Global.music_game_position = $Player/AudioStreamPlayer.get_playback_position()
 		Global.must_close = true
 		get_tree().change_scene_to_file("res://Levels/Levels/level_2.tscn")

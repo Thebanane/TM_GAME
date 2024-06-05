@@ -137,7 +137,7 @@ shape = SubResource("RectangleShape2D_v5exj")
 [node name="Player" parent="." index="4"]
 process_mode = 3
 z_index = 2
-position = Vector2(-6, 495)
+position = Vector2(-6, 495.025)
 
 [node name="Camera2D" parent="Player" index="8"]
 zoom = Vector2(4.24, 4.24)
@@ -150,7 +150,6 @@ limit_bottom = 520
 process_mode = 1
 
 [node name="Exit" parent="lights" index="1"]
-visible = false
 position = Vector2(196.403, 491.734)
 scale = Vector2(1.6375, 1.50665)
 

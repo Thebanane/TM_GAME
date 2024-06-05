@@ -255,6 +255,7 @@ energy = 2.0
 texture = ExtResource("7_8coda")
 
 [node name="Exit" parent="lights" index="5"]
+visible = true
 position = Vector2(-984.25, 1198)
 scale = Vector2(1.80625, 1.4375)
 

@@ -9,15 +9,23 @@
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5xncx"]
 bg_color = Color(0, 0, 0, 1)
+border_width_left = 4
+border_color = Color(0, 0, 0, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_20l8m"]
 bg_color = Color(0, 0, 0, 1)
+border_width_left = 4
+border_color = Color(0, 0, 0, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_acwts"]
 bg_color = Color(0, 0, 0, 1)
+border_width_left = 4
+border_color = Color(0, 0, 0, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vme5r"]
 bg_color = Color(0, 0, 0, 1)
+border_width_left = 4
+border_color = Color(0, 0, 0, 1)
 
 [node name="Main menu" type="Control"]
 process_mode = 3
@@ -179,7 +187,7 @@ color = Color(0, 0, 0, 0)
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 process_mode = 3
 stream = ExtResource("4_64sex")
-volume_db = -6.785
+volume_db = -6.53
 autoplay = true
 
 [node name="Tick_sound" type="AudioStreamPlayer2D" parent="."]

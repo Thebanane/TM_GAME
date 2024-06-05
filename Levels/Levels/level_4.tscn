@@ -1829,7 +1829,7 @@ color = Color(0.388235, 0.419608, 0.494118, 1)
 position = Vector2(-1000.25, -1)
 scale = Vector2(1.95625, 1.4375)
 color = Color(1, 1, 0, 1)
-energy = 1.95
+energy = 5.3
 texture = ExtResource("12_inemo")
 texture_scale = 0.1
 

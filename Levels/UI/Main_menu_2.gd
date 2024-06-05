@@ -7,10 +7,14 @@ func _ready():
 		tween.tween_property($Label,"modulate",Color('ffffff'), 2)
 		tween.tween_property($VBoxContainer,"modulate",Color('ffffff'), 2)
 		Global.has_played_once = true
+		await get_tree().create_timer(4).timeout
 	else : 
 		$VBoxContainer.modulate = Color('ffffff')
 		$Label.modulate = Color('ffffff')
+	
+
 	$"VBoxContainer/New game".grab_focus()
+
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -43,6 +47,7 @@ func _on_quit_pressed():
 	var tween2 = create_tween()
 	tween2.tween_property($AudioStreamPlayer,"volume_db",-60, 2.5 )
 	tween.tween_property($Front_transion,"color", Color(0, 0, 0), 1.5)
+	$VBoxContainer.visible = false
 	await get_tree().create_timer(2).timeout
 	get_tree().quit()
 
@@ -65,6 +70,7 @@ func _on_peace_pressed():
 	var tween2 = create_tween()
 	tween.tween_property($Front_transion,"color", Color(0, 0, 0), 2 )
 	tween2.tween_property($AudioStreamPlayer,"volume_db",-60, 2.5 )
+	$VBoxContainer2.visible = false
 	await get_tree().create_timer(3.5).timeout
 	get_tree().change_scene_to_file("res://Levels/UI/introduction.tscn")
 	
@@ -80,5 +86,6 @@ func _on_hardcore_pressed():
 	var tween2 = create_tween()
 	tween.tween_property($Front_transion,"color", Color(0, 0, 0), 2 )
 	tween2.tween_property($AudioStreamPlayer,"volume_db",-60, 2.5 )
+	$VBoxContainer2.visible = false
 	await get_tree().create_timer(3.5).timeout
 	get_tree().change_scene_to_file("res://Levels/UI/introduction.tscn")

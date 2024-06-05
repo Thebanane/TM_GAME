@@ -50,4 +50,5 @@ func _on_main_menu_pressed():
 	get_tree().paused = false
 	Global.music_intro_position = 0
 	Global.music_game_position = 0 
+	$PanelContainer/VBoxContainer.visible = false
 	get_tree().change_scene_to_file("res://Levels/UI/main_menu.tscn")

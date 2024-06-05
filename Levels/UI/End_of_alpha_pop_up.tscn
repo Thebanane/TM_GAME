@@ -25,7 +25,7 @@ grow_horizontal = 2
 grow_vertical = 2
 text = "This is the end of the first alpha. 
 If you've seen any bugs or have any suggestions, don't hesitate to let me know. 
-If the game have a little success, I'll continue to develop it and add new levels. 
+I'll continue to develop it and add some new levels. 
 A big thanks to you to have played my Game"
 label_settings = SubResource("LabelSettings_bha0j")
 horizontal_alignment = 1

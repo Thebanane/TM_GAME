@@ -10,13 +10,16 @@ bg_color = Color(0.0823529, 0.0823529, 0.0823529, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ysn17"]
 bg_color = Color(0.0823529, 0.0823529, 0.0823529, 1)
+border_width_left = 4
+border_color = Color(0.0823529, 0.0823529, 0.0823529, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8son6"]
 bg_color = Color(0.0823529, 0.0823529, 0.0823529, 1)
+border_width_left = 4
+border_color = Color(0.0823529, 0.0823529, 0.0823529, 1)
 
 [node name="Pause_menu" type="Control"]
 process_mode = 3
-visible = false
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0

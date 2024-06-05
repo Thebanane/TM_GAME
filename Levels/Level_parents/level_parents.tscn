@@ -1621,10 +1621,11 @@ autoplay = true
 color = Color(0.388235, 0.419608, 0.494118, 1)
 
 [node name="Exit" type="PointLight2D" parent="lights"]
+visible = false
 position = Vector2(190.972, 489.905)
 scale = Vector2(1.6375, 1.4375)
 color = Color(1, 1, 0, 1)
-energy = 1.95
+energy = 5.3
 texture = ExtResource("7_ck68i")
 texture_scale = 0.1
 

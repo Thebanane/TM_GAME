@@ -350,9 +350,6 @@ color = Color(0.913725, 0.223529, 0.552941, 1)
 energy = 2.6
 texture = ExtResource("9_5428i")
 
-[node name="Exit" parent="lights" index="10"]
-visible = false
-
 [node name="GPUParticles2D3" type="GPUParticles2D" parent="." index="9"]
 z_index = 2
 position = Vector2(-530, -202)
