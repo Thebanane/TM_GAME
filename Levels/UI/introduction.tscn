@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://Levels/UI/First_dialogue.gd" id="1_m6myi"]
 [ext_resource type="FontFile" uid="uid://d1ejdlnb4xa3" path="res://Graphics/monogram/monogram/ttf/monogram-extended.ttf" id="1_xnihp"]
-[ext_resource type="AudioStream" uid="uid://nemrjr34a2yn" path="res://Graphics/Music/UI_soundeffect/Abstract1.mp3" id="3_nqbtf"]
+[ext_resource type="AudioStream" uid="uid://doivhjt128oqe" path="res://Graphics/Music/UI_soundeffect/Abstract1.mp3" id="3_nqbtf"]
 
 [node name="Introduction" type="Control"]
 layout_mode = 3
