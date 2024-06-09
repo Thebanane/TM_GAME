@@ -1,9 +1,12 @@
-[gd_scene load_steps=5 format=3 uid="uid://dbu1tr82f4oia"]
+[gd_scene load_steps=6 format=3 uid="uid://dbu1tr82f4oia"]
 
 [ext_resource type="FontFile" uid="uid://d1ejdlnb4xa3" path="res://Graphics/monogram/monogram/ttf/monogram-extended.ttf" id="1_it2ss"]
 [ext_resource type="Script" path="res://Levels/UI/credits.gd" id="1_xhlm2"]
 [ext_resource type="AudioStream" uid="uid://d067oh80xyv8k" path="res://Graphics/Music/Pack/6- The Veil of Night.mp3" id="3_5meba"]
 [ext_resource type="AudioStream" uid="uid://cr4lvik50wcfr" path="res://Graphics/Music/UI_soundeffect/Minimalist13.mp3" id="4_dts78"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_d0o1w"]
+bg_color = Color(0, 0, 0, 1)
 
 [node name="Credits" type="Control"]
 layout_mode = 3
@@ -229,6 +232,7 @@ size_flags_horizontal = 4
 size_flags_vertical = 6
 theme_override_fonts/font = ExtResource("1_it2ss")
 theme_override_font_sizes/font_size = 57
+theme_override_styles/normal = SubResource("StyleBoxFlat_d0o1w")
 text = "MAIN MENU"
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]

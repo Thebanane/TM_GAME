@@ -1,10 +1,16 @@
-[gd_scene load_steps=6 format=3 uid="uid://b4qhlujj05q3p"]
+[gd_scene load_steps=8 format=3 uid="uid://b4qhlujj05q3p"]
 
 [ext_resource type="FontFile" uid="uid://d1ejdlnb4xa3" path="res://Graphics/monogram/monogram/ttf/monogram-extended.ttf" id="1_6n8ev"]
 [ext_resource type="Script" path="res://Levels/UI/options_menu.gd" id="1_aeps4"]
 [ext_resource type="AudioStream" uid="uid://d067oh80xyv8k" path="res://Graphics/Music/Pack/6- The Veil of Night.mp3" id="3_hh8qk"]
 [ext_resource type="AudioStream" uid="uid://c6mvch6knshy" path="res://Graphics/Music/UI_soundeffect/Minimalist7.mp3" id="4_ro3js"]
 [ext_resource type="AudioStream" uid="uid://cr4lvik50wcfr" path="res://Graphics/Music/UI_soundeffect/Minimalist13.mp3" id="5_2ie5m"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wtque"]
+bg_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mr88v"]
+bg_color = Color(0, 0, 0, 1)
 
 [node name="Options" type="Control"]
 layout_mode = 3
@@ -26,12 +32,9 @@ color = Color(0, 0, 0, 1)
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 layout_mode = 1
-anchors_preset = 13
-anchor_left = 0.5
-anchor_right = 0.5
+anchors_preset = 15
+anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -129.0
-offset_right = 129.0
 grow_horizontal = 2
 grow_vertical = 2
 alignment = 1
@@ -47,10 +50,11 @@ horizontal_alignment = 1
 [node name="OptionButton" type="OptionButton" parent="VBoxContainer"]
 texture_filter = 1
 layout_mode = 2
-size_flags_horizontal = 4
+size_flags_horizontal = 6
 size_flags_vertical = 6
 theme_override_fonts/font = ExtResource("1_6n8ev")
 theme_override_font_sizes/font_size = 57
+theme_override_styles/normal = SubResource("StyleBoxFlat_wtque")
 alignment = 1
 item_count = 2
 selected = 0
@@ -66,6 +70,7 @@ size_flags_horizontal = 4
 size_flags_vertical = 6
 theme_override_fonts/font = ExtResource("1_6n8ev")
 theme_override_font_sizes/font_size = 57
+theme_override_styles/normal = SubResource("StyleBoxFlat_mr88v")
 text = "MAIN MENU"
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]

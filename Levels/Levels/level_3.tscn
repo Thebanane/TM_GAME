@@ -67,27 +67,23 @@ rotation = -1.57079
 position = Vector2(-60.6067, 197.667)
 rotation = -1.57079
 
-[node name="Spike6" parent="Objects/Spike_folder/Spike right" index="5" instance=ExtResource("2_4ee3y")]
-position = Vector2(-60.6067, 245.667)
-rotation = -1.57079
-
-[node name="Spike7" parent="Objects/Spike_folder/Spike right" index="6" instance=ExtResource("2_4ee3y")]
+[node name="Spike7" parent="Objects/Spike_folder/Spike right" index="5" instance=ExtResource("2_4ee3y")]
 position = Vector2(-60.6067, 229.667)
 rotation = -1.57079
 
-[node name="Spike8" parent="Objects/Spike_folder/Spike right" index="7" instance=ExtResource("2_4ee3y")]
+[node name="Spike8" parent="Objects/Spike_folder/Spike right" index="6" instance=ExtResource("2_4ee3y")]
 position = Vector2(-60.6067, 213.667)
 rotation = -1.57079
 
-[node name="Spike9" parent="Objects/Spike_folder/Spike right" index="8" instance=ExtResource("2_4ee3y")]
+[node name="Spike9" parent="Objects/Spike_folder/Spike right" index="7" instance=ExtResource("2_4ee3y")]
 position = Vector2(-60.6067, 444.667)
 rotation = -1.57079
 
-[node name="Spike10" parent="Objects/Spike_folder/Spike right" index="9" instance=ExtResource("2_4ee3y")]
+[node name="Spike10" parent="Objects/Spike_folder/Spike right" index="8" instance=ExtResource("2_4ee3y")]
 position = Vector2(-60.6067, 459.667)
 rotation = -1.57079
 
-[node name="Spike11" parent="Objects/Spike_folder/Spike right" index="10" instance=ExtResource("2_4ee3y")]
+[node name="Spike11" parent="Objects/Spike_folder/Spike right" index="9" instance=ExtResource("2_4ee3y")]
 position = Vector2(-60.6067, 475.667)
 rotation = -1.57079
 
@@ -273,6 +269,12 @@ position = Vector2(-27.423, 156.542)
 scale = Vector2(0.415, 0.415)
 texture = ExtResource("8_gf05u")
 
+[node name="PointLight2D4" type="PointLight2D" parent="Sprite2D" index="0"]
+modulate = Color(0.843137, 0.27451, 0.603922, 1)
+position = Vector2(-0.536526, -2.79525)
+scale = Vector2(0.21988, 0.240964)
+texture = ExtResource("7_8coda")
+
 [node name="Area2D" type="Area2D" parent="." index="7"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" index="0"]
@@ -286,6 +288,12 @@ texture_filter = 1
 position = Vector2(-140.866, 779.172)
 scale = Vector2(0.415, 0.415)
 texture = ExtResource("8_gf05u")
+
+[node name="PointLight2D4" type="PointLight2D" parent="Sprite2D2" index="0"]
+modulate = Color(0.843137, 0.27451, 0.603922, 1)
+position = Vector2(-0.536526, -2.79525)
+scale = Vector2(0.21988, 0.240964)
+texture = ExtResource("7_8coda")
 
 [node name="Area2D2" type="Area2D" parent="." index="9"]
 position = Vector2(-135.947, 791.633)

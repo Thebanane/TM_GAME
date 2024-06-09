@@ -1,4 +1,12 @@
+res://Levels/Levels/level_4.tscn
 res://Levels/Level_parents/level_parents.tscn
 res://Levels/UI/pause_menu.tscn
 res://Levels/UI/main_menu.tscn
 res://Levels/UI/introduction.tscn
+res://Levels/UI/pop_up.tscn
+res://Levels/Levels/level_2.tscn
+res://Levels/UI/PopUp.gd
+res://Levels/UI/timer.tscn
+res://Levels/Levels/level_3.tscn
+res://Levels/Levels/level_1.tscn
+res://Levels/Levels/Level_1.gd

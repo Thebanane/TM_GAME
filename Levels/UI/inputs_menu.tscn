@@ -1,0 +1,248 @@
+[gd_scene load_steps=23 format=3 uid="uid://usw7l83g65bm"]
+
+[ext_resource type="Script" path="res://Levels/UI/inputs_menu.gd" id="1_qqru1"]
+[ext_resource type="FontFile" uid="uid://d1ejdlnb4xa3" path="res://Graphics/monogram/monogram/ttf/monogram-extended.ttf" id="1_xei17"]
+[ext_resource type="Texture2D" uid="uid://bds1jijgxic76" path="res://Graphics/Input/Computer/Q.png" id="2_0p0b4"]
+[ext_resource type="AudioStream" uid="uid://d067oh80xyv8k" path="res://Graphics/Music/Pack/6- The Veil of Night.mp3" id="3_c6n60"]
+[ext_resource type="Texture2D" uid="uid://blm8f6miyrhi2" path="res://Graphics/Input/Controller/LS_LEFT.png" id="3_x3tnw"]
+[ext_resource type="Texture2D" uid="uid://wdhb8np7ohrc" path="res://Graphics/Input/Computer/D.png" id="4_t3tp4"]
+[ext_resource type="AudioStream" uid="uid://cr4lvik50wcfr" path="res://Graphics/Music/UI_soundeffect/Minimalist13.mp3" id="4_yonv1"]
+[ext_resource type="Texture2D" uid="uid://dtq7ipcsfnvpk" path="res://Graphics/Input/Controller/LS_RIGHT.png" id="5_hcq5n"]
+[ext_resource type="Texture2D" uid="uid://drto5uxj4sn4w" path="res://Graphics/Input/Computer/SPACE.png" id="6_negi2"]
+[ext_resource type="Texture2D" uid="uid://ekbnurq2gdrq" path="res://Graphics/Input/Controller/A_BUTTON.png" id="7_ovj4r"]
+[ext_resource type="Texture2D" uid="uid://b0b7k5jki1you" path="res://Graphics/Input/Controller/CROSS_BUTTON.png" id="8_lnwuc"]
+[ext_resource type="Texture2D" uid="uid://cvgsm0syf6j1y" path="res://Graphics/Input/Computer/E.png" id="9_374wl"]
+[ext_resource type="Texture2D" uid="uid://bgfiyr1132edh" path="res://Graphics/Input/Controller/B_BUTTON.png" id="10_lrncx"]
+[ext_resource type="Texture2D" uid="uid://dw6mp8xsql6p4" path="res://Graphics/Input/Controller/CIRCLE_BUTTON.png" id="11_gfi88"]
+[ext_resource type="Texture2D" uid="uid://dbi1sfw0gyvs3" path="res://Graphics/Input/Computer/SHIFT.png" id="12_h6kdc"]
+[ext_resource type="Texture2D" uid="uid://qu4bmik2su08" path="res://Graphics/Input/Controller/X_BUTTON.png" id="13_cnxei"]
+[ext_resource type="Texture2D" uid="uid://bvmfin6apnjx8" path="res://Graphics/Input/Controller/BOX_BUTTON.png" id="14_j6ava"]
+[ext_resource type="Texture2D" uid="uid://dhblj44eo0wi2" path="res://Graphics/Input/Computer/CTRL.png" id="15_br358"]
+[ext_resource type="Texture2D" uid="uid://boyu4x4synx33" path="res://Graphics/Input/Controller/R2.png" id="16_nda0l"]
+[ext_resource type="Texture2D" uid="uid://cfrhd5eiwis5t" path="res://Graphics/Input/Computer/ALT.png" id="17_paayt"]
+[ext_resource type="Texture2D" uid="uid://dxc01n4klbo88" path="res://Graphics/Input/Controller/L2.png" id="18_j18e2"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6fv34"]
+bg_color = Color(0, 0, 0, 1)
+
+[node name="Inputs_menu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_qqru1")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 13
+anchor_left = 0.5
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -179.0
+offset_right = 179.0
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+
+[node name="Title" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 6
+theme_override_fonts/font = ExtResource("1_xei17")
+theme_override_font_sizes/font_size = 115
+text = "CONTROLS"
+horizontal_alignment = 1
+
+[node name="left" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 6
+alignment = 1
+
+[node name="Label" type="Label" parent="VBoxContainer/left"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_xei17")
+theme_override_font_sizes/font_size = 57
+text = "MOVE LEFT:"
+
+[node name="TextureRect" type="TextureRect" parent="VBoxContainer/left"]
+layout_mode = 2
+texture = ExtResource("2_0p0b4")
+expand_mode = 2
+
+[node name="TextureRect2" type="TextureRect" parent="VBoxContainer/left"]
+layout_mode = 2
+texture = ExtResource("3_x3tnw")
+expand_mode = 3
+
+[node name="right" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 6
+alignment = 1
+
+[node name="Label" type="Label" parent="VBoxContainer/right"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_xei17")
+theme_override_font_sizes/font_size = 57
+text = "MOVE RIGHT:"
+
+[node name="TextureRect" type="TextureRect" parent="VBoxContainer/right"]
+layout_mode = 2
+texture = ExtResource("4_t3tp4")
+expand_mode = 2
+
+[node name="TextureRect2" type="TextureRect" parent="VBoxContainer/right"]
+layout_mode = 2
+texture = ExtResource("5_hcq5n")
+expand_mode = 2
+
+[node name="jump" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 6
+alignment = 1
+
+[node name="Label" type="Label" parent="VBoxContainer/jump"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_xei17")
+theme_override_font_sizes/font_size = 57
+text = "JUMP:"
+
+[node name="TextureRect" type="TextureRect" parent="VBoxContainer/jump"]
+layout_mode = 2
+texture = ExtResource("6_negi2")
+expand_mode = 2
+
+[node name="TextureRect2" type="TextureRect" parent="VBoxContainer/jump"]
+layout_mode = 2
+texture = ExtResource("7_ovj4r")
+expand_mode = 2
+
+[node name="TextureRect3" type="TextureRect" parent="VBoxContainer/jump"]
+layout_mode = 2
+texture = ExtResource("8_lnwuc")
+expand_mode = 2
+
+[node name="action" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 6
+alignment = 1
+
+[node name="Label" type="Label" parent="VBoxContainer/action"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_xei17")
+theme_override_font_sizes/font_size = 57
+text = "ACTIVATE:"
+
+[node name="TextureRect" type="TextureRect" parent="VBoxContainer/action"]
+layout_mode = 2
+texture = ExtResource("9_374wl")
+expand_mode = 2
+
+[node name="TextureRect2" type="TextureRect" parent="VBoxContainer/action"]
+layout_mode = 2
+texture = ExtResource("10_lrncx")
+expand_mode = 2
+
+[node name="TextureRect3" type="TextureRect" parent="VBoxContainer/action"]
+layout_mode = 2
+texture = ExtResource("11_gfi88")
+expand_mode = 2
+
+[node name="dash" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 6
+alignment = 1
+
+[node name="Label" type="Label" parent="VBoxContainer/dash"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_xei17")
+theme_override_font_sizes/font_size = 57
+text = "DASH:"
+
+[node name="TextureRect" type="TextureRect" parent="VBoxContainer/dash"]
+layout_mode = 2
+texture = ExtResource("12_h6kdc")
+expand_mode = 2
+
+[node name="TextureRect2" type="TextureRect" parent="VBoxContainer/dash"]
+layout_mode = 2
+texture = ExtResource("13_cnxei")
+expand_mode = 2
+
+[node name="TextureRect3" type="TextureRect" parent="VBoxContainer/dash"]
+layout_mode = 2
+texture = ExtResource("14_j6ava")
+expand_mode = 2
+
+[node name="wall_slide" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 6
+alignment = 1
+
+[node name="Label" type="Label" parent="VBoxContainer/wall_slide"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_xei17")
+theme_override_font_sizes/font_size = 57
+text = "WALL SLIDE:"
+
+[node name="TextureRect" type="TextureRect" parent="VBoxContainer/wall_slide"]
+layout_mode = 2
+texture = ExtResource("15_br358")
+expand_mode = 2
+
+[node name="TextureRect2" type="TextureRect" parent="VBoxContainer/wall_slide"]
+layout_mode = 2
+texture = ExtResource("16_nda0l")
+expand_mode = 2
+
+[node name="floor_slide" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 6
+alignment = 1
+
+[node name="Label" type="Label" parent="VBoxContainer/floor_slide"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_xei17")
+theme_override_font_sizes/font_size = 57
+text = "FLOOR SLIDE:"
+
+[node name="TextureRect" type="TextureRect" parent="VBoxContainer/floor_slide"]
+layout_mode = 2
+texture = ExtResource("17_paayt")
+expand_mode = 2
+
+[node name="TextureRect2" type="TextureRect" parent="VBoxContainer/floor_slide"]
+layout_mode = 2
+texture = ExtResource("18_j18e2")
+expand_mode = 2
+
+[node name="Quit" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 6
+theme_override_fonts/font = ExtResource("1_xei17")
+theme_override_font_sizes/font_size = 57
+theme_override_styles/normal = SubResource("StyleBoxFlat_6fv34")
+text = "MAIN MENU"
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_c6n60")
+volume_db = -6.785
+autoplay = true
+
+[node name="Enter_sound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_yonv1")
+
+[connection signal="pressed" from="VBoxContainer/Quit" to="." method="_on_quit_pressed"]

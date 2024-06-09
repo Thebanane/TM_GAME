@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://dlmywauagx1m4"]
+[gd_scene load_steps=12 format=3 uid="uid://dlmywauagx1m4"]
 
 [ext_resource type="Script" path="res://Levels/UI/Main_menu_2.gd" id="1_qyrqn"]
 [ext_resource type="FontFile" uid="uid://3jwrr8w5ouiw" path="res://Graphics/monogram/monogram/ttf/monogram-extended-italic.ttf" id="2_k7ygx"]
@@ -10,6 +10,11 @@
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5xncx"]
 bg_color = Color(0, 0, 0, 1)
 border_width_left = 4
+border_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_l3u65"]
+bg_color = Color(0, 0, 0, 1)
+border_width_left = 2
 border_color = Color(0, 0, 0, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_20l8m"]
@@ -108,6 +113,16 @@ theme_override_font_sizes/font_size = 38
 theme_override_styles/normal = SubResource("StyleBoxFlat_5xncx")
 text = "NEW GAME"
 
+[node name="Controls" type="Button" parent="VBoxContainer"]
+texture_filter = 1
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 6
+theme_override_fonts/font = ExtResource("3_vjow2")
+theme_override_font_sizes/font_size = 38
+theme_override_styles/normal = SubResource("StyleBoxFlat_l3u65")
+text = "CONTROLS"
+
 [node name="Option" type="Button" parent="VBoxContainer"]
 texture_filter = 1
 layout_mode = 2
@@ -197,6 +212,7 @@ stream = ExtResource("5_627sx")
 stream = ExtResource("6_vgud4")
 
 [connection signal="pressed" from="VBoxContainer/New game" to="." method="_on_new_game_pressed"]
+[connection signal="pressed" from="VBoxContainer/Controls" to="." method="_on_controls_pressed"]
 [connection signal="pressed" from="VBoxContainer/Option" to="." method="_on_button_pressed"]
 [connection signal="pressed" from="VBoxContainer/Credits" to="." method="_on_credits_pressed"]
 [connection signal="pressed" from="VBoxContainer/Quit" to="." method="_on_quit_pressed"]

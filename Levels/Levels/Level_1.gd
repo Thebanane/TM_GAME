@@ -8,7 +8,7 @@ func _ready():
 		get_tree().paused = true
 		$AnimationPlayer.play("Transition")
 		Global.must_close = false
-		await get_tree().create_timer(4.5).timeout
+		await get_tree().create_timer(4).timeout
 		get_tree().paused = false
 	else : 
 		$Objects/Door_entrance.position = Vector2(192,446)

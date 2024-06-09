@@ -89,3 +89,10 @@ func _on_hardcore_pressed():
 	$VBoxContainer2.visible = false
 	await get_tree().create_timer(3.5).timeout
 	get_tree().change_scene_to_file("res://Levels/UI/introduction.tscn")
+	
+
+
+
+func _on_controls_pressed():
+	Global.music_intro_position = $AudioStreamPlayer.get_playback_position()
+	get_tree().change_scene_to_file("res://Levels/UI/inputs_menu.tscn")
