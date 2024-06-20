@@ -1,4 +1,4 @@
-[gd_scene load_steps=29 format=3 uid="uid://hx1cfspeigh4"]
+[gd_scene load_steps=32 format=3 uid="uid://hx1cfspeigh4"]
 
 [ext_resource type="Script" path="res://Levels/Levels/level_4.gd" id="2_ooosv"]
 [ext_resource type="Texture2D" uid="uid://dlghhiohsvnhn" path="res://Graphics/Brush/brush046.png" id="3_n2spi"]
@@ -1596,9 +1596,60 @@ linear_accel_max = 4.2
 scale_max = 2.0
 color = Color(0, 0.611765, 0.611765, 0.847059)
 
+[sub_resource type="Animation" id="Animation_hwcq2"]
+resource_name = "entrance"
+length = 0.6
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Transition_rect:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(-169, -122), Vector2(170, -125)]
+}
+
+[sub_resource type="Animation" id="Animation_imu26"]
+resource_name = "level_5"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Transition_rect:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(-3177, -330), Vector2(-1037, -330)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_bfiuq"]
+_data = {
+"entrance": SubResource("Animation_hwcq2"),
+"level_5": SubResource("Animation_imu26")
+}
+
 [node name="Level_4" type="Node2D"]
 texture_filter = 1
 script = ExtResource("2_ooosv")
+
+[node name="Transition_rect" type="ColorRect" parent="."]
+z_index = 35
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -3177.0
+offset_top = -337.0
+offset_right = -1170.0
+offset_bottom = 28.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
 
 [node name="Objects" type="Sprite2D" parent="."]
 texture_filter = 1
@@ -1757,6 +1808,7 @@ limit_left = -910
 limit_top = -290
 limit_right = 170
 limit_bottom = 40
+editor_draw_limits = true
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer2D" parent="Player"]
 stream = ExtResource("15_kme11")
@@ -1892,9 +1944,15 @@ position = Vector2(-0.536526, -2.79525)
 scale = Vector2(0.21988, 0.240964)
 texture = ExtResource("12_inemo")
 
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_bfiuq")
+}
+
 [connection signal="switch_on" from="Objects/Switch" to="." method="_on_switch_switch_on"]
 [connection signal="body_entered" from="Camera_change" to="." method="_on_camera_change_body_entered"]
 [connection signal="body_entered" from="Death" to="." method="_on_death_body_entered"]
 [connection signal="body_entered" from="level_change" to="." method="_on_level_change_body_entered"]
 [connection signal="body_entered" from="PopUp" to="." method="_on_pop_up_body_entered"]
 [connection signal="body_exited" from="PopUp" to="." method="_on_pop_up_body_exited"]
+[connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]

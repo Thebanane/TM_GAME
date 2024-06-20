@@ -1,6 +1,7 @@
 #On dit que le level est une extension du code déja écrit dans LevelParent
 extends LevelParent
 
+
 func _ready():
 	Global.has_played_once = false
 	Global.level_time = 3
@@ -27,4 +28,12 @@ func _on_area_2d_body_entered(body):
 		Global.level_time = 5.5
 		Global.music_game_position = $Player/AudioStreamPlayer.get_playback_position()
 		Global.must_close = true
-		get_tree().change_scene_to_file("res://Levels/Levels/level_2.tscn")
+		$AnimationPlayer.play("level_2")
+
+
+
+
+func _on_animation_player_animation_finished(anim_name):
+	if anim_name == "level_2": 
+		var level_2 = load("res://Levels/Levels/level_2.tscn")
+		get_tree().change_scene_to_packed(level_2)

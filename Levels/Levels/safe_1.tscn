@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://cccp3kco457xs"]
+[gd_scene load_steps=9 format=3 uid="uid://cccp3kco457xs"]
 
 [ext_resource type="PackedScene" uid="uid://xgn587n7yswb" path="res://Levels/Levels/level_1.tscn" id="1_tviqj"]
 [ext_resource type="Script" path="res://Levels/Levels/Safe_1.gd" id="2_dqr6c"]
@@ -9,22 +9,58 @@
 [sub_resource type="CircleShape2D" id="CircleShape2D_h614m"]
 radius = 36.7986
 
+[sub_resource type="Animation" id="Animation_kga2c"]
+resource_name = "entrance"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Transition_rect:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(-141, 366), Vector2(229.395, 366)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_g2ijp"]
+_data = {
+"entrance": SubResource("Animation_kga2c")
+}
+
 [node name="Safe_1" instance=ExtResource("1_tviqj")]
 script = ExtResource("2_dqr6c")
 
-[node name="TileMap" parent="." index="1"]
+[node name="Transition_rect" parent="." index="0"]
+offset_left = 229.395
+offset_top = 366.0
+offset_right = 598.395
+offset_bottom = 548.0
+
+[node name="TileMap" parent="." index="2"]
 layer_1/tile_data = PackedInt32Array(1638393, 786433, 7, 1900537, 851969, 9, 1638394, 786433, 7, 1769466, 720897, 8, 1835002, 983041, 10, 1900538, 917505, 9, 1966074, 917505, 8, 2031610, 917505, 8, 2097146, 917505, 12, 1638395, 786433, 9, 1769467, 851969, 8, 1638396, 786433, 7, 1572861, 917505, 8, 1638397, 851969, 8, 1507335, 917505, 8, 1572871, 983041, 10, 1638407, 720897, 9, 1638408, 786433, 7, 1638409, 786433, 7, 1507338, 720897, 8, 1572874, 917505, 11, 1638410, 851969, 8, 2031618, 1114113, 2, 1703931, 917505, 11, 1769477, 524289, 11, 1835013, 524289, 12, 1769478, 589825, 11, 1835014, 589825, 12, 1835005, 524289, 11, 1900541, 524289, 12, 1835006, 589825, 11, 1900542, 589825, 12, 1966082, 720897, 7)
 
 [node name="CollisionShape2D" parent="Area2D" index="0"]
 position = Vector2(329.607, 601.443)
 
-[node name="Player" parent="." index="4"]
+[node name="Effects" parent="." index="4"]
+visible = true
+
+[node name="Player" parent="." index="5"]
 process_mode = 0
+visible = true
 position = Vector2(150, 495)
+
+[node name="Camera2D" parent="Player" index="8"]
+editor_draw_limits = false
+
+[node name="Front" parent="." index="7"]
+visible = false
 
 [node name="PointLight2D" type="PointLight2D" parent="lights" index="0"]
 position = Vector2(39.5028, 487.768)
-energy = 0.93
+energy = 1.83
 texture = ExtResource("3_51jok")
 texture_scale = 0.35
 
@@ -33,7 +69,7 @@ modulate = Color(0.843137, 0.27451, 0.603922, 1)
 position = Vector2(-32, 448)
 scale = Vector2(0.09125, 0.1)
 color = Color(0.913725, 0.223529, 0.552941, 1)
-energy = 2.05
+energy = 3.1
 texture = ExtResource("3_51jok")
 
 [node name="PointLight2D3" type="PointLight2D" parent="lights" index="2"]
@@ -41,20 +77,11 @@ modulate = Color(0.843137, 0.27451, 0.603922, 1)
 position = Vector2(95.9775, 448.573)
 scale = Vector2(0.09125, 0.1)
 color = Color(0.913725, 0.223529, 0.552941, 1)
-energy = 2.05
+energy = 3.1
 texture = ExtResource("3_51jok")
 
 [node name="Exit" parent="lights" index="4"]
 energy = 1.95
-
-[node name="Front" parent="." index="7"]
-visible = false
-
-[node name="Timer" parent="CanvasLayer" index="0"]
-visible = false
-
-[node name="PopUp" parent="CanvasLayer" index="2" instance=ExtResource("4_jhxio")]
-visible = false
 
 [node name="Sprite2D" type="Sprite2D" parent="." index="10"]
 visible = false
@@ -69,6 +96,14 @@ texture = ExtResource("4_4snv6")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D2" index="0"]
 position = Vector2(40.2016, 486.872)
 shape = SubResource("CircleShape2D_h614m")
+
+[node name="PopUp" parent="CanvasLayer" index="2" instance=ExtResource("4_jhxio")]
+visible = false
+
+[node name="AnimationPlayer2" type="AnimationPlayer" parent="." index="14"]
+libraries = {
+"": SubResource("AnimationLibrary_g2ijp")
+}
 
 [connection signal="body_entered" from="Area2D2" to="." method="_on_area_2d_2_body_entered"]
 [connection signal="body_exited" from="Area2D2" to="." method="_on_area_2d_2_body_exited"]

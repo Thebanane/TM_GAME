@@ -1,7 +1,8 @@
 extends LevelParent
 
 func _ready():
-	$Player/AudioStreamPlayer.play(Global.music_game_position )
+	$Player/AudioStreamPlayer.play(Global.music_game_position)
+	$AnimationPlayer.play("entrance")
 	if Global.must_close :
 		var tween = create_tween()
 		tween.tween_property($Objects/Door_entrance, "position", Vector2(177,-5), 0.2)
@@ -44,4 +45,12 @@ func _on_level_change_body_entered(body):
 		Global.music_game_position = $Player/AudioStreamPlayer.get_playback_position()
 		Global.must_close = true
 		Global.level_time = 9999999999999999
+		$AnimationPlayer.play("safe_1")
+		await get_tree().create_timer(0.6).timeout
 		get_tree().change_scene_to_file("res://Levels/Levels/safe_1.tscn")
+
+
+func _on_animation_player_animation_finished(anim_name):
+	if anim_name == "safe_1":
+		var safe = load("res://Levels/Levels/safe_1.tscn")
+		get_tree().change_scene_to_packed(safe)

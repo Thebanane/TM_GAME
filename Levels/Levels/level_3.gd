@@ -3,10 +3,9 @@ var popup: bool = false
 
 #Lors de la première frame (seulement la première), on force l'image du joueur à tourner car sinon ce n'est pas cohérent que le joueur regarde le mur
 func _ready():
-	$Player/AudioStreamPlayer.play(Global.music_game_position )
+	$Player/AudioStreamPlayer.play(Global.music_game_position)
 	$Player/Sprites_folder/girl_animation_sprites.flip_h = false
-
-
+	$AnimationPlayer.play("entrance")
 
 
 #Lorsque le joueur entre cette zonne, on va mettre de nouvelles valeurs à certaines variables mais surtout on va faire une petite animation. 
@@ -31,8 +30,7 @@ func _on_next_level_body_entered(body):
 		Global.level_time = 8
 		Global.must_close = true
 		Global.music_game_position = $Player/AudioStreamPlayer.get_playback_position()
-		get_tree().change_scene_to_file("res://Levels/Levels/level_4.tscn")
-		
+		$AnimationPlayer.play("level_4")
 
 
 func _on_door_animation_body_entered(body):
@@ -74,4 +72,7 @@ func _on_area_2d_2_body_exited(_body):
 	Global.dash_pop = false	
 	
 
-
+func _on_animation_player_animation_finished(anim_name):
+	if anim_name == "level_4":
+		var level_4 = load("res://Levels/Levels/level_4.tscn")
+		get_tree().change_scene_to_packed(level_4)

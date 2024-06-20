@@ -1554,6 +1554,15 @@ sources/0 = SubResource("TileSetAtlasSource_yyl1y")
 [node name="Level_parents" type="Node2D"]
 script = ExtResource("1_wc6bw")
 
+[node name="Transition_rect" type="ColorRect" parent="."]
+z_index = 35
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
 [node name="Objects" type="Sprite2D" parent="."]
 
 [node name="Backround" type="Sprite2D" parent="Objects"]
@@ -1609,10 +1618,11 @@ layer_5/tile_data = PackedInt32Array()
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
 zoom = Vector2(4.175, 4.175)
+editor_draw_limits = true
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer2D" parent="Player"]
 stream = ExtResource("9_tw7ag")
-volume_db = -6.0
+volume_db = -8.565
 autoplay = true
 
 [node name="lights" type="Node2D" parent="."]

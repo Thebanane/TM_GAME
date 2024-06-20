@@ -1,3 +1,7 @@
+AnimationPlayer
+AnimationTree
+ColorRect
+CanvasModulate
 Timer
 PointLight2D
 Node2D
@@ -13,16 +17,12 @@ TextureRect
 Sprite2D
 CollisionShape2D
 Area2D
-ColorRect
 ParallaxLayer
 ParallaxBackground
-CanvasModulate
 LinkButton
 FlowContainer
 AudioStreamPlayer2D
 AudioStreamPlayer
-AnimationPlayer
-AnimationTree
 CanvasLayer
 PanelContainer
 Container
@@ -30,4 +30,3 @@ OptionButton
 CheckButton
 LineEdit
 TextEdit
-RichTextLabel
