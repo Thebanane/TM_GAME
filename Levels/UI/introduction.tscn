@@ -41,6 +41,7 @@ fit_content = true
 script = ExtResource("1_m6myi")
 
 [node name="Tick_sound" type="AudioStreamPlayer2D" parent="."]
+process_mode = 3
 stream = ExtResource("3_nqbtf")
 volume_db = 2.93
 pitch_scale = 0.3

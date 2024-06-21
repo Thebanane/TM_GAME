@@ -1,3 +1,8 @@
+TextureRect
+Label
+VBoxContainer
+GridContainer
+HBoxContainer
 AnimationPlayer
 AnimationTree
 ColorRect
@@ -5,15 +10,11 @@ CanvasModulate
 Timer
 PointLight2D
 Node2D
-Label
-HBoxContainer
 HSlider
 Panel
 MenuButton
 MenuBar
 Button
-VBoxContainer
-TextureRect
 Sprite2D
 CollisionShape2D
 Area2D
@@ -29,4 +30,3 @@ Container
 OptionButton
 CheckButton
 LineEdit
-TextEdit

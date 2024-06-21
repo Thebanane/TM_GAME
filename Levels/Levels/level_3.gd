@@ -32,7 +32,7 @@ func _on_next_level_body_entered(body):
 		Global.music_game_position = $Player/AudioStreamPlayer.get_playback_position()
 		$AnimationPlayer.play("level_4")
 
-
+#L'animation de la porte du début du niveau 
 func _on_door_animation_body_entered(body):
 	if body == $Player: 
 		var tween1 = create_tween()

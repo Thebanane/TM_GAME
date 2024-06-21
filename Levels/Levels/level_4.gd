@@ -2,6 +2,7 @@ extends LevelParent
 
 func _ready():
 	$Player/AudioStreamPlayer.play(Global.music_game_position)
+#Ici je dois flip le sprite du joueur sinon il regarde dans la mauvaise direction à l'entrée du jeu, ce qui n'est pas cohérent
 	$Player/Sprites_folder/girl_animation_sprites.flip_h = false
 	$AnimationPlayer.play("entrance")
 	if Global.must_close :

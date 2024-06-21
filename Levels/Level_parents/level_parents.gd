@@ -8,7 +8,8 @@ func double_jump_effect():
 		$Effects.global_position = $Player.global_position
 		Global.double_jump_input_pressed = false
 		Global.is_double_jumping = true
-		
+
+#Fonction qui va voir quelle mode le joueur a choisi et faire la mort qui le correspond		
 func player_death():
 	if Global.mode == 'normal' :
 		if Global.must_die: 
@@ -28,7 +29,6 @@ func _ready():
 func _process(_delta):
 	double_jump_effect()
 	player_death()
-	Global.music_game_position = $Player/AudioStreamPlayer.get_playback_position()
 
 
 

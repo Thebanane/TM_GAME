@@ -1,7 +1,6 @@
 extends Control
 
-
-# Called when the node enters the scene tree for the first time.
+# Même principe que le fichier credits.gd
 func _ready():
 	$AudioStreamPlayer.play(Global.music_intro_position)
 	$VBoxContainer/Quit.grab_focus()

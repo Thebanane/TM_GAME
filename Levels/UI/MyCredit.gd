@@ -1,7 +1,7 @@
 extends Control
 
 
-# Called when the node enters the scene tree for the first time.
+#Animation de lancement de mon jeu avec mon nom
 func _ready():
 	var tween = create_tween()
 	tween.tween_property($Label,"modulate",Color('ffffff'),3)
