@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://80cvuthr36b6"]
+[gd_scene load_steps=10 format=3 uid="uid://80cvuthr36b6"]
 
 [ext_resource type="Script" path="res://Levels/UI/pause_menu.gd" id="1_pgs5m"]
 [ext_resource type="FontFile" uid="uid://d1ejdlnb4xa3" path="res://Graphics/monogram/monogram/ttf/monogram-extended.ttf" id="1_wx85n"]
@@ -17,6 +17,27 @@ border_color = Color(0.0823529, 0.0823529, 0.0823529, 1)
 bg_color = Color(0.0823529, 0.0823529, 0.0823529, 1)
 border_width_left = 4
 border_color = Color(0.0823529, 0.0823529, 0.0823529, 1)
+
+[sub_resource type="Animation" id="Animation_xl3du"]
+resource_name = "transition"
+length = 2.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("front_screen:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 0), Color(0, 0, 0, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_juutg"]
+_data = {
+"transition": SubResource("Animation_xl3du")
+}
 
 [node name="Pause_menu" type="Control"]
 process_mode = 3
@@ -106,6 +127,12 @@ stream = ExtResource("3_873eo")
 process_mode = 3
 stream = ExtResource("4_x2kfm")
 
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_juutg")
+}
+
 [connection signal="pressed" from="PanelContainer/VBoxContainer/Resume" to="." method="_on_resume_pressed"]
 [connection signal="pressed" from="PanelContainer/VBoxContainer/Restart" to="." method="_on_restart_pressed"]
 [connection signal="pressed" from="PanelContainer/VBoxContainer/Main menu" to="." method="_on_main_menu_pressed"]
+[connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]
