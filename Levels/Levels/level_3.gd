@@ -27,7 +27,7 @@ func _on_camera_in_body_entered(body):
 
 func _on_next_level_body_entered(body):
 	if body == $Player : 
-		Global.level_time = 8
+		Global.level_time = 9
 		Global.must_close = true
 		Global.music_game_position = $Player/AudioStreamPlayer.get_playback_position()
 		$AnimationPlayer.play("level_4")

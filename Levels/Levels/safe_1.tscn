@@ -33,9 +33,9 @@ _data = {
 script = ExtResource("2_dqr6c")
 
 [node name="Transition_rect" parent="." index="0"]
-offset_left = 229.395
+offset_left = -141.0
 offset_top = 366.0
-offset_right = 598.395
+offset_right = 228.0
 offset_bottom = 548.0
 
 [node name="TileMap" parent="." index="2"]

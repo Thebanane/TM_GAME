@@ -35,7 +35,7 @@ func _on_death_body_entered(body):
 
 func _on_level_change_body_entered(body):
 	if body == $Player: 
-		Global.level_time = 11
+		Global.level_time = 12
 		Global.must_close = true
 		Global.music_game_position = $Player/AudioStreamPlayer.get_playback_position()
 		$AnimationPlayer.play("level_5")

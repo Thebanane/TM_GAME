@@ -25,7 +25,7 @@ func scroll_text(text_input) :
 	
 #Après cette animation, on place le timer, et on reinitialise le "must_close" (qui est la variable qui nous permettra de faire une animation seulement une fois et non deux fois)
 	await get_tree().create_timer(1.5).timeout
-	Global.level_time = 3
+	Global.level_time = 3.5
 	Global.must_close = true
 	get_tree().change_scene_to_file("res://Levels/Levels/level_1.tscn")
 

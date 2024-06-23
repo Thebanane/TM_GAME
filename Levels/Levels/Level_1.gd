@@ -28,7 +28,7 @@ func _ready():
 #On initialise toutes les variables nécessaires et on lance la petite animation de transition de scène
 func _on_area_2d_body_entered(body):
 	if body == $Player : 
-		Global.level_time = 5.5
+		Global.level_time = 6
 		Global.music_game_position = $Player/AudioStreamPlayer.get_playback_position()
 		Global.must_close = true
 		$AnimationPlayer.play("level_2")
