@@ -1,18 +1,13 @@
 extends LevelParent
 
 func _ready():
-#La solution que j'ai trouvé pour avoir la music qui se suit, c'est d'à chaque fois, prendre les coordonées de la musique avant le changement de scène et l'aplliquer à la nouvelle scène.
-	$Player/AudioStreamPlayer.play(Global.music_game_position)
+#La solution que j'ai trouvé pour avoir la music qui se suit, c'est d'à chaque fois, prendre les coordonées de la musique avant le changement de scène et l'aplliquer à la nouvelle scène.	
 	$AnimationPlayer.play("entrance_transition")
-	if not Global.must_close : 
-		$Objects/Door_entrance.position = Vector2(-82,-7)
+
 
 
 func _on_area_2d_2_body_entered(body):
 	if body == $Player: 
-		Global.level_time = 8
-		Global.must_close = true
-		Global.music_game_position = $Player/AudioStreamPlayer.get_playback_position()
 		$AnimationPlayer.play("level_3")
 
 
@@ -36,10 +31,14 @@ func _on_popup_body_exited(_body):
 func _on_animation_player_animation_finished(anim_name):
 	if anim_name == "level_3":
 		var level_3 = load("res://Levels/Levels/level_3.tscn")
+		Global.level_time = 8
+		Global.has_played_once = false
 		get_tree().change_scene_to_packed(level_3)
 	
 	if anim_name == "entrance_transition": 
-		if Global.must_close :
+		if not Global.has_played_once : 
 			$AnimationPlayer.play("door")
-			Global.must_close = false
+			Global.has_played_once = true
+		else :
+			$Objects/Door_entrance.position = Vector2(-82,-7)
 		

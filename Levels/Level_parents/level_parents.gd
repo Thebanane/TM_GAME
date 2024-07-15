@@ -19,8 +19,7 @@ func player_death():
 		if Global.must_die: 
 			get_tree().change_scene_to_file("res://Levels/UI/main_menu.tscn")
 			Global.must_die = false
-			
-	
+
 
 func _ready():
 	Global.light = false
@@ -29,7 +28,6 @@ func _ready():
 func _process(_delta):
 	double_jump_effect()
 	player_death()
-	Global.music_game_position = $Player/AudioStreamPlayer.get_playback_position()
 
 
 

@@ -5,6 +5,7 @@ var text_1 = '"When time flies, death comes."
 - french quotation'
 
 func _ready():
+	BackroungMusic.stop()
 	scroll_text(text_1)
 
 
@@ -24,9 +25,9 @@ func scroll_text(text_input) :
 		await get_tree().create_timer(0.01).timeout
 	
 #Après cette animation, on place le timer, et on reinitialise le "must_close" (qui est la variable qui nous permettra de faire une animation seulement une fois et non deux fois)
-	await get_tree().create_timer(1.5).timeout
+	await get_tree().create_timer(1).timeout
 	Global.level_time = 3.5
-	Global.must_close = true
+	Global.has_played_once = false
 	get_tree().change_scene_to_file("res://Levels/Levels/level_1.tscn")
 
 

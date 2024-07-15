@@ -2,7 +2,6 @@ extends Control
 
 # Même principe que le fichier credits.gd
 func _ready():
-	$AudioStreamPlayer.play(Global.music_intro_position)
 	$VBoxContainer/Quit.grab_focus()
 
 
@@ -13,5 +12,4 @@ func _process(_delta):
 
 
 func _on_quit_pressed():
-	Global.music_intro_position = $AudioStreamPlayer.get_playback_position()
 	get_tree().change_scene_to_file("res://Levels/UI/main_menu.tscn")

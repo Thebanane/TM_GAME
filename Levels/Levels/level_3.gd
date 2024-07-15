@@ -3,7 +3,6 @@ var popup: bool = false
 
 #Lors de la première frame (seulement la première), on force l'image du joueur à tourner car sinon ce n'est pas cohérent que le joueur regarde le mur
 func _ready():
-	$Player/AudioStreamPlayer.play(Global.music_game_position)
 	$Player/Sprites_folder/girl_animation_sprites.flip_h = false
 	$AnimationPlayer.play("entrance")
 
@@ -27,9 +26,6 @@ func _on_camera_in_body_entered(body):
 
 func _on_next_level_body_entered(body):
 	if body == $Player : 
-		Global.level_time = 9
-		Global.must_close = true
-		Global.music_game_position = $Player/AudioStreamPlayer.get_playback_position()
 		$AnimationPlayer.play("level_4")
 
 #L'animation de la porte du début du niveau 
@@ -37,10 +33,10 @@ func _on_door_animation_body_entered(body):
 	if body == $Player: 
 		var tween1 = create_tween()
 		tween1.tween_property($Player/Camera2D, "limit_top", 80, 0.3)  
-		if Global.must_close :
+		if not 	Global.has_played_once:
 			var tween = create_tween()
 			tween.tween_property($Objects/Door_entrance, "position", Vector2(0,90), 0.2)
-			Global.must_close = false
+			Global.has_played_once = true
 		else :
 			$Objects/Door_entrance.position = Vector2(0,90)
 
@@ -75,4 +71,6 @@ func _on_area_2d_2_body_exited(_body):
 func _on_animation_player_animation_finished(anim_name):
 	if anim_name == "level_4":
 		var level_4 = load("res://Levels/Levels/level_4.tscn")
+		Global.level_time = 9
+		Global.has_played_once = false
 		get_tree().change_scene_to_packed(level_4)

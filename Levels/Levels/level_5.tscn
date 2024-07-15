@@ -146,16 +146,6 @@ scale = Vector2(0.855, 0.855)
 position = Vector2(-257.703, 47.0588)
 scale = Vector2(0.855, 0.855)
 
-[node name="Spike3" parent="Objects/Spike_folder/Spikes_2" index="2" instance=ExtResource("3_o6swr")]
-position = Vector2(-270.028, 19.0476)
-rotation = -3.14159
-scale = Vector2(0.855, 0.855)
-
-[node name="Spike4" parent="Objects/Spike_folder/Spikes_2" index="3" instance=ExtResource("3_o6swr")]
-position = Vector2(-256.583, 19.0476)
-rotation = -3.14159
-scale = Vector2(0.855, 0.855)
-
 [node name="Spikes_3" type="Node2D" parent="Objects/Spike_folder" index="2"]
 
 [node name="Spike" parent="Objects/Spike_folder/Spikes_3" index="0" instance=ExtResource("3_o6swr")]
@@ -164,16 +154,6 @@ scale = Vector2(0.855, 0.855)
 
 [node name="Spike2" parent="Objects/Spike_folder/Spikes_3" index="1" instance=ExtResource("3_o6swr")]
 position = Vector2(-271.148, 208.403)
-scale = Vector2(0.855, 0.855)
-
-[node name="Spike3" parent="Objects/Spike_folder/Spikes_3" index="2" instance=ExtResource("3_o6swr")]
-position = Vector2(-271.148, 179.832)
-rotation = -3.14159
-scale = Vector2(0.855, 0.855)
-
-[node name="Spike4" parent="Objects/Spike_folder/Spikes_3" index="3" instance=ExtResource("3_o6swr")]
-position = Vector2(-257.703, 179.832)
-rotation = -3.14159
 scale = Vector2(0.855, 0.855)
 
 [node name="Spikes_4" type="Node2D" parent="Objects/Spike_folder" index="3"]
@@ -332,17 +312,7 @@ lifetime = 6.95
 fixed_fps = 60
 collision_base_size = 0.0
 
-[node name="GPUParticles2D4" type="GPUParticles2D" parent="." index="10"]
-z_index = 2
-position = Vector2(-404.53, 20.4802)
-amount = 5
-sub_emitter = NodePath(".")
-process_material = SubResource("ParticleProcessMaterial_jwrs5")
-lifetime = 6.95
-fixed_fps = 60
-collision_base_size = 0.0
-
-[node name="GPUParticles2D5" type="GPUParticles2D" parent="." index="11"]
+[node name="GPUParticles2D5" type="GPUParticles2D" parent="." index="10"]
 z_index = 2
 position = Vector2(-946, 613)
 amount = 2
@@ -352,13 +322,13 @@ lifetime = 1.15
 fixed_fps = 60
 collision_base_size = 0.0
 
-[node name="GPUParticles2D2" type="GPUParticles2D" parent="." index="12"]
+[node name="GPUParticles2D2" type="GPUParticles2D" parent="." index="11"]
 position = Vector2(-232, -195)
 process_material = SubResource("ParticleProcessMaterial_7hdol")
 lifetime = 0.78
 fixed_fps = 60
 
-[node name="GPUParticles2D6" type="GPUParticles2D" parent="." index="13"]
+[node name="GPUParticles2D6" type="GPUParticles2D" parent="." index="12"]
 position = Vector2(-280, -195)
 process_material = SubResource("ParticleProcessMaterial_7hdol")
 lifetime = 0.78
@@ -436,7 +406,7 @@ color = Color(0.913725, 0.223529, 0.552941, 1)
 energy = 2.6
 texture = ExtResource("9_5428i")
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="." index="16"]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." index="15"]
 libraries = {
 "": SubResource("AnimationLibrary_tlbxd")
 }

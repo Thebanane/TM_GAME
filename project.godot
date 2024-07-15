@@ -26,6 +26,7 @@ buses/default_bus_layout=""
 [autoload]
 
 Global="*res://Objects_folder/Global/Global.gd"
+BackroungMusic="*res://Objects_folder/Global/backroung_music.tscn"
 
 [display]
 

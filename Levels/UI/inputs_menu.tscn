@@ -1,9 +1,8 @@
-[gd_scene load_steps=23 format=3 uid="uid://usw7l83g65bm"]
+[gd_scene load_steps=22 format=3 uid="uid://usw7l83g65bm"]
 
 [ext_resource type="Script" path="res://Levels/UI/inputs_menu.gd" id="1_qqru1"]
 [ext_resource type="FontFile" uid="uid://d1ejdlnb4xa3" path="res://Graphics/monogram/monogram/ttf/monogram-extended.ttf" id="1_xei17"]
 [ext_resource type="Texture2D" uid="uid://bds1jijgxic76" path="res://Graphics/Input/Computer/Q.png" id="2_0p0b4"]
-[ext_resource type="AudioStream" uid="uid://d067oh80xyv8k" path="res://Graphics/Music/Pack/6- The Veil of Night.mp3" id="3_c6n60"]
 [ext_resource type="Texture2D" uid="uid://blm8f6miyrhi2" path="res://Graphics/Input/Controller/LS_LEFT.png" id="3_x3tnw"]
 [ext_resource type="Texture2D" uid="uid://wdhb8np7ohrc" path="res://Graphics/Input/Computer/D.png" id="4_t3tp4"]
 [ext_resource type="AudioStream" uid="uid://cr4lvik50wcfr" path="res://Graphics/Music/UI_soundeffect/Minimalist13.mp3" id="4_yonv1"]
@@ -236,11 +235,6 @@ theme_override_fonts/font = ExtResource("1_xei17")
 theme_override_font_sizes/font_size = 57
 theme_override_styles/normal = SubResource("StyleBoxFlat_6fv34")
 text = "MAIN MENU"
-
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("3_c6n60")
-volume_db = -6.785
-autoplay = true
 
 [node name="Enter_sound" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("4_yonv1")

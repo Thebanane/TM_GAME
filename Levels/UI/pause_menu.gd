@@ -27,7 +27,6 @@ func resume():
 func restart():
 	resume()
 	get_tree().reload_current_scene()
-	
 
 
 #Les boutons et les actions qu'ils doivent faire si on les appuie dessus
@@ -41,7 +40,9 @@ func _on_main_menu_pressed():
 	$front_screen.visible = true
 	$AnimationPlayer.play("transition")
 
+
 func _on_animation_player_animation_finished(anim_name):
 	if anim_name == "transition" :
 		var main_menu = load("res://Levels/UI/main_menu.tscn")
+		BackroungMusic.stop()
 		get_tree().change_scene_to_packed(main_menu)

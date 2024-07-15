@@ -7,8 +7,7 @@ func _ready():
 		$VBoxContainer/OptionButton.selected = 1
 	else : 
 		$VBoxContainer/OptionButton.selected = 0
-	
-	$AudioStreamPlayer.play(Global.music_intro_position)
+
 	$VBoxContainer/OptionButton.grab_focus()
 		
 
@@ -29,5 +28,4 @@ func _on_option_button_item_selected(index):
 
 
 func _on_quit_pressed():
-	Global.music_intro_position = $AudioStreamPlayer.get_playback_position()
 	get_tree().change_scene_to_file("res://Levels/UI/main_menu.tscn")

@@ -1,7 +1,7 @@
 extends Control
 
 func _ready():
-	$AudioStreamPlayer.play(Global.music_intro_position)
+	BackroungMusic.play_music_menu()
 	get_tree().paused = false
 	if not Global.has_played_once : 
 		var tween = create_tween()
@@ -12,11 +12,8 @@ func _ready():
 	else : 
 		$VBoxContainer.modulate = Color('ffffff')
 		$Label.modulate = Color('ffffff')
-	
 
 	$"VBoxContainer/New game".grab_focus()
-
-
 
 
 func _process(_delta):
@@ -49,7 +46,7 @@ func _on_quit_pressed():
 	$Front_transion.visible = true
 	var tween = create_tween()
 	var tween2 = create_tween()
-	tween2.tween_property($AudioStreamPlayer,"volume_db",-60, 2.5 )
+	tween2.tween_property(BackroungMusic,"volume_db",-60, 2.5 )
 	tween.tween_property($Front_transion,"color", Color(0, 0, 0), 1.5)
 	$VBoxContainer.visible = false
 	await get_tree().create_timer(2).timeout
@@ -57,17 +54,14 @@ func _on_quit_pressed():
 
 #L'option
 func _on_button_pressed():
-	Global.music_intro_position = $AudioStreamPlayer.get_playback_position()
 	get_tree().change_scene_to_file("res://Levels/UI/options.tscn")
 
 #Les credits
 func _on_credits_pressed():
-	Global.music_intro_position = $AudioStreamPlayer.get_playback_position()
 	get_tree().change_scene_to_file("res://Levels/UI/credits.tscn")
 
 #Les controls
 func _on_controls_pressed():
-	Global.music_intro_position = $AudioStreamPlayer.get_playback_position()
 	get_tree().change_scene_to_file("res://Levels/UI/inputs_menu.tscn")
 
 
@@ -79,9 +73,11 @@ func _on_peace_pressed():
 	var tween = create_tween()
 	var tween2 = create_tween()
 	tween.tween_property($Front_transion,"color", Color(0, 0, 0), 2 )
-	tween2.tween_property($AudioStreamPlayer,"volume_db",-60, 2.5 )
+	tween2.tween_property(BackroungMusic, "volume_db", -60, 2.5)
 	$VBoxContainer2.visible = false
 	await get_tree().create_timer(3.5).timeout
+	
+	
 	get_tree().change_scene_to_file("res://Levels/UI/introduction.tscn")
 	
 #Si le mode choisi est normal, alors Global.mode = 'hard' ce qui va me permettre dans le fichier de levelparent de définir la mort	
@@ -92,9 +88,11 @@ func _on_hardcore_pressed():
 	var tween = create_tween()
 	var tween2 = create_tween()
 	tween.tween_property($Front_transion,"color", Color(0, 0, 0), 2 )
-	tween2.tween_property($AudioStreamPlayer,"volume_db",-60, 2.5 )
+	tween2.tween_property(BackroungMusic, "volume_db", -60, 2.5)
 	$VBoxContainer2.visible = false
 	await get_tree().create_timer(3.5).timeout
+
+	BackroungMusic.stop()
 	get_tree().change_scene_to_file("res://Levels/UI/introduction.tscn")
 	
 

@@ -1,11 +1,15 @@
 D:/MementoMori
-C:/Program Files (x86)/Windows Kits/10/App Certification Kit
-res://Graphics
-res://Levels/Levels
 res://Levels/UI
+res://Levels/Levels
+res://Objects_folder/Player
+D:/TM/TM_GAME/Levels/UI
+D:/TM/TM_GAME/Objects_folder/Player
+res://Objects_folder/Global
+D:/TM/TM_GAME/Objects_folder/Global
+res://Graphics
+C:/Program Files (x86)/Windows Kits/10/App Certification Kit
 D:/
 res://
-res://Objects_folder/Player
 D:/TM_Movie
 res://Levels/Level_parents
 res://Objects_folder/Objet_interaction

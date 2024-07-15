@@ -1,9 +1,6 @@
 res://Levels/Level_parents/level_parents.tscn
-res://Levels/Levels/safe_1.tscn
-res://Levels/UI/First_dialogue.gd
+res://Objects_folder/Player/Player.tscn
 res://Levels/Levels/Level_1.gd
-res://Levels/Levels/level_2.gd
-res://Levels/Levels/level_3.gd
-res://Levels/Levels/level_4.gd
-res://Levels/Levels/level_2.tscn
-res://Levels/Level_parents/level_parents.gd
+res://Levels/Levels/level_1.tscn
+res://Levels/UI/pause_menu.gd
+res://Levels/UI/pause_menu.tscn

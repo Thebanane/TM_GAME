@@ -41,10 +41,10 @@ tracks/1/path = NodePath("CanvasLayer/Timer:visible")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(2.1),
-"transitions": PackedFloat32Array(1),
+"times": PackedFloat32Array(0, 2.1),
+"transitions": PackedFloat32Array(1, 1),
 "update": 1,
-"values": [true]
+"values": [false, true]
 }
 tracks/2/type = "value"
 tracks/2/imported = false
@@ -65,10 +65,10 @@ tracks/3/path = NodePath("Front:visible")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
-"times": PackedFloat32Array(1.1),
-"transitions": PackedFloat32Array(1),
+"times": PackedFloat32Array(0, 1.1),
+"transitions": PackedFloat32Array(1, 1),
 "update": 1,
-"values": [false]
+"values": [true, false]
 }
 tracks/4/type = "value"
 tracks/4/imported = false
@@ -77,10 +77,10 @@ tracks/4/path = NodePath("Player:visible")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/keys = {
-"times": PackedFloat32Array(3.1),
-"transitions": PackedFloat32Array(1),
+"times": PackedFloat32Array(0, 3.1),
+"transitions": PackedFloat32Array(1, 1),
 "update": 1,
-"values": [true]
+"values": [false, true]
 }
 tracks/5/type = "method"
 tracks/5/imported = false
@@ -100,6 +100,20 @@ tracks/5/keys = {
 }, {
 "args": [0.0],
 "method": &"play"
+}]
+}
+tracks/6/type = "method"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath(".")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(4.7),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"play_music"
 }]
 }
 
@@ -191,9 +205,6 @@ limit_top = 370
 limit_right = 180
 limit_bottom = 520
 
-[node name="AudioStreamPlayer" parent="Player" index="9"]
-process_mode = 1
-
 [node name="GPUParticles2D" type="GPUParticles2D" parent="." index="6"]
 z_index = 2
 position = Vector2(-63, 395)
@@ -214,6 +225,7 @@ offset_bottom = 587.0
 color = Color(0, 0, 0, 1)
 
 [node name="Exit" parent="lights" index="1"]
+visible = true
 position = Vector2(196.403, 491.734)
 scale = Vector2(1.6375, 1.50665)
 

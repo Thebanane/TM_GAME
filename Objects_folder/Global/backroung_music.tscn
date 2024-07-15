@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://bjyjgsb31cbbe"]
+
+[ext_resource type="Script" path="res://Objects_folder/Global/backroung_music.gd" id="1_0olyk"]
+
+[node name="backroung_music" type="AudioStreamPlayer"]
+process_mode = 3
+volume_db = -8.565
+script = ExtResource("1_0olyk")

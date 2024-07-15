@@ -1,4 +1,4 @@
-[gd_scene load_steps=32 format=3 uid="uid://hx1cfspeigh4"]
+[gd_scene load_steps=31 format=3 uid="uid://hx1cfspeigh4"]
 
 [ext_resource type="Script" path="res://Levels/Levels/level_4.gd" id="2_ooosv"]
 [ext_resource type="Texture2D" uid="uid://dlghhiohsvnhn" path="res://Graphics/Brush/brush046.png" id="3_n2spi"]
@@ -14,7 +14,6 @@
 [ext_resource type="Texture2D" uid="uid://cgyab8qmtupxh" path="res://Graphics/circle.png" id="12_inemo"]
 [ext_resource type="PackedScene" uid="uid://crmdvf5ppxtlj" path="res://Levels/UI/timer.tscn" id="13_spxm3"]
 [ext_resource type="PackedScene" uid="uid://80cvuthr36b6" path="res://Levels/UI/pause_menu.tscn" id="14_srtyv"]
-[ext_resource type="AudioStream" uid="uid://b4ckghyybgy1u" path="res://Graphics/Music/EuropaIce Extended.wav" id="15_kme11"]
 [ext_resource type="PackedScene" uid="uid://do8tfr7iyd0fy" path="res://Levels/UI/Floor_slide_pop_up.tscn" id="16_26cvp"]
 [ext_resource type="Texture2D" uid="uid://bdixm5pm27mjs" path="res://Graphics/Icones/Shadow/32/Exclamation-Mark.png" id="17_amfyx"]
 
@@ -1643,10 +1642,10 @@ z_index = 35
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -3177.0
-offset_top = -337.0
-offset_right = -1170.0
-offset_bottom = 28.0
+offset_left = -169.0
+offset_top = -122.0
+offset_right = 1838.0
+offset_bottom = 243.0
 grow_horizontal = 2
 grow_vertical = 2
 color = Color(0, 0, 0, 1)
@@ -1809,11 +1808,6 @@ limit_top = -290
 limit_right = 170
 limit_bottom = 40
 editor_draw_limits = true
-
-[node name="AudioStreamPlayer" type="AudioStreamPlayer2D" parent="Player"]
-stream = ExtResource("15_kme11")
-volume_db = -6.0
-autoplay = true
 
 [node name="Camera_change" type="Area2D" parent="."]
 

@@ -155,10 +155,12 @@ func _physics_process(delta):
 	var axis = round(Input.get_axis("left","right"))
 
 #On appelle de toutes les fonction permettant au joueur de bouger
-	movement_dash(direction, axis)
-	jump()
-	wall_slide(delta)
-	floor_slide()
+	if Global.can_move :
+		movement_dash(direction, axis)
+		jump()
+		wall_slide(delta)
+		floor_slide()
+	
 	animation(target_velocity)
 
 #velocity est la variable interne de la vitesse du joueur et prendra la valeur de target velocity permettant ainsi de bouger et de sauter
