@@ -1,4 +1,4 @@
-[gd_scene load_steps=31 format=3 uid="uid://hx1cfspeigh4"]
+[gd_scene load_steps=33 format=3 uid="uid://hx1cfspeigh4"]
 
 [ext_resource type="Script" path="res://Levels/Levels/level_4.gd" id="2_ooosv"]
 [ext_resource type="Texture2D" uid="uid://dlghhiohsvnhn" path="res://Graphics/Brush/brush046.png" id="3_n2spi"]
@@ -15,6 +15,7 @@
 [ext_resource type="PackedScene" uid="uid://crmdvf5ppxtlj" path="res://Levels/UI/timer.tscn" id="13_spxm3"]
 [ext_resource type="PackedScene" uid="uid://80cvuthr36b6" path="res://Levels/UI/pause_menu.tscn" id="14_srtyv"]
 [ext_resource type="PackedScene" uid="uid://do8tfr7iyd0fy" path="res://Levels/UI/Floor_slide_pop_up.tscn" id="16_26cvp"]
+[ext_resource type="AudioStream" uid="uid://doivhjt128oqe" path="res://Graphics/Music/UI_soundeffect/Abstract1.mp3" id="17_3lixj"]
 [ext_resource type="Texture2D" uid="uid://bdixm5pm27mjs" path="res://Graphics/Icones/Shadow/32/Exclamation-Mark.png" id="17_amfyx"]
 
 [sub_resource type="CanvasTexture" id="CanvasTexture_4mbrx"]
@@ -1597,18 +1598,32 @@ color = Color(0, 0.611765, 0.611765, 0.847059)
 
 [sub_resource type="Animation" id="Animation_hwcq2"]
 resource_name = "entrance"
-length = 0.6
+length = 0.5
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Transition_rect:position")
+tracks/0/path = NodePath("CanvasLayer/Front:visible")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.4),
+"times": PackedFloat32Array(0, 0.5),
 "transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector2(-169, -122), Vector2(170, -125)]
+"update": 1,
+"values": [true, false]
+}
+tracks/1/type = "method"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Tick_sound")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.5),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [0.0],
+"method": &"play"
+}]
 }
 
 [sub_resource type="Animation" id="Animation_imu26"]
@@ -1617,18 +1632,48 @@ length = 0.5
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Transition_rect:position")
+tracks/0/path = NodePath("CanvasLayer/Front:visible")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.4),
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/1/type = "method"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Tick_sound")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [0.0],
+"method": &"play"
+}]
+}
+
+[sub_resource type="Animation" id="Animation_mkfl6"]
+resource_name = "door"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Objects/Door_entrance:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Vector2(-3177, -330), Vector2(-1037, -330)]
+"values": [Vector2(161, 31), Vector2(161, -6)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_bfiuq"]
 _data = {
+"door": SubResource("Animation_mkfl6"),
 "entrance": SubResource("Animation_hwcq2"),
 "level_5": SubResource("Animation_imu26")
 }
@@ -1642,10 +1687,10 @@ z_index = 35
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -169.0
-offset_top = -122.0
-offset_right = 1838.0
-offset_bottom = 243.0
+offset_left = -3177.0
+offset_top = -330.0
+offset_right = -1170.0
+offset_bottom = 35.0
 grow_horizontal = 2
 grow_vertical = 2
 color = Color(0, 0, 0, 1)
@@ -1741,7 +1786,7 @@ scale = Vector2(1.335, 1.335)
 
 [node name="Door_entrance" parent="Objects" instance=ExtResource("8_nneij")]
 z_index = 1
-position = Vector2(160, 31)
+position = Vector2(161, 31)
 rotation = 3.14159
 scale = Vector2(1.39, 1.39)
 
@@ -1825,7 +1870,7 @@ shape = SubResource("RectangleShape2D_fnkf4")
 [node name="level_change" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="level_change"]
-position = Vector2(-1005, -4)
+position = Vector2(-1008.46, -4)
 shape = SubResource("RectangleShape2D_g3cjh")
 
 [node name="PopUp" type="Area2D" parent="."]
@@ -1924,6 +1969,16 @@ collision_base_size = 0.0
 [node name="PopUp" parent="CanvasLayer" instance=ExtResource("16_26cvp")]
 visible = false
 
+[node name="Front" type="ColorRect" parent="CanvasLayer"]
+process_mode = 3
+z_index = 35
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
 [node name="Sprite2D" type="Sprite2D" parent="."]
 visible = false
 z_index = 2
@@ -1942,6 +1997,13 @@ texture = ExtResource("12_inemo")
 libraries = {
 "": SubResource("AnimationLibrary_bfiuq")
 }
+
+[node name="Tick_sound" type="AudioStreamPlayer2D" parent="."]
+process_mode = 3
+stream = ExtResource("17_3lixj")
+volume_db = 4.06
+pitch_scale = 0.3
+attenuation = 0.353553
 
 [connection signal="switch_on" from="Objects/Switch" to="." method="_on_switch_switch_on"]
 [connection signal="body_entered" from="Camera_change" to="." method="_on_camera_change_body_entered"]

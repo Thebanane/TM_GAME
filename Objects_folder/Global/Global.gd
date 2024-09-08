@@ -14,3 +14,5 @@ var has_played_once: bool = false
 var mode: String
 var Pop_can_show: bool = false
 var dash_pop : bool
+
+var timer_off: bool = false

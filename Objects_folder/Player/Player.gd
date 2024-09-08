@@ -1,7 +1,7 @@
 extends CharacterBody2D
 
 #variable vitesse (@export signifie qu'on place la variable dans l'inspecteur pour pouvoir modifer sans rouvrir le script)
-@export var speed = 350
+@export var speed = 300
 
 #variables utilisées dans la fonction movement_dash
 var dashspeed
@@ -14,7 +14,7 @@ var dash_direction: Vector2 = Vector2.ZERO
 
 #variables utilisées dans la fonction jump et qui déterminera la puissance du saut et de la gravité
 @export var gravity = 35
-@export var jump_impulse = 450
+@export var jump_impulse = 460
 var can_double_jump: bool = false
 var can_jump : bool
 

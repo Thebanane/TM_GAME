@@ -1,7 +1,6 @@
 extends Label
 #Code d'un youtubeur du nom de ...
 
-
 var time
 #Global.level_time
 var timer_on = true 
@@ -13,17 +12,18 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	if timer_on and time > 0.016:
-		time -= delta
-	else : 
-		timer_on = false
-		time = 0
-		Global.must_die = true
-		
-	if time <= 2 : 
-		$".".modulate = Color('fb004b')
-	else : 
-		$".".modulate = Color('ffffff')
+	if not Global.timer_off:
+		if timer_on and time > 0.016:
+			time -= delta
+		else : 
+			timer_on = false
+			time = 0
+			Global.must_die = true
+			
+		if time <= 2 : 
+			$".".modulate = Color('fb004b')
+		else : 
+			$".".modulate = Color('ffffff')
 			
 		
 	var sec = fmod(time,60)

@@ -26,6 +26,7 @@ func _ready():
 #On initialise toutes les variables nécessaires et on lance la petite animation de transition de scène
 func _on_area_2d_body_entered(body):
 	if body == $Player : 
+		Global.timer_off = true
 		$AnimationPlayer.play("level_2")
 
 
@@ -38,6 +39,6 @@ func _on_animation_player_animation_finished(anim_name):
 
 	if anim_name == "level_2": 
 		var level_2 = load("res://Levels/Levels/level_2.tscn")
-		Global.level_time = 6
+		Global.level_time = 7
 		Global.has_played_once = false
 		get_tree().change_scene_to_packed(level_2)

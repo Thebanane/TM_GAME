@@ -15,10 +15,12 @@ func player_death():
 		if Global.must_die: 
 			get_tree().reload_current_scene()
 			Global.must_die = false
+			$CanvasLayer/Front.visible = true
 	elif Global.mode == 'hard':
 		if Global.must_die: 
 			get_tree().change_scene_to_file("res://Levels/UI/main_menu.tscn")
 			Global.must_die = false
+			$CanvasLayer/Front.visible = true
 
 
 func _ready():

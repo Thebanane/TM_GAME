@@ -3,16 +3,8 @@ extends LevelParent
 func _ready():
 	
 #Ici je dois flip le sprite du joueur sinon il regarde dans la mauvaise direction à l'entrée du jeu, ce qui n'est pas cohérent
-	$Player/Sprites_folder/girl_animation_sprites.flip_h = false
 	$AnimationPlayer.play("entrance")
-	if not Global.has_played_once :
-		var tween = create_tween()
-		tween.tween_property($Objects/Door_entrance, "position", Vector2(161,-6), 0.2)
-		Global.has_played_once = true
-	else :
-		$Objects/Door_entrance.position = Vector2(161,-6)
-
-
+	$Player/Sprites_folder/girl_animation_sprites.flip_h = false
 
 
 func _on_camera_change_body_entered(body):	
@@ -35,6 +27,7 @@ func _on_death_body_entered(body):
 
 func _on_level_change_body_entered(body):
 	if body == $Player: 
+		Global.timer_off = true
 		$AnimationPlayer.play("level_5")
 
 
@@ -52,6 +45,15 @@ func _on_pop_up_body_exited(_body):
 func _on_animation_player_animation_finished(anim_name):
 	if anim_name == "level_5": 
 		var level_5 = load("res://Levels/Levels/level_5.tscn")
-		Global.level_time = 12
+		Global.level_time = 13
 		Global.has_played_once = false
 		get_tree().change_scene_to_packed(level_5)
+	
+	if anim_name == 'entrance' :
+		Global.timer_off = false
+			
+		if not Global.has_played_once :
+			$AnimationPlayer.play("door")
+			Global.has_played_once = true
+		else :
+			$Objects/Door_entrance.position = Vector2(161,-6)

@@ -1553,15 +1553,6 @@ sources/0 = SubResource("TileSetAtlasSource_yyl1y")
 [node name="Level_parents" type="Node2D"]
 script = ExtResource("1_wc6bw")
 
-[node name="Transition_rect" type="ColorRect" parent="."]
-z_index = 35
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-color = Color(0, 0, 0, 1)
-
 [node name="Objects" type="Sprite2D" parent="."]
 
 [node name="Backround" type="Sprite2D" parent="Objects"]
@@ -1622,14 +1613,14 @@ editor_draw_limits = true
 [node name="lights" type="Node2D" parent="."]
 
 [node name="CanvasModulate" type="CanvasModulate" parent="lights"]
-color = Color(0.388235, 0.419608, 0.494118, 1)
+color = Color(0.486275, 0.521569, 0.6, 1)
 
 [node name="Exit" type="PointLight2D" parent="lights"]
 visible = false
 position = Vector2(190.972, 489.905)
 scale = Vector2(1.6375, 1.4375)
 color = Color(1, 1, 0, 1)
-energy = 5.3
+energy = 3.4
 texture = ExtResource("7_ck68i")
 texture_scale = 0.1
 
@@ -1638,3 +1629,13 @@ texture_scale = 0.1
 [node name="Timer" parent="CanvasLayer" instance=ExtResource("7_qmf6j")]
 
 [node name="Pause_menu" parent="CanvasLayer" instance=ExtResource("6_breiy")]
+
+[node name="Front" type="ColorRect" parent="CanvasLayer"]
+process_mode = 3
+z_index = 35
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)

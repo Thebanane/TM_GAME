@@ -3,6 +3,7 @@ var popup: bool = false
 
 #Lors de la première frame (seulement la première), on force l'image du joueur à tourner car sinon ce n'est pas cohérent que le joueur regarde le mur
 func _ready():
+	Global.timer_off = false
 	$Player/Sprites_folder/girl_animation_sprites.flip_h = false
 	$AnimationPlayer.play("entrance")
 
@@ -26,6 +27,7 @@ func _on_camera_in_body_entered(body):
 
 func _on_next_level_body_entered(body):
 	if body == $Player : 
+		Global.timer_off = true
 		$AnimationPlayer.play("level_4")
 
 #L'animation de la porte du début du niveau 
@@ -44,7 +46,6 @@ func _on_door_animation_body_entered(body):
 func _on_death_zones_body_entered(body):
 	if body == $Player : 
 		Global.must_die = true
-
 
 
 func _on_area_2d_body_entered(body):
@@ -71,6 +72,6 @@ func _on_area_2d_2_body_exited(_body):
 func _on_animation_player_animation_finished(anim_name):
 	if anim_name == "level_4":
 		var level_4 = load("res://Levels/Levels/level_4.tscn")
-		Global.level_time = 9
+		Global.level_time = 10
 		Global.has_played_once = false
 		get_tree().change_scene_to_packed(level_4)
