@@ -1,17 +1,19 @@
 extends Control
 
+func skip(): 
+	if Input.is_action_just_pressed("jump"): 
+		get_tree().change_scene_to_file("res://Levels/UI/main_menu.tscn")
 
 #Animation de lancement de mon jeu avec mon nom
 func _ready():
-	var tween = create_tween()
-	tween.tween_property($Label,"modulate",Color('ffffff'),3)
-	await get_tree().create_timer(4).timeout
-	var tween2 = create_tween()
-	tween2.tween_property($Label,"modulate",Color('ffffff00'),2)
-	await get_tree().create_timer(2.5).timeout
-	get_tree().change_scene_to_file("res://Levels/UI/main_menu.tscn")
+	$AnimationPlayer.play("Entrance")
 
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _on_animation_player_animation_finished(anim_name):
+	if anim_name == 'Entrance' : 
+		get_tree().change_scene_to_file("res://Levels/UI/main_menu.tscn")
+
+
 func _process(_delta):
-	pass
+	if $AnimationPlayer.is_playing(): 
+		skip()

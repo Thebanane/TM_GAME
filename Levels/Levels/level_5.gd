@@ -4,9 +4,7 @@ func _ready():
 	$AnimationPlayer.play("entrance")
 	$Player/Sprites_folder/girl_animation_sprites.flip_h = false
 
-		
-	
-	
+
 func _on_switch_switch_on():
 	var tween = create_tween()
 	tween.tween_property($Objects/Door_exit, "position", Vector2(-1086,584), 0.5)

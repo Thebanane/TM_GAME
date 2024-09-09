@@ -1,10 +1,10 @@
+Label
+AnimationPlayer
 AudioStreamPlayer
 TextureRect
-Label
 VBoxContainer
 GridContainer
 HBoxContainer
-AnimationPlayer
 AnimationTree
 ColorRect
 CanvasModulate

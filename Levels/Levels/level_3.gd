@@ -72,6 +72,6 @@ func _on_area_2d_2_body_exited(_body):
 func _on_animation_player_animation_finished(anim_name):
 	if anim_name == "level_4":
 		var level_4 = load("res://Levels/Levels/level_4.tscn")
-		Global.level_time = 10
+		Global.level_time = 10.5
 		Global.has_played_once = false
 		get_tree().change_scene_to_packed(level_4)

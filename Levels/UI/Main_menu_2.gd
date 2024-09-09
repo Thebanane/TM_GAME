@@ -1,27 +1,30 @@
 extends Control
 
+@export var can_make_sound: bool = false
+
+func skip(): 
+	$AnimationPlayer.stop()
+	$AnimationPlayer.play("skip")
+
+func tick_sound(variable): 
+	#Le son de mouvement 
+	if variable :
+		if Input.is_action_just_pressed('ui_down') or Input.is_action_just_pressed('ui_up'):
+			$Tick_sound.play()
+
 func _ready():
+	$".".visible = false
 	BackroungMusic.play_music_menu()
-	get_tree().paused = false
 	if not Global.has_played_once : 
-		var tween = create_tween()
-		tween.tween_property($Label,"modulate",Color('ffffff'), 2)
-		tween.tween_property($VBoxContainer,"modulate",Color('ffffff'), 2)
+		$AnimationPlayer.play("Entrance")
 		Global.has_played_once = true
-		await get_tree().create_timer(4).timeout
 	else : 
-		$VBoxContainer.modulate = Color('ffffff')
-		$Label.modulate = Color('ffffff')
-
-	$"VBoxContainer/New game".grab_focus()
-
+		skip()
 
 func _process(_delta):
-#Le son de mouvement 
-	if Input.is_action_just_pressed('ui_down') or Input.is_action_just_pressed('ui_up'):
-		$Tick_sound.play()
-	if Input.is_action_just_pressed("ui_accept") :
-		$Enter_sound.play()
+	if Input.is_action_just_pressed("jump") :
+		skip()
+	tick_sound(can_make_sound)
 
 #Lorsque je suis sur le mode hardcore, le petit texte explicatif s'affiche
 	if $VBoxContainer2/Hardcore.is_hovered() or $VBoxContainer2/Hardcore.has_focus() :
@@ -31,25 +34,14 @@ func _process(_delta):
 
 #Le retour en arrière	
 	if Input.is_action_just_pressed("ui_cancel"): 
-		$VBoxContainer.visible = true
-		$VBoxContainer2. visible = false
-		$"VBoxContainer/New game".grab_focus()
+		$AnimationPlayer.play("ReturnToMainMenu")
 
 #L'affichage des mods de jeu
 func _on_new_game_pressed():
-	$VBoxContainer.visible = false
-	$VBoxContainer2. visible = true
-	$VBoxContainer2/Peace.grab_focus()
+	$AnimationPlayer.play("Transition1")
 
 #Lorsque je veux quitter le jeu
 func _on_quit_pressed():
-	$Front_transion.visible = true
-	var tween = create_tween()
-	var tween2 = create_tween()
-	tween2.tween_property(BackroungMusic,"volume_db",-60, 2.5 )
-	tween.tween_property($Front_transion,"color", Color(0, 0, 0), 1.5)
-	$VBoxContainer.visible = false
-	await get_tree().create_timer(2).timeout
 	get_tree().quit()
 
 #L'option
@@ -68,32 +60,28 @@ func _on_controls_pressed():
 #Si le mode choisi est normal, alors Global.mode = 'normal'	ce qui va me permettre dans le fichier de levelparent de définir la mort
 func _on_peace_pressed():
 	Global.mode = 'normal'	
-	$Front_transion.visible = true
-	get_tree().paused = true
-	var tween = create_tween()
-	var tween2 = create_tween()
-	tween.tween_property($Front_transion,"color", Color(0, 0, 0), 2 )
-	tween2.tween_property(BackroungMusic, "volume_db", -60, 2.5)
-	$VBoxContainer2.visible = false
+	
+	var tween = create_tween()	
+	$AnimationPlayer.play("TransitionToGame")
+	tween.tween_property(BackroungMusic, "volume_db", -60, 3.5)
+	
 	await get_tree().create_timer(3.5).timeout
-	
-	
+	BackroungMusic.stop()
 	get_tree().change_scene_to_file("res://Levels/UI/introduction.tscn")
 	
 #Si le mode choisi est normal, alors Global.mode = 'hard' ce qui va me permettre dans le fichier de levelparent de définir la mort	
 func _on_hardcore_pressed():
-	Global.mode = 'hard'	
-	$Front_transion.visible = true
-	get_tree().paused = true
-	var tween = create_tween()
-	var tween2 = create_tween()
-	tween.tween_property($Front_transion,"color", Color(0, 0, 0), 2 )
-	tween2.tween_property(BackroungMusic, "volume_db", -60, 2.5)
-	$VBoxContainer2.visible = false
+	Global.mode = 'hard'
+	
+	var tween = create_tween()	
+	$AnimationPlayer.play("TransitionToGame")
+	tween.tween_property(BackroungMusic, "volume_db", -60, 3.5)
+	
 	await get_tree().create_timer(3.5).timeout
-
 	BackroungMusic.stop()
 	get_tree().change_scene_to_file("res://Levels/UI/introduction.tscn")
 	
 
-
+func _on_animation_player_animation_finished(anim_name):
+	if anim_name == "Entrance" :
+		can_make_sound = true
