@@ -7,7 +7,7 @@
 [ext_resource type="AudioStream" uid="uid://doivhjt128oqe" path="res://Graphics/Music/UI_soundeffect/Abstract1.mp3" id="5_4xmkg"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_v5exj"]
-size = Vector2(11, 42)
+size = Vector2(22.44, 42)
 
 [sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_md1jo"]
 particle_flag_disable_z = true
@@ -212,11 +212,10 @@ visible = false
 [node name="Area2D" type="Area2D" parent="." index="3"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" index="0"]
-position = Vector2(200.005, 490)
+position = Vector2(190.78, 490)
 shape = SubResource("RectangleShape2D_v5exj")
 
 [node name="Player" parent="." index="4"]
-process_mode = 3
 visible = false
 z_index = 2
 position = Vector2(-6, 495.025)

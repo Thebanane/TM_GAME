@@ -12,3 +12,5 @@ res://Levels/UI/MyCredit.gd
 res://Levels/UI/introduction.tscn
 res://Levels/UI/Main_menu_2.gd
 res://Levels/UI/First_dialogue.gd
+res://Levels/Levels/level_2.tscn
+res://Levels/UI/pause_menu.tscn

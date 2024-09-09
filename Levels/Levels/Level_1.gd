@@ -7,20 +7,21 @@ func play_music():
 
 func _ready():
 	Global.can_move = false
+	Global.timer_off = true
 #Si c'est la première fois qu'on entre dans cette scène, on fait l'animation
 	if not Global.has_played_once : 
-		get_tree().paused = true
 		$AnimationPlayer.play("Transition")
 
 #Si ce n'est pas la première fois qu'on est sur cette scène (signifiant que le joueur est mort au moins une fois), je ne lance pas l'animation mais dois placer certains éléments à d'autres endroits pour que ça coincide avec la fin de l'animation
 	else : 
 		$Objects/Door_entrance.position = Vector2(192,446)
-		$Front.color = Color('00000000')
+		$CanvasLayer/Front.color = Color('00000000')
 		$CanvasLayer/Timer.modulate = Color('ffffff')
 		$lights/Exit.visible = true
 		$Player.visible = true
 		$CanvasLayer/Timer.visible = true
 		Global.can_move = true
+		Global.timer_off = false
 		
 #Lors le joueur entre dans cette zone, on passe à la scène suivant, c'est à dire le level 2.
 #On initialise toutes les variables nécessaires et on lance la petite animation de transition de scène
@@ -35,8 +36,9 @@ func _on_area_2d_body_entered(body):
 func _on_animation_player_animation_finished(anim_name):
 	if anim_name == "Transition" :
 		Global.has_played_once = true
-		get_tree().paused = false	
-
+		Global.timer_off = false
+		Global.can_move = true
+		
 	if anim_name == "level_2": 
 		var level_2 = load("res://Levels/Levels/level_2.tscn")
 		Global.level_time = 7.5
