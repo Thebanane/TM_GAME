@@ -22,7 +22,7 @@ func _ready():
 		skip()
 
 func _process(_delta):
-	if Input.is_action_just_pressed("jump") :
+	if Input.is_action_just_pressed("jump") and not get_tree().paused:
 		skip()
 	tick_sound(can_make_sound)
 
@@ -33,7 +33,7 @@ func _process(_delta):
 		$Label2.visible = false
 
 #Le retour en arrière	
-	if Input.is_action_just_pressed("ui_cancel"): 
+	if Input.is_action_just_pressed("ui_cancel") and not get_tree().paused: 
 		$AnimationPlayer.play("ReturnToMainMenu")
 
 #L'affichage des mods de jeu
@@ -56,31 +56,34 @@ func _on_credits_pressed():
 func _on_controls_pressed():
 	get_tree().change_scene_to_file("res://Levels/UI/inputs_menu.tscn")
 
-
 #Si le mode choisi est normal, alors Global.mode = 'normal'	ce qui va me permettre dans le fichier de levelparent de définir la mort
 func _on_peace_pressed():
 	Global.mode = 'normal'	
 	
+	get_tree().paused = true
 	var tween = create_tween()	
 	$AnimationPlayer.play("TransitionToGame")
 	tween.tween_property(BackroungMusic, "volume_db", -60, 3.5)
 	
-	await get_tree().create_timer(3.5).timeout
+	await get_tree().create_timer(4.5).timeout
 	BackroungMusic.stop()
+	get_tree().paused = false
 	get_tree().change_scene_to_file("res://Levels/UI/introduction.tscn")
 	
 #Si le mode choisi est normal, alors Global.mode = 'hard' ce qui va me permettre dans le fichier de levelparent de définir la mort	
 func _on_hardcore_pressed():
 	Global.mode = 'hard'
 	
+	get_tree().paused = true
 	var tween = create_tween()	
 	$AnimationPlayer.play("TransitionToGame")
 	tween.tween_property(BackroungMusic, "volume_db", -60, 3.5)
 	
-	await get_tree().create_timer(3.5).timeout
+	await get_tree().create_timer(4.5).timeout
 	BackroungMusic.stop()
+	get_tree().paused = false
 	get_tree().change_scene_to_file("res://Levels/UI/introduction.tscn")
-	
+
 
 func _on_animation_player_animation_finished(anim_name):
 	if anim_name == "Entrance" :

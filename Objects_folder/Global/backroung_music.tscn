@@ -4,5 +4,4 @@
 
 [node name="backroung_music" type="AudioStreamPlayer"]
 process_mode = 3
-volume_db = -8.565
 script = ExtResource("1_0olyk")

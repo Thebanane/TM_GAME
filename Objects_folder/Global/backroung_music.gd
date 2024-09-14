@@ -12,7 +12,7 @@ func _play_music(music, sound) :
 	play()
 	
 func play_music_level() :
-	_play_music(level_music, -8.565)
+	_play_music(level_music, -12)
 	
 func play_music_menu():
-	_play_music(menu_music, -6.53)
+	_play_music(menu_music, -7)

@@ -39,7 +39,7 @@ tracks/0/keys = {
 
 [sub_resource type="Animation" id="Animation_0tdle"]
 resource_name = "level_3"
-length = 0.5
+length = 0.8
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -186,7 +186,7 @@ z_index = 1
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Objects/Death zones" index="0"]
 z_index = 1
-position = Vector2(190, 217)
+position = Vector2(190, 260.915)
 shape = SubResource("RectangleShape2D_b1adt")
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="Objects/Death zones" index="1"]

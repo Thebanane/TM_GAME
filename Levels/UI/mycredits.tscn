@@ -116,7 +116,7 @@ horizontal_alignment = 1
 
 [node name="Tick_sound" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("3_dufia")
-volume_db = 4.25
+volume_db = 5.5
 pitch_scale = 0.3
 attenuation = 0.353
 

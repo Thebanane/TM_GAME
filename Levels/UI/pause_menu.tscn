@@ -1,21 +1,22 @@
-[gd_scene load_steps=10 format=3 uid="uid://80cvuthr36b6"]
+[gd_scene load_steps=8 format=3 uid="uid://80cvuthr36b6"]
 
 [ext_resource type="Script" path="res://Levels/UI/pause_menu.gd" id="1_pgs5m"]
 [ext_resource type="FontFile" uid="uid://d1ejdlnb4xa3" path="res://Graphics/monogram/monogram/ttf/monogram-extended.ttf" id="1_wx85n"]
-[ext_resource type="AudioStream" uid="uid://c6mvch6knshy" path="res://Graphics/Music/UI_soundeffect/Minimalist7.mp3" id="3_873eo"]
-[ext_resource type="AudioStream" uid="uid://cr4lvik50wcfr" path="res://Graphics/Music/UI_soundeffect/Minimalist13.mp3" id="4_x2kfm"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_354nv"]
 bg_color = Color(0.0823529, 0.0823529, 0.0823529, 1)
+border_color = Color(0.0823529, 0.0823529, 0.0823529, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ysn17"]
 bg_color = Color(0.0823529, 0.0823529, 0.0823529, 1)
-border_width_left = 4
+border_width_left = 8
+border_width_right = 4
 border_color = Color(0.0823529, 0.0823529, 0.0823529, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8son6"]
 bg_color = Color(0.0823529, 0.0823529, 0.0823529, 1)
-border_width_left = 4
+border_width_left = 6
+border_width_right = 4
 border_color = Color(0.0823529, 0.0823529, 0.0823529, 1)
 
 [sub_resource type="Animation" id="Animation_xl3du"]
@@ -98,6 +99,7 @@ size_flags_vertical = 6
 theme_override_fonts/font = ExtResource("1_wx85n")
 theme_override_font_sizes/font_size = 29
 theme_override_styles/normal = SubResource("StyleBoxFlat_ysn17")
+action_mode = 0
 text = "RESTART"
 
 [node name="Main menu" type="Button" parent="PanelContainer/VBoxContainer"]
@@ -107,6 +109,7 @@ size_flags_vertical = 6
 theme_override_fonts/font = ExtResource("1_wx85n")
 theme_override_font_sizes/font_size = 29
 theme_override_styles/normal = SubResource("StyleBoxFlat_8son6")
+action_mode = 0
 text = "MAIN MENU"
 
 [node name="front_screen" type="ColorRect" parent="."]
@@ -117,15 +120,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-color = Color(0, 0, 0, 0)
-
-[node name="Tick_sound" type="AudioStreamPlayer2D" parent="."]
-process_mode = 3
-stream = ExtResource("3_873eo")
-
-[node name="Enter_sound" type="AudioStreamPlayer2D" parent="."]
-process_mode = 3
-stream = ExtResource("4_x2kfm")
+color = Color(0, 0, 0, 1)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {

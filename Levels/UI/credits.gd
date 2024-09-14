@@ -6,11 +6,6 @@ func _ready():
 	$VBoxContainer/Quit.grab_focus()
 
 
-#Lorsque j'appuie l'input que j'ai désigné comme "accept", un son se fait entendre
-func _process(_delta):
-	if Input.is_action_just_pressed("ui_accept") :
-		$Enter_sound.play()
-
 #Lorsque le joueur quitte, je récupère les "coordonées" de ma musique pour ensuite la jouer au main menu au bonne endroit. 
 func _on_quit_pressed():
 	get_tree().change_scene_to_file("res://Levels/UI/main_menu.tscn")

@@ -4,6 +4,7 @@ var popup: bool = false
 #Lors de la première frame (seulement la première), on force l'image du joueur à tourner car sinon ce n'est pas cohérent que le joueur regarde le mur
 func _ready():
 	Global.timer_off = false
+	Global.can_move = false
 	$Player/Sprites_folder/girl_animation_sprites.flip_h = false
 	$AnimationPlayer.play("entrance")
 
@@ -75,3 +76,6 @@ func _on_animation_player_animation_finished(anim_name):
 		Global.level_time = 10.5
 		Global.has_played_once = false
 		get_tree().change_scene_to_packed(level_4)
+	
+	if anim_name == 'entrance' :
+		Global.can_move = true

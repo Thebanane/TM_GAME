@@ -3,6 +3,7 @@ extends LevelParent
 func _ready():
 	$AnimationPlayer.play("entrance")
 	$Player/Sprites_folder/girl_animation_sprites.flip_h = false
+	Global.can_move = false
 
 
 func _on_switch_switch_on():
@@ -53,3 +54,4 @@ func _on_animation_player_animation_finished(anim_name):
 			Global.has_played_once = true
 		else :
 			$Objects/Door_entrance.position = Vector2(177,-5)
+		Global.can_move = true

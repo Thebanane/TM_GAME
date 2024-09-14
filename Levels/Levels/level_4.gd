@@ -5,6 +5,7 @@ func _ready():
 #Ici je dois flip le sprite du joueur sinon il regarde dans la mauvaise direction à l'entrée du jeu, ce qui n'est pas cohérent
 	$AnimationPlayer.play("entrance")
 	$Player/Sprites_folder/girl_animation_sprites.flip_h = false
+	Global.can_move = false
 
 
 func _on_camera_change_body_entered(body):	
@@ -51,6 +52,7 @@ func _on_animation_player_animation_finished(anim_name):
 	
 	if anim_name == 'entrance' :
 		Global.timer_off = false
+		Global.can_move = true
 			
 		if not Global.has_played_once :
 			$AnimationPlayer.play("door")

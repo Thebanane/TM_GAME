@@ -6,6 +6,11 @@
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_d0o1w"]
 bg_color = Color(0, 0, 0, 1)
+border_width_left = 6
+border_width_top = 6
+border_width_right = 6
+border_width_bottom = 6
+border_color = Color(0, 0, 0, 1)
 
 [node name="Credits" type="Control"]
 layout_mode = 3
@@ -41,7 +46,7 @@ layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 6
 theme_override_fonts/font = ExtResource("1_it2ss")
-theme_override_font_sizes/font_size = 115
+theme_override_font_sizes/font_size = 100
 text = "CREDITS"
 
 [node name="Character" type="HBoxContainer" parent="VBoxContainer"]
@@ -53,7 +58,7 @@ size_flags_vertical = 6
 texture_filter = 1
 layout_mode = 2
 theme_override_fonts/font = ExtResource("1_it2ss")
-theme_override_font_sizes/font_size = 33
+theme_override_font_sizes/font_size = 27
 text = "Character Sprite : "
 
 [node name="LinkButton" type="LinkButton" parent="VBoxContainer/Character"]
@@ -73,7 +78,7 @@ size_flags_vertical = 6
 texture_filter = 1
 layout_mode = 2
 theme_override_fonts/font = ExtResource("1_it2ss")
-theme_override_font_sizes/font_size = 33
+theme_override_font_sizes/font_size = 27
 text = "Backround Tileset :"
 
 [node name="LinkButton" type="LinkButton" parent="VBoxContainer/Bckrnd sprite"]
@@ -93,7 +98,7 @@ size_flags_vertical = 6
 texture_filter = 1
 layout_mode = 2
 theme_override_fonts/font = ExtResource("1_it2ss")
-theme_override_font_sizes/font_size = 33
+theme_override_font_sizes/font_size = 27
 text = "Decoration Tileset: "
 horizontal_alignment = 1
 
@@ -114,7 +119,7 @@ size_flags_vertical = 6
 texture_filter = 1
 layout_mode = 2
 theme_override_fonts/font = ExtResource("1_it2ss")
-theme_override_font_sizes/font_size = 33
+theme_override_font_sizes/font_size = 27
 text = "Main menu music : "
 
 [node name="LinkButton" type="LinkButton" parent="VBoxContainer/Music intro"]
@@ -134,7 +139,7 @@ size_flags_vertical = 6
 texture_filter = 1
 layout_mode = 2
 theme_override_fonts/font = ExtResource("1_it2ss")
-theme_override_font_sizes/font_size = 33
+theme_override_font_sizes/font_size = 27
 text = "In-Game music : "
 
 [node name="LinkButton" type="LinkButton" parent="VBoxContainer/Music game"]
@@ -154,7 +159,7 @@ size_flags_vertical = 6
 texture_filter = 1
 layout_mode = 2
 theme_override_fonts/font = ExtResource("1_it2ss")
-theme_override_font_sizes/font_size = 33
+theme_override_font_sizes/font_size = 27
 text = "UI sound : "
 
 [node name="LinkButton" type="LinkButton" parent="VBoxContainer/UI music"]
@@ -174,7 +179,7 @@ size_flags_vertical = 6
 texture_filter = 1
 layout_mode = 2
 theme_override_fonts/font = ExtResource("1_it2ss")
-theme_override_font_sizes/font_size = 33
+theme_override_font_sizes/font_size = 27
 text = "Text Font : "
 
 [node name="LinkButton" type="LinkButton" parent="VBoxContainer/Text font"]
@@ -194,7 +199,7 @@ size_flags_vertical = 6
 texture_filter = 1
 layout_mode = 2
 theme_override_fonts/font = ExtResource("1_it2ss")
-theme_override_font_sizes/font_size = 33
+theme_override_font_sizes/font_size = 27
 text = "Input image : "
 
 [node name="LinkButton" type="LinkButton" parent="VBoxContainer/Input"]
@@ -214,7 +219,7 @@ size_flags_vertical = 6
 texture_filter = 1
 layout_mode = 2
 theme_override_fonts/font = ExtResource("1_it2ss")
-theme_override_font_sizes/font_size = 33
+theme_override_font_sizes/font_size = 27
 text = "Icon : "
 
 [node name="LinkButton" type="LinkButton" parent="VBoxContainer/Icon"]

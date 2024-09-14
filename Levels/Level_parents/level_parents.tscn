@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://dl4uye3w6uwl5"]
+[gd_scene load_steps=14 format=3 uid="uid://dl4uye3w6uwl5"]
 
 [ext_resource type="PackedScene" uid="uid://cxocvyngllghe" path="res://Objects_folder/Player/Player.tscn" id="1_n8pkd"]
 [ext_resource type="Script" path="res://Levels/Level_parents/level_parents.gd" id="1_wc6bw"]
@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://80cvuthr36b6" path="res://Levels/UI/pause_menu.tscn" id="6_breiy"]
 [ext_resource type="Texture2D" uid="uid://cgyab8qmtupxh" path="res://Graphics/circle.png" id="7_ck68i"]
 [ext_resource type="PackedScene" uid="uid://crmdvf5ppxtlj" path="res://Levels/UI/timer.tscn" id="7_qmf6j"]
+[ext_resource type="AudioStream" uid="uid://doivhjt128oqe" path="res://Graphics/Music/UI_soundeffect/Abstract1.mp3" id="9_3web0"]
 
 [sub_resource type="CanvasTexture" id="CanvasTexture_cf0oq"]
 
@@ -1613,7 +1614,7 @@ editor_draw_limits = true
 [node name="lights" type="Node2D" parent="."]
 
 [node name="CanvasModulate" type="CanvasModulate" parent="lights"]
-color = Color(0.486275, 0.521569, 0.6, 1)
+color = Color(0.262745, 0.290196, 0.345098, 1)
 
 [node name="Exit" type="PointLight2D" parent="lights"]
 visible = false
@@ -1639,3 +1640,10 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 color = Color(0, 0, 0, 1)
+
+[node name="Death_sound" type="AudioStreamPlayer2D" parent="."]
+process_mode = 3
+stream = ExtResource("9_3web0")
+volume_db = 4.06
+pitch_scale = 0.3
+attenuation = 0.353553

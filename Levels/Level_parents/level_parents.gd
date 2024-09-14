@@ -12,15 +12,18 @@ func double_jump_effect():
 #Fonction qui va voir quelle mode le joueur a choisi et faire la mort qui le correspond		
 func player_death():
 	if Global.mode == 'normal' :
-		if Global.must_die: 
+		if Global.must_die:
+			$CanvasLayer/Front.visible = true 
 			get_tree().reload_current_scene()
 			Global.must_die = false
-			$CanvasLayer/Front.visible = true
+			
 	elif Global.mode == 'hard':
 		if Global.must_die: 
-			get_tree().change_scene_to_file("res://Levels/UI/main_menu.tscn")
-			Global.must_die = false
 			$CanvasLayer/Front.visible = true
+			Global.level_time = 3.5
+			get_tree().change_scene_to_file("res://Levels/Levels/level_1.tscn")
+			Global.must_die = false
+			
 
 
 func _ready():

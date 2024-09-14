@@ -3,6 +3,7 @@ extends LevelParent
 func _ready():
 #La solution que j'ai trouvé pour avoir la music qui se suit, c'est d'à chaque fois, prendre les coordonées de la musique avant le changement de scène et l'aplliquer à la nouvelle scène.	
 	Global.timer_off = false 
+	Global.can_move = false
 	$AnimationPlayer.play("level_3")
 
 func _on_area_2d_2_body_entered(body):
@@ -41,4 +42,5 @@ func _on_animation_player_animation_finished(anim_name):
 			Global.has_played_once = true
 		else :
 			$Objects/Door_entrance.position = Vector2(-82,-7)
+		Global.can_move = true
 		

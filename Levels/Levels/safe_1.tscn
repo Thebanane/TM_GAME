@@ -57,7 +57,6 @@ visible = true
 position = Vector2(329.607, 601.443)
 
 [node name="Player" parent="." index="4"]
-process_mode = 0
 visible = true
 position = Vector2(150, 495)
 

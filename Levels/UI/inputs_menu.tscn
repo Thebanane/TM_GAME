@@ -23,6 +23,11 @@
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6fv34"]
 bg_color = Color(0, 0, 0, 1)
+border_width_left = 13
+border_width_top = 3
+border_width_right = 8
+border_width_bottom = 3
+border_color = Color(0, 0, 0, 1)
 
 [node name="Inputs_menu" type="Control"]
 layout_mode = 3
@@ -60,7 +65,7 @@ layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 6
 theme_override_fonts/font = ExtResource("1_xei17")
-theme_override_font_sizes/font_size = 115
+theme_override_font_sizes/font_size = 100
 text = "CONTROLS"
 horizontal_alignment = 1
 
@@ -73,7 +78,7 @@ alignment = 1
 [node name="Label" type="Label" parent="VBoxContainer/left"]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("1_xei17")
-theme_override_font_sizes/font_size = 57
+theme_override_font_sizes/font_size = 44
 text = "MOVE LEFT:"
 
 [node name="TextureRect" type="TextureRect" parent="VBoxContainer/left"]
@@ -94,7 +99,7 @@ alignment = 1
 [node name="Label" type="Label" parent="VBoxContainer/right"]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("1_xei17")
-theme_override_font_sizes/font_size = 57
+theme_override_font_sizes/font_size = 44
 text = "MOVE RIGHT:"
 
 [node name="TextureRect" type="TextureRect" parent="VBoxContainer/right"]
@@ -115,7 +120,7 @@ alignment = 1
 [node name="Label" type="Label" parent="VBoxContainer/jump"]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("1_xei17")
-theme_override_font_sizes/font_size = 57
+theme_override_font_sizes/font_size = 44
 text = "JUMP:"
 
 [node name="TextureRect" type="TextureRect" parent="VBoxContainer/jump"]
@@ -141,7 +146,7 @@ alignment = 1
 [node name="Label" type="Label" parent="VBoxContainer/action"]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("1_xei17")
-theme_override_font_sizes/font_size = 57
+theme_override_font_sizes/font_size = 44
 text = "ACTIVATE:"
 
 [node name="TextureRect" type="TextureRect" parent="VBoxContainer/action"]
@@ -167,7 +172,7 @@ alignment = 1
 [node name="Label" type="Label" parent="VBoxContainer/dash"]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("1_xei17")
-theme_override_font_sizes/font_size = 57
+theme_override_font_sizes/font_size = 44
 text = "DASH:"
 
 [node name="TextureRect" type="TextureRect" parent="VBoxContainer/dash"]
@@ -193,7 +198,7 @@ alignment = 1
 [node name="Label" type="Label" parent="VBoxContainer/wall_slide"]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("1_xei17")
-theme_override_font_sizes/font_size = 57
+theme_override_font_sizes/font_size = 44
 text = "WALL SLIDE:"
 
 [node name="TextureRect" type="TextureRect" parent="VBoxContainer/wall_slide"]
@@ -214,7 +219,7 @@ alignment = 1
 [node name="Label" type="Label" parent="VBoxContainer/floor_slide"]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("1_xei17")
-theme_override_font_sizes/font_size = 57
+theme_override_font_sizes/font_size = 44
 text = "FLOOR SLIDE:"
 
 [node name="TextureRect" type="TextureRect" parent="VBoxContainer/floor_slide"]
@@ -234,6 +239,7 @@ size_flags_vertical = 6
 theme_override_fonts/font = ExtResource("1_xei17")
 theme_override_font_sizes/font_size = 57
 theme_override_styles/normal = SubResource("StyleBoxFlat_6fv34")
+action_mode = 0
 text = "MAIN MENU"
 
 [node name="Enter_sound" type="AudioStreamPlayer2D" parent="."]

@@ -16,8 +16,6 @@ func _ready():
 func _process(_delta):
 	if Input.is_action_just_pressed('ui_down') or Input.is_action_just_pressed('ui_up'):
 		$Tick_sound.play()
-	if Input.is_action_just_pressed("ui_accept") :
-		$Enter_sound.play()
 
 #Fonction qui va permettre de changer la taille de l'écrant
 func _on_option_button_item_selected(index):
